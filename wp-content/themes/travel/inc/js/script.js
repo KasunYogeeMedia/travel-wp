@@ -31,7 +31,7 @@ function createNewSection1() {
   closeButton.setAttribute("onclick", "closeSection(this)");
 
   newDiv.appendChild(closeButton);
-  newDiv.setAttribute("class", "example");
+  newDiv.setAttribute("class", "newSec");
   document.getElementById("sectionContainer1").appendChild(newDiv);
 }
 function closeSection(element) {

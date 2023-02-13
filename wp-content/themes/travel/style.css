@@ -3081,13 +3081,34 @@ section.footer-section {
 #sectionContainer1 {
   margin-left: 65px;
 }
-.addBtn{
 
-}
 @media (max-width: 768px) {
-  #sectionContainer1 {
-    margin-left: 25px;
+  #sectionContainer1,
+  .addBtn {
+    margin-left: 26px;
   }
 }
+.newSec {
+  border: #cdcdcd 2px solid;
+  background-color: #cdcdcd;
+  margin-top: 10px;
+  width: fit-content;
+}
+.newSec .close-button{
+  height: 100%;
+}
+.newSec p{
+  margin-bottom: 0;
+  margin-left: 20px;
+}
+.newSec .fa-plus-circle{
+  margin-right: 20px;
+}
 
+
+.newSec div,
+.newSec .close-button,
+.newSec p{
+  display: inline-block;
+}
 /* Kasun Styles */
