@@ -49,11 +49,11 @@ get_header();  ?>
                         <input type="radio" class="form-check-input" id="stay" name="optradio" value="stay" checked>
                         <label class="form-check-label" for="stay">Choose Your Stay</label>
                         <div class="ch_btn">
-                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal1">
                                 choose now <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                             </button>
                             <!-- Modal -->
-                            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div id="myImageSelect" class="p-2 p-sm-5">
@@ -163,11 +163,11 @@ get_header();  ?>
                         <input type="radio" class="form-check-input" id="breakfast" name="optradio" value="breakfast" checked>
                         <label class="form-check-label" for="breakfast">Breakfast</label>
                         <div class="ch_btn">
-                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal2">
                                 choose now <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                             </button>
                             <!-- Modal -->
-                            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div id="myImageSelect" class="p-2 p-sm-5">
@@ -275,11 +275,11 @@ get_header();  ?>
                         <input type="radio" class="form-check-input" id="morning" name="optradio" value="morning" checked>
                         <label class="form-check-label" for="morning">Morning Excursions</label>
                         <div class="ch_btn">
-                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal3">
                                 choose now <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                             </button>
                             <!-- Modal -->
-                            <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="Modal3" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div id="myImageSelect" class="p-2 p-sm-5">
@@ -381,7 +381,7 @@ get_header();  ?>
                                     </div>
                                 </div>
                             </div>
-                            <button type="button" id="myButton1">Add HTML 1</button>
+                            <button type="button" class="addBtn" id="myButton1">Add HTML 1</button>
                             <div id="sectionContainer1"></div>
                         </div>
 
@@ -390,11 +390,11 @@ get_header();  ?>
                         <input type="radio" class="form-check-input" id="lunch" name="optradio" value="stay" checked>
                         <label class="form-check-label" for="lunch">Lunch</label>
                         <div class="ch_btn">
-                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal4">
                                 choose now <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                             </button>
                             <!-- Modal -->
-                            <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="Modal4" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div id="myImageSelect" class="p-2 p-sm-5">
@@ -502,11 +502,11 @@ get_header();  ?>
                         <input type="radio" class="form-check-input" id="evening" name="optradio" value="evening" checked>
                         <label class="form-check-label" for="evening">Evening Excursions</label>
                         <div class="ch_btn">
-                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#exampleModal5">
+                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal5">
                                 choose now <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                             </button>
                             <!-- Modal -->
-                            <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="Modal5" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div id="myImageSelect" class="p-2 p-sm-5">
@@ -614,11 +614,11 @@ get_header();  ?>
                         <input type="radio" class="form-check-input" id="dinner" name="optradio" value="dinner" checked>
                         <label class="form-check-label" for="dinner">Dinner</label>
                         <div class="ch_btn">
-                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#exampleModal6">
+                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal6">
                                 choose now <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                             </button>
                             <!-- Modal -->
-                            <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="Modal6" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div id="myImageSelect" class="p-2 p-sm-5">
@@ -726,11 +726,11 @@ get_header();  ?>
                         <input type="radio" class="form-check-input" id="night" name="optradio" value="night" checked>
                         <label class="form-check-label" for="night">Night Life</label>
                         <div class="ch_btn">
-                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#exampleModal7">
+                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal7">
                                 choose now <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                             </button>
                             <!-- Modal -->
-                            <div class="modal fade" id="exampleModal7" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="Modal7" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div id="myImageSelect" class="p-2 p-sm-5">

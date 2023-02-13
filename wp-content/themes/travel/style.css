@@ -1431,8 +1431,8 @@ section.contact-main-description {
 section.footer-links {
   padding: 50px 50px 50px 107px;
 }
-section.footer-links ul{
-padding-left: 0;
+section.footer-links ul {
+  padding-left: 0;
 }
 section.Map-Area {
   position: relative;
@@ -2968,19 +2968,21 @@ section.footer-section {
   margin-left: 20px;
 }
 
-
-
 /* Form Model */
 @media (min-width: 576px) {
   .modal-dialog {
-    max-width: 90%;
+    max-width: 90% !important;
   }
 
   .service .sample-status-bottom {
     margin: 0px 20px 20px 20px;
   }
 }
-
+@media (max-width: 576px) {
+  .modal-dialog {
+    margin: 10% !important;
+  }
+}
 .buttonOpt {
   float: left;
   margin: 0 5px 0 0;
@@ -3019,7 +3021,7 @@ section.footer-section {
   color: orange;
 }
 @media screen and (max-width: 768px) {
-  .video-text{
+  .video-text {
     padding-left: 0;
   }
 }
@@ -3071,10 +3073,21 @@ section.footer-section {
   .s-11 {
     padding-left: 0px;
   }
-  .video-text{
+  .video-text {
+  }
+}
 
+/* Form 2 js section part styles*/
+#sectionContainer1 {
+  margin-left: 65px;
+}
+.addBtn{
+
+}
+@media (max-width: 768px) {
+  #sectionContainer1 {
+    margin-left: 25px;
   }
 }
 
 /* Kasun Styles */
-
