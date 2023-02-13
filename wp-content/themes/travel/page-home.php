@@ -16,7 +16,7 @@ get_header();  ?>
                         <div class="hero_cap mt-0 mt-md-5">
                             <span class="lg_text text-light">Plan your dream vacation</span>
                             <h2 class="sm_text text-light">in 3 simple steps</h2>
-                            <a class="btn text-uppercase bg-light mt-3" href="">PLAN YOUR ADVENTURE</a>
+                            <a class="btn text-uppercase bg-light mt-3" href="form-1/">PLAN YOUR ADVENTURE</a>
                         </div>
                     </div>
                     <div class="col-sm-6 mt-4 mt-sm-0">
