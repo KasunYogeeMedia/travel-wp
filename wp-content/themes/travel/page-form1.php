@@ -16,7 +16,7 @@ get_header();  ?>
             <span class="text-light sub_head">Choose your stay, find what to do and where to eat</span>
         </div>
         <div class="form">
-            <form method="POST" action="page-form.php">
+            <form method="POST" action="http://ongoing.website/websites/travel-wp/form-2/">
                 <div class="row mt-5">
                     <div class="col-md-12">
                         <div class="input-group">
