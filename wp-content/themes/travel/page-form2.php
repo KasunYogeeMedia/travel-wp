@@ -2,7 +2,18 @@
 /*
 Template Name: Form2
 */
-get_header();  ?>
+get_header();  
+if(isset($_POST['submit'])){
+    $search = $_POST['search'];
+    $adults = $_POST['adults'];
+    $childern = $_POST['childern'];
+    $date = $_POST['date'];
+   echo $search;
+   echo $adults;
+   echo $childern;
+   echo $date;
+}
+?>
 
 <!-- ////////////////Form2 page content Start////////////////// -->
 
