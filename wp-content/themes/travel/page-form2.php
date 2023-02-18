@@ -3,10 +3,10 @@
 Template Name: Form2
 */
 get_header(); 
-echo $_GET['search'];
-echo $_GET['adults'];
-echo $_GET['childern'];
-echo $_GET['date']; 
+echo $_POST['search'];
+echo $_POST['adults'];
+echo $_POST['childern'];
+echo $_POST['date']; 
 
 ?>
 
