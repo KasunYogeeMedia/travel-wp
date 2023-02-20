@@ -266,7 +266,7 @@ li.nav-item {
 
 .carousel-item .w-100 {
   width: 100% !important;
-  height: 700px;
+  /* height: 700px; */
 }
 
 .carousel-control-prev-icon {
@@ -3094,21 +3094,23 @@ section.footer-section {
   margin-top: 10px;
   width: fit-content;
 }
-.newSec .close-button{
+.newSec .close-button {
   height: 100%;
 }
-.newSec p{
+.newSec p {
   margin-bottom: 0;
   margin-left: 20px;
 }
-.newSec .fa-plus-circle{
+.newSec .fa-plus-circle {
   margin-right: 20px;
 }
 
-
 .newSec div,
 .newSec .close-button,
-.newSec p{
+.newSec p {
   display: inline-block;
+}
+button.btn_popup {
+  border-radius: 50%;
 }
 /* Kasun Styles */
