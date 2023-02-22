@@ -14,7 +14,8 @@ get_header();  ?>
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="hero_cap mt-0 mt-md-5">
-                            <span class="lg_text text-light">Plan your dream vacation</span>
+                            <!-- <span class="lg_text text-light">Plan your dream vacation</span> -->
+                            <span class="main-title lg_text text-light" id="text"></span>
                             <h2 class="sm_text text-light">in 3 simple steps</h2>
                             <a class="btn text-uppercase bg-light mt-3" href="form-1/">PLAN YOUR ADVENTURE</a>
                         </div>
@@ -124,20 +125,21 @@ get_header();  ?>
 <!-- sample status page end -->
 
 <section class="wrapper2 top">
-    <div class="container-fluid">
+    <div class="container-fluid wrap-2">
         <div class="bag-image" style="background-image: url(<?php echo get_template_directory_uri(); ?>/inc/img/testimonials.jpg);"></div>
 
     </div>
     <div class="text">
+    <div class="line">
+
+</div>
         <div class="heading">
             <h5 class="wrapper-main-text">AT THE HEART OF COMMUNICATION</h5>
             <h2>People say</h2>
         </div>
 
         <div class="para">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias deleniti, expedita labore
-                iste, reiciendis quos laboriosam temporibus sed blanditiis, pariatur totam itaque placeat
-                suscipit. Magni nam tempore voluptates exercitationem quae!</p>
+        <p class="form-para">"Suspendisse quis luctus leo.Maeceans sit amet sapien dolor.Sed non diam venenatis, lacinia leo ut, aliquet lectus. In various dictum massa sed fringilla. Suspendisse sit amet ultricies erat, interdum tempus velit"</p><br>
 
             <div class="box flex">
                 <div class="box-img">
@@ -168,44 +170,50 @@ get_header();  ?>
 
             <div class="container-fluid mt-4">
                 <div class="steps2-images">
-                    <div class="card">
+                    <div class="card card-action">
                         <img src="<?php echo get_template_directory_uri(); ?>/inc/img/coronavirus-rome-trapped-in-the-most-beautiful-city-in-the-worldromenew.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="text">
-                                <a href="blogpage1.html">
-                                    <h3 class="countries-name">Rome</h3>
-                                </a>
-                                <p class="countries-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero distinctio
-                                    tenetur placeat qui pariatur facilis soluta autem quos aliquam velit natus ipsa,
-                                    enim accusantium quae similique, consectetur earum? Minima, explicabo? </p>
+                        <div class="card-overlay">
+                            <div class="card-body">
+                                <div class="text">
+                                    <a href="blogpage1.html">
+                                        <h3 class="countries-name">Rome</h3>
+                                    </a>
+                                    <p class="countries-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero distinctio
+                                        tenetur placeat qui pariatur facilis soluta autem quos aliquam velit natus ipsa,
+                                        enim accusantium quae similique, consectetur earum? Minima, explicabo? </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card card-action">
                         <img src="<?php echo get_template_directory_uri(); ?>/inc/img/HDR-Photography-Beautiful-Paris-Presetpro.com_-1024x683new.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="text">
-                                <a href="">
-                                    <h3 class="countries-name">Paris</h3>
-                                </a>
-                                <p class="countries-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero distinctio
-                                    tenetur placeat qui pariatur facilis soluta autem quos aliquam velit natus ipsa,
-                                    enim accusantium quae similique, consectetur earum? Minima, explicabo? </p>
+                        <div class="card-overlay">
+                            <div class="card-body">
+                                <div class="text">
+                                    <a href="">
+                                        <h3 class="countries-name">Paris</h3>
+                                    </a>
+                                    <p class="countries-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero distinctio
+                                        tenetur placeat qui pariatur facilis soluta autem quos aliquam velit natus ipsa,
+                                        enim accusantium quae similique, consectetur earum? Minima, explicabo? </p>
+                                </div>
                             </div>
                         </div>
 
                     </div>
 
-                    <div class="card">
+                    <div class="card card-action">
                         <img src="<?php echo get_template_directory_uri(); ?>/inc/img/2968902_17101113310057652035dubainew.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="text">
-                                <a href="">
-                                    <h3 class="countries-name">Dubai</h3>
-                                </a>
-                                <p class="countries-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero distinctio
-                                    tenetur placeat qui pariatur facilis soluta autem quos aliquam velit natus ipsa,
-                                    enim accusantium quae similique, consectetur earum? Minima, explicabo? </p>
+                        <div class="card-overlay">
+                            <div class="card-body">
+                                <div class="text">
+                                    <a href="">
+                                        <h3 class="countries-name">Dubai</h3>
+                                    </a>
+                                    <p class="countries-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero distinctio
+                                        tenetur placeat qui pariatur facilis soluta autem quos aliquam velit natus ipsa,
+                                        enim accusantium quae similique, consectetur earum? Minima, explicabo? </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -214,44 +222,50 @@ get_header();  ?>
 
             <div class="container-fluid mt-4">
                 <div class="steps2-images">
-                    <div class="card">
+                    <div class="card card-action">
                         <img src="<?php echo get_template_directory_uri(); ?>/inc/img/photo-1555109307-f7d9da25c244newyorknew.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="text">
-                                <a href="">
-                                    <h3 class="countries-name">NYC</h3>
-                                </a>
-                                <p class="countries-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero distinctio
-                                    tenetur placeat qui pariatur facilis soluta autem quos aliquam velit natus ipsa,
-                                    enim accusantium quae similique, consectetur earum? Minima, explicabo? </p>
+                        <div class="card-overlay">
+                            <div class="card-body">
+                                <div class="text">
+                                    <a href="">
+                                        <h3 class="countries-name">NYC</h3>
+                                    </a>
+                                    <p class="countries-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero distinctio
+                                        tenetur placeat qui pariatur facilis soluta autem quos aliquam velit natus ipsa,
+                                        enim accusantium quae similique, consectetur earum? Minima, explicabo? </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card card-action">
                         <img src="<?php echo get_template_directory_uri(); ?>/inc/img/London-Eye-Pictures-720x404londonnew.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="text">
-                                <a href="">
-                                    <h3 class="countries-name">London</h3>
-                                </a>
-                                <p class="countries-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero distinctio
-                                    tenetur placeat qui pariatur facilis soluta autem quos aliquam velit natus ipsa,
-                                    enim accusantium quae similique, consectetur earum? Minima, explicabo? </p>
+                        <div class="card-overlay">
+                            <div class="card-body">
+                                <div class="text">
+                                    <a href="">
+                                        <h3 class="countries-name">London</h3>
+                                    </a>
+                                    <p class="countries-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero distinctio
+                                        tenetur placeat qui pariatur facilis soluta autem quos aliquam velit natus ipsa,
+                                        enim accusantium quae similique, consectetur earum? Minima, explicabo? </p>
+                                </div>
                             </div>
                         </div>
 
                     </div>
 
-                    <div class="card">
+                    <div class="card card-action">
                         <img src="<?php echo get_template_directory_uri(); ?>/inc/img/aa43530936bcbc9f6c9bc4d0c2c12474ohunew.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="text">
-                                <a href="">
-                                    <h3 class="countries-name">Oahu</h3>
-                                </a>
-                                <p class="countries-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero distinctio
-                                    tenetur placeat qui pariatur facilis soluta autem quos aliquam velit natus ipsa,
-                                    enim accusantium quae similique, consectetur earum? Minima, explicabo? </p>
+                        <div class="card-overlay">
+                            <div class="card-body">
+                                <div class="text">
+                                    <a href="">
+                                        <h3 class="countries-name">Oahu</h3>
+                                    </a>
+                                    <p class="countries-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero distinctio
+                                        tenetur placeat qui pariatur facilis soluta autem quos aliquam velit natus ipsa,
+                                        enim accusantium quae similique, consectetur earum? Minima, explicabo? </p>
+                                </div>
                             </div>
                         </div>
                     </div>
