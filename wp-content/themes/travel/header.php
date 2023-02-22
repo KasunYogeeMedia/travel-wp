@@ -48,6 +48,7 @@
 		<div class="container-fluid">
 			<nav class="navbar navbar-expand-lg navbar-light px-5 fixed-top">
 				<a class="navbar-brand" href="#">Logo Here</a>
+				<p>test</p>
 				<button class="navbar-toggler" id="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
