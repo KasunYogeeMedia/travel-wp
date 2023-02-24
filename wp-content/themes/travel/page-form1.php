@@ -7,7 +7,7 @@ get_header();  ?>
 <!-- ////////////////Form1 page content Start////////////////// -->
 
 <!-- Form section -->
-<div class="form_sec py-5 ">
+<div class="form_sec form-1 py-5 ">
     <div class="container pt-5">
         <div class="ttle text-center pt-5">
             <h2 class="form_title text-light text-center text-lg mb-3">

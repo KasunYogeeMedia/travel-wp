@@ -16,13 +16,13 @@ $results = json_decode($get_api);
 <!-- ////////////////Form2 page content Start////////////////// -->
 
 <!-- Form section -->
-<div class="form_sec pt-5">
+<div class="form_sec form-2 pt-5">
     <form action="">
         <div class="container-fluid pt-5">
             <div class="ttle py-5 border-bottom">
                 <div class="row">
-                    <div class="col-md-4 text-center">
-                        <h2 class="form_title text-light text-center text-lg mb-1">
+                    <div class="col-md-4 form-2-tit pe-0 pe-sm-5">
+                        <h2 class="form_title text-light fw-bold text-lg mb-1">
                             Day 01.
                         </h2>
                         <span class="text-light sub_head">20th of Feb 2023</span>
@@ -53,9 +53,9 @@ $results = json_decode($get_api);
                 </div>
             </div>
             <div class="container">
-                <div class="choose_sec py-5">
+                <div class="choose_sec py-5 position-relative">
                     <div class="form-check">
-                        <input type="radio" class="form-check-input" id="stay" name="optradio" value="stay" checked>
+                        <input type="checkbox" class="form-check-input" id="stay" name="optradio" value="stay">
                         <label class="form-check-label" for="stay">Choose Your Stay</label>
                         <div class="ch_btn">
                             <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal1">
@@ -191,11 +191,11 @@ $results = json_decode($get_api);
 
                     </div>
                     <div class="form-check">
-                        <input type="radio" class="form-check-input" id="breakfast" name="optradio" value="breakfast" checked>
+                        <input type="checkbox" class="form-check-input" id="breakfast" name="optradio" value="breakfast">
                         <label class="form-check-label" for="breakfast">Breakfast</label>
                         <div class="ch_btn">
                             <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal2">
-                                choose now <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -303,11 +303,11 @@ $results = json_decode($get_api);
                         </div>
                     </div>
                     <div class="form-check">
-                        <input type="radio" class="form-check-input" id="morning" name="optradio" value="morning" checked>
+                        <input type="checkbox" class="form-check-input" id="morning" name="optradio" value="morning">
                         <label class="form-check-label" for="morning">Morning Excursions</label>
                         <div class="ch_btn">
                             <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal3">
-                                choose now <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                Choose <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="Modal3" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -349,17 +349,17 @@ $results = json_decode($get_api);
                                     </div>
                                 </div>
                             </div>
-                            <button type="button" class="addBtn" id="myButton1">Add HTML 1</button>
+                            <button type="button" class="addBtn" id="myButton1">Add another <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i></button>
                             <div id="sectionContainer1"></div>
                         </div>
 
                     </div>
                     <div class="form-check">
-                        <input type="radio" class="form-check-input" id="lunch" name="optradio" value="stay" checked>
+                        <input type="checkbox" class="form-check-input" id="lunch" name="optradio" value="stay">
                         <label class="form-check-label" for="lunch">Lunch</label>
                         <div class="ch_btn">
                             <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal4">
-                                choose now <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                            a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="Modal4" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -464,14 +464,15 @@ $results = json_decode($get_api);
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                     <div class="form-check">
-                        <input type="radio" class="form-check-input" id="evening" name="optradio" value="evening" checked>
+                        <input type="checkbox" class="form-check-input" id="evening" name="optradio" value="evening">
                         <label class="form-check-label" for="evening">Evening Excursions</label>
                         <div class="ch_btn">
                             <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal5">
-                                choose now <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                Choose <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="Modal5" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -579,11 +580,11 @@ $results = json_decode($get_api);
                         </div>
                     </div>
                     <div class="form-check">
-                        <input type="radio" class="form-check-input" id="dinner" name="optradio" value="dinner" checked>
+                        <input type="checkbox" class="form-check-input" id="dinner" name="optradio" value="dinner">
                         <label class="form-check-label" for="dinner">Dinner</label>
                         <div class="ch_btn">
                             <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal6">
-                                choose now <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                            a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="Modal6" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -691,11 +692,11 @@ $results = json_decode($get_api);
                         </div>
                     </div>
                     <div class="form-check">
-                        <input type="radio" class="form-check-input" id="night" name="optradio" value="night" checked>
+                        <input type="checkbox" class="form-check-input" id="night" name="optradio" value="night">
                         <label class="form-check-label" for="night">Night Life</label>
                         <div class="ch_btn">
                             <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal7">
-                                choose now <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                Choose <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="Modal7" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -802,6 +803,7 @@ $results = json_decode($get_api);
                             </div>
                         </div>
                     </div>
+                    <div class="vl"></div>
                 </div>
             </div>
         </div>
