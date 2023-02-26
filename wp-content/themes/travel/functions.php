@@ -261,9 +261,9 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
 // register a new menu
 register_nav_menu('main-menu', 'Main menu');
 
-function get_api_data($category,$lat) { 
+function get_api_data() { 
 	$api_key = "E64AD6845F1C447FA768AA345CD76731";
-	$url = "https://api.content.tripadvisor.com/api/v1/location/search?key=E64AD6845F1C447FA768AA345CD76731&searchQuery=kandy&category=hotels&language=en";
+	$url = "https://api.content.tripadvisor.com/api/v1/location/search";
 	
 	// Set parameters for the search
 	$params = array(
@@ -288,7 +288,7 @@ function get_api_data($category,$lat) {
 	  $results = json_decode($response);
 	  
 	  // Process results
-	  return $response;
+	  return $results;
   
 
 }

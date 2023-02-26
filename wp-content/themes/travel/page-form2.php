@@ -2,8 +2,8 @@
 /*
 Template Name: Form2
 */
-get_header();  ?>
-
+get_header();  
+echo get_api_data();
 ?>
 <!-- ////////////////Form2 page content Start////////////////// -->
 
