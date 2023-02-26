@@ -3,7 +3,13 @@
 Template Name: Form2
 */
 get_header();  ?>
+<?php
+$get_api  = get_api_data('hotels','6.9270786%2C79.861243');
+$results = json_decode($get_api);
+var_dump($results);
+//echo $results->data[0]->productUrlName;
 
+?>
 <!-- ////////////////Form2 page content Start////////////////// -->
 
 <!-- Form section -->
@@ -59,94 +65,41 @@ get_header();  ?>
                                         <div id="myImageSelect" class="p-2 p-sm-5">
                                             <h2 class="mb-4">Choose Hotel</h2>
                                             <div class="row">
+                                            <?php foreach($results->data as $data){ ?>
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
+                                                    <img class="img-fluid" src="<?php echo $data->thumbnailHiResURL; ?>" alt="Option 1">
                                                     <div class="caption row my-2">
                                                         <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
+                                                           <a href="<?php echo $data->webURL;?>"> <span class="text-primary"><?php echo $data->title;?></span></a>
                                                         </div>
                                                         <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
+                                                            <span class="text-end"><?php echo $data->priceFormatted;?></span>
                                                         </div>
                                                     </div>
                                                     <div class="star mb-2">
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star"></span>
-                                                        <span class="fa fa-star"></span>
+                                                        <?php 
+                                                       $rating = (int) $data->rating;
+                                                     
+                                                       $x = 1;
+
+                                                       while($x <= 5) {
+                                                         if( $rating >= $x){?>
+                                                            <span class="fa fa-star checked"></span>
+                                                         <?php }else{ ?> 
+                                                            <span class="fa fa-star"></span>
+                                                        <?php }
+                                                         $x++;
+                                                       } 
+                                                       ?>
+
                                                     </div>
                                                     <div class="buttonOpt w-100 bg-primary">
                                                         <input type="radio" id="a50" name="check-substitution-2" />
                                                         <label class="btn btn-default text-light" for="a50">Choose</label>
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
-                                                    <div class="caption row my-2">
-                                                        <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
-                                                        </div>
-                                                        <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="star mb-2">
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star"></span>
-                                                        <span class="fa fa-star"></span>
-                                                    </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
-                                                    <div class="caption row my-2">
-                                                        <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
-                                                        </div>
-                                                        <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="star mb-2">
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star"></span>
-                                                        <span class="fa fa-star"></span>
-                                                    </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
-                                                    <div class="caption row my-2">
-                                                        <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
-                                                        </div>
-                                                        <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="star mb-2">
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star"></span>
-                                                        <span class="fa fa-star"></span>
-                                                    </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
-                                                    </div>
-                                                </div>
+                                                <?php  } ?>
+
                                             </div>
                                         </div>
                                         <div class="modal-footer">

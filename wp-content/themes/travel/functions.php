@@ -261,27 +261,34 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
 // register a new menu
 register_nav_menu('main-menu', 'Main menu');
 
-function get_api_data() { 
+function get_api_data($category,$lat) { 
+	$api_key = "E64AD6845F1C447FA768AA345CD76731";
+	$url = "https://api.content.tripadvisor.com/api/v1/location/search?key=E64AD6845F1C447FA768AA345CD76731&searchQuery=kandy&category=hotels&language=en";
+	
+	// Set parameters for the search
+	$params = array(
+		"key" => $api_key,
+		"searchQuery" => "kandy",
+		"category"=> "hotels",
+		"language" => "en",
 
-	$curl = curl_init();
-	
-	curl_setopt_array($curl, array(
-	  CURLOPT_URL => 'https://api.viator.com/partner/v1/attraction/products?seoId=1594&topX=1-10&sortOrder=SEO_PRODUCT_REVIEW_AVG_RATING_D',
-	  CURLOPT_RETURNTRANSFER => true,
-	  CURLOPT_ENCODING => '',
-	  CURLOPT_MAXREDIRS => 10,
-	  CURLOPT_TIMEOUT => 0,
-	  CURLOPT_FOLLOWLOCATION => true,
-	  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-	  CURLOPT_CUSTOMREQUEST => 'GET',
-	  CURLOPT_HTTPHEADER => array(
-		'Content-Type: application/json',
-		'exp-api-key: 74fb64fb-31db-4dc5-91f1-1007220f0d7c'
-	  ),
-	));
-	
-	$response = curl_exec($curl);
-	
-	curl_close($curl);
-	return $response;
+	  );
+	  
+	  // Build query string
+	  $query_string = http_build_query($params);
+	  
+	  // Make request to API
+	  $ch = curl_init();
+	  curl_setopt($ch, CURLOPT_URL, $url . "?" . $query_string);
+	  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	  $response = curl_exec($ch);
+	  curl_close($ch);
+	  
+	  // Parse JSON response
+	  $results = json_decode($response);
+	  
+	  // Process results
+	  return $response;
+  
+
 }
