@@ -34,8 +34,8 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-	
-	
+
+
 	<!-- stylesheet -->
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/styles.css">
 </head>
@@ -47,8 +47,9 @@
 	<header>
 		<div class="container-fluid">
 			<nav class="navbar navbar-expand-lg navbar-light px-5 fixed-top">
-				<a class="navbar-brand" href="#">Logo Here</a>
-				<button class="navbar-toggler" id="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+				<!-- <a class="navbar-brand" href="#">Logo Here</a> -->
+				<a class="navbar-brand" href="#"><img class="travel-logo" src="<?php echo get_template_directory_uri(); ?>/inc/img/travel-logopreview1.png" alt=""></a>
+				<button class="navbar-toggler bg-light" id="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="main-menu">

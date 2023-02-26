@@ -19,7 +19,8 @@
 			<div class="s-1">
 				<div class="social-lofo-des">
 					<!-- <img src="<?php echo get_template_directory_uri(); ?>/inc/img/logo-footer.svg" alt="" class="footer-logo"> -->
-					<h2>Logo Here</h2>
+					<!-- <h2>Logo Here</h2> -->
+					<h2><img class="travel-logo2" src="<?php echo get_template_directory_uri(); ?>/inc/img/travel-logo2.png" alt=""></h2>
 					<p>All hotels and vacation rental properties listed on this website are independently owned and
 						operated. Accepted payment methods:</p>
 					<img src="<?php echo get_template_directory_uri(); ?>/inc/img/payments.png" alt="" class="payment-image">
@@ -109,6 +110,22 @@
 
 <?php wp_footer(); ?>
 
+<script type="text/javascript">
+	var i = 0,
+		text;
+	text = "Plan your dream vacation"
+
+
+	function typing() {
+		if (i < text.length) {
+			document.getElementById("text").innerHTML += text.charAt(i);
+			i++;
+			setTimeout(typing, 100);
+		}
+	}
+
+	typing();
+</script>
 </body>
 
 </html>
