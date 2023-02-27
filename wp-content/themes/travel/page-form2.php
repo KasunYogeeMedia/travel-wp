@@ -2,17 +2,9 @@
 /*
 Template Name: Form2
 */
-get_header(); 
-echo $_POST['search'];
-echo $_POST['adults'];
-echo $_POST['childern'];
-echo $_POST['date']; 
-
-$get_api  = get_api_data();
-$results = json_decode($get_api);
-
+get_header();  
+echo get_api_data();
 ?>
-
 <!-- ////////////////Form2 page content Start////////////////// -->
 
 <!-- Form section -->
@@ -68,116 +60,41 @@ $results = json_decode($get_api);
                                         <div id="myImageSelect" class="p-2 p-sm-5">
                                             <h2 class="mb-4">Choose Hotel</h2>
                                             <div class="row">
-                                                <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                    <!-- Carosel -->
-                                                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                                                        <div class="carousel-inner">
-                                                            <div class="carousel-item active">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" class="d-block w-100" alt="...">
-                                                            </div>
-                                                            <div class="carousel-item">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" class="d-block w-100" alt="...">
-                                                            </div>
-                                                            <div class="carousel-item">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" class="d-block w-100" alt="...">
-                                                            </div>
-                                                        </div>
-                                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                            <span class="visually-hidden">Previous</span>
-                                                        </button>
-                                                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                            <span class="visually-hidden">Next</span>
-                                                        </button>
-                                                    </div>
-                                                    <!-- Carosel -->
-                                                    <div class="caption row my-2">
-                                                        <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
-                                                        </div>
-                                                        <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="star mb-2">
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star"></span>
-                                                        <span class="fa fa-star"></span>
-                                                    </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
-                                                    </div>
-                                                </div>
+                                            <?php foreach($results->data as $data){ ?>
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
                                                     <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
                                                     <div class="caption row my-2">
                                                         <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
+                                                           <a href="<?php echo $data->webURL;?>"> <span class="text-primary"><?php echo $data->title;?></span></a>
                                                         </div>
                                                         <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
+                                                            <span class="text-end"><?php echo $data->priceFormatted;?></span>
                                                         </div>
                                                     </div>
                                                     <div class="star mb-2">
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star"></span>
-                                                        <span class="fa fa-star"></span>
+                                                        <?php 
+                                                       $rating = (int) $data->rating;
+                                                     
+                                                       $x = 1;
+
+                                                       while($x <= 5) {
+                                                         if( $rating >= $x){?>
+                                                            <span class="fa fa-star checked"></span>
+                                                         <?php }else{ ?> 
+                                                            <span class="fa fa-star"></span>
+                                                        <?php }
+                                                         $x++;
+                                                       } 
+                                                       ?>
+
                                                     </div>
                                                     <div class="buttonOpt w-100 bg-primary">
                                                         <input type="radio" id="a50" name="check-substitution-2" />
                                                         <label class="btn btn-default text-light" for="a50">Choose</label>
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
-                                                    <div class="caption row my-2">
-                                                        <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
-                                                        </div>
-                                                        <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="star mb-2">
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star"></span>
-                                                        <span class="fa fa-star"></span>
-                                                    </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
-                                                    <div class="caption row my-2">
-                                                        <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
-                                                        </div>
-                                                        <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="star mb-2">
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star"></span>
-                                                        <span class="fa fa-star"></span>
-                                                    </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
-                                                    </div>
-                                                </div>
+                                                <?php  } ?>
+
                                             </div>
                                         </div>
                                         <div class="modal-footer">
