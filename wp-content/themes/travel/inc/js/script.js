@@ -34,33 +34,7 @@ function createNewSection1() {
   newDiv.setAttribute("class", "newSec");
   document.getElementById("sectionContainer1").appendChild(newDiv);
 }
-function createNewSection2() {
-  var newDiv = document.createElement("div");
-  newDiv.setAttribute("id", "newSection1");
 
-  var textIconDiv = document.createElement("div");
-  textIconDiv.setAttribute("id", "text-icon-div1");
-
-  var text = document.createElement("p");
-  text.innerHTML = "Text";
-  textIconDiv.appendChild(text);
-
-  var icon = document.createElement("i");
-  icon.setAttribute("class", "fa fa-2x fa-plus-circle"); // replace "icon-name" with the appropriate icon class
-  textIconDiv.appendChild(icon);
-
-  newDiv.appendChild(textIconDiv);
-
-  var closeButton = document.createElement("button");
-  var closeText = document.createTextNode("Close");
-  closeButton.appendChild(closeText);
-  closeButton.setAttribute("class", "close-button");
-  closeButton.setAttribute("onclick", "closeSection(this)");
-
-  newDiv.appendChild(closeButton);
-  newDiv.setAttribute("class", "newSec");
-  document.getElementById("sectionContainer1").appendChild(newDiv);
-}
 function closeSection(element) {
   element.parentNode.remove();
 }

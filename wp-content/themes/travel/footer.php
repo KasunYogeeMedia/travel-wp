@@ -20,7 +20,7 @@
 				<div class="social-lofo-des">
 					<!-- <img src="<?php echo get_template_directory_uri(); ?>/inc/img/logo-footer.svg" alt="" class="footer-logo"> -->
 					<!-- <h2>Logo Here</h2> -->
-					<h2><img class="travel-logo2" src="<?php echo get_template_directory_uri(); ?>/inc/img/travel-logo2.png" alt=""></h2>
+					<h2><img class="travel-logo2" src="<?php echo get_template_directory_uri(); ?>/inc/img/logo.png" alt=""></h2>
 					<p>All hotels and vacation rental properties listed on this website are independently owned and
 						operated. Accepted payment methods:</p>
 					<img src="<?php echo get_template_directory_uri(); ?>/inc/img/payments.png" alt="" class="payment-image">

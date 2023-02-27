@@ -18,6 +18,8 @@
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<!-- favicon -->
+	<link rel="icon" type="image/x-icon" href="<?php echo get_template_directory_uri(); ?>/inc/img/favicon.png">
 
 	<?php wp_head(); ?>
 	<!-- Bootstrap  -->
@@ -47,8 +49,7 @@
 	<header>
 		<div class="container-fluid">
 			<nav class="navbar navbar-expand-lg navbar-light px-5 fixed-top">
-				<!-- <a class="navbar-brand" href="#">Logo Here</a> -->
-				<a class="navbar-brand" href="#"><img class="travel-logo" src="<?php echo get_template_directory_uri(); ?>/inc/img/travel-logopreview1.png" alt=""></a>
+				<a class="navbar-brand" href="<?php echo get_home_url(); ?>"><img class="travel-logo" src="<?php echo get_template_directory_uri(); ?>/inc/img/logo.png" alt=""></a>
 				<button class="navbar-toggler bg-light" id="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -69,14 +70,14 @@
 						<ul class="navbar-nav sm-icons social-icons pt-md-22 px-md-2 d-inline">
 
 							<div class="social-media">
-								<a class="nav-link" href="#"><i class="fab fa-facebook-f"></i></a>
+								<a class="nav-link" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
 							</div>
 
 							<div class="social-media">
-								<a class="nav-link" href="#"><i class="fab fa-instagram"></i></a>
+								<a class="nav-link" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
 							</div>
 							<div class="social-media">
-								<a class="nav-link" href="#"><i class="fab fa-twitter"></i></a>
+								<a class="nav-link" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
 							</div>
 						</ul>
 					</div>

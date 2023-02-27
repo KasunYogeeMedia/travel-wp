@@ -2976,7 +2976,7 @@ section.footer-section {
 }
 
 .navbar {
-  background-color: #00000047;
+  background-color: #0000008f;
 }
 
 /* form2 page */
@@ -3325,11 +3325,12 @@ button.button-partners:hover {
   margin-left: 50px;
 }
 img.travel-logo {
-  width: 60px;
-  height: 60px;
+  width: 100%;
+  height: auto;
+  max-width: 100px;
 }
 img.travel-logo2 {
-  width: 80px;
+  width: 100px;
   /* margin-left: -7px; */
   margin: 0 auto;
   margin: 0px 60px;
@@ -3371,5 +3372,9 @@ img.travel-logo2 {
   section.our-details {
     padding-left: 10%;
     padding-bottom: 40px;
+  }
+  img.travel-logo2 {
+    margin: 0 auto;
+    
   }
 }

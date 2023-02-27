@@ -73,7 +73,7 @@ get_header();  ?>
                                 Officiis ex consequatur minus atque!</p>
 
                             <div class="read-more">
-                                <a href="#"><button class="btn">READ MORE</button></a>
+                                <a href="about/"><button class="btn">READ MORE</button></a>
                             </div>
                         </card>
                     </div>
@@ -90,7 +90,7 @@ get_header();  ?>
                                 Officiis ex consequatur minus atque!</p>
 
                             <div class="read-more">
-                                <a href="#"><button class="btn">READ MORE</button></a>
+                                <a href="about/"><button class="btn">READ MORE</button></a>
                             </div>
                         </card>
                     </div>
@@ -108,7 +108,7 @@ get_header();  ?>
                                 Officiis ex consequatur minus atque!</p>
 
                             <div class="read-more">
-                                <a href="#"><button class="btn">READ MORE</button></a>
+                                <a href="about/"><button class="btn">READ MORE</button></a>
                             </div>
                         </card>
                     </div>
@@ -117,7 +117,7 @@ get_header();  ?>
         </div>
 
         <div class="lower-button">
-            <button class="btn-lower">START PLANNING NOW</button>
+            <button onclick="location.href='form-1/';" class="btn-lower">START PLANNING NOW</button>
         </div>
     </div>
 
