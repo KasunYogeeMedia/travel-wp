@@ -9,7 +9,7 @@ get_header();  ?>
 <!-- banner about section start -->
 <section class="about-us">
     <div class="container-fluid ss-2">
-        <div class="aboutus-banner" style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/home3.jpg)">
+        <div class="aboutus-banner banner" style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/home3.jpg)">
             <h1 class="centered">About Us</h1>
         </div>
     </div>
@@ -30,9 +30,12 @@ get_header();  ?>
                         reprehenderit, modi porro ad veritatis? Culpa illo fugiat nulla nobis.<br><br>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates possimus sed
                         asperiores fugiat excepturi reprehenderit autem rerum veritatis eveniet voluptate, cum
-                        voluptatibus debitis dolor vel necessitatibus vero laborum magni animi!</p>
+                        voluptatibus debitis dolor vel necessitatibus vero laborum magni animi!
+                        <br><br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque consequatur doloribus perferendis aliquam cupiditate vitae at iusto praesentium vero magnam sint aspernatur reiciendis nulla enim eum, dolorem excepturi exercitationem magni.
+                    </p>
 
-                    <button class="btn-new">READ MORE</button>
+                    <!-- <button class="btn-new">READ MORE</button> -->
                 </div>
             </div>
 
@@ -77,11 +80,14 @@ get_header();  ?>
                             </div>
                             <h4 class="font-weight-bold pb-2">01.Enter your trip details with your preferences</h4>
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Officiis ex consequatur minus atque!</p>
+                                Officiis ex consequatur minus atque!
+                                <br>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dicta consequuntur saepe magnam animi accusantium labore perferendis harum explicabo velit, reiciendis in. Rerum quo corrupti aut odio quas asperiores exercitationem?
+                            </p>
 
-                            <div class="read-more">
-                                <a href="#"><button class="btn">READ MORE</button></a>
-                            </div>
+                            <!-- <div class="read-more">
+                                <a href="about/"><button class="btn">READ MORE</button></a>
+                            </div> -->
                         </card>
                     </div>
                 </div>
@@ -94,11 +100,14 @@ get_header();  ?>
                             </div>
                             <h4 class="font-weight-bold pb-2">02.We will list your accomodation and excursions</h4>
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Officiis ex consequatur minus atque!</p>
+                                Officiis ex consequatur minus atque!
+                                <br>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, perspiciatis reprehenderit! Eos obcaecati velit eveniet debitis corrupti molestiae ea totam excepturi ratione asperiores explicabo, nihil, provident incidunt quas praesentium omnis.
+                            </p>
 
-                            <div class="read-more">
-                                <a href="#"><button class="btn">READ MORE</button></a>
-                            </div>
+                            <!-- <div class="read-more">
+                                <a href="about/"><button class="btn">READ MORE</button></a>
+                            </div> -->
                         </card>
                     </div>
                 </div>
@@ -112,11 +121,13 @@ get_header();  ?>
                             <h4 class="font-weight-bold pb-2">03.Click the confirm button and get ready for your
                                 trip!</h4>
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Officiis ex consequatur minus atque!</p>
+                                Officiis ex consequatur minus atque!
+                                <br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam at, quaerat recusandae aliquam cum alias. Dolorum, blanditiis. Fugit eveniet magni, reprehenderit cum eligendi numquam, voluptate, incidunt saepe dolorum maxime a.
+                            </p>
 
-                            <div class="read-more">
-                                <a href="#"><button class="btn">READ MORE</button></a>
-                            </div>
+                            <!-- <div class="read-more">
+                                <a href="about/"><button class="btn">READ MORE</button></a>
+                            </div> -->
                         </card>
                     </div>
                 </div>
@@ -124,7 +135,7 @@ get_header();  ?>
         </div>
 
         <div class="lower-button">
-            <button class="btn-lower">START PLANNING NOW</button>
+            <button onclick="location.href='form-1/';" class="btn-lower">START PLANNING NOW</button>
         </div>
     </div>
 
@@ -269,14 +280,14 @@ get_header();  ?>
             </div>
             <div class="col-sm-12 col-md-12 col-lg-6">
                 <div class="all-gallery">
-                    <div class="line"></div>
+                    <!-- <div class="line"></div> -->
                     <div class="video-description">
                         <h5>TOGETHER WE ARE MORE</h5>
                         <h3>Our Partners</h3>
                     </div>
                 </div>
 
-                <div class="video-text">
+                <div class="video-text px-3">
                     <div class="gallery-para">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias quas facere sed,
                         vitae, commodi ipsa nulla ut mollitia possimus temporibus vel distinctio atque
@@ -284,11 +295,12 @@ get_header();  ?>
                         adipisicing elit. Molestias quas facere sed,
                         vitae, commodi ipsa nulla ut mollitia possimus temporibus vel distinctio atque
                         iusto. Eius odit consectetur consequatur ipsa vitae!
+                        <br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, dolorem! Atque corrupti rerum id reiciendis harum nobis quod, cumque incidunt fugiat. Quidem culpa est numquam illo voluptatem atque, maxime omnis!
                     </div>
 
-                    <div class="text-button">
+                    <!-- <div class="text-button">
                         <button class="btn-new">READ MORE</button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

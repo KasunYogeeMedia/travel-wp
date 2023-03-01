@@ -18,9 +18,7 @@
 		<div class="col-sm-12 col-md-3 col-lg-3">
 			<div class="s-1">
 				<div class="social-lofo-des">
-					<!-- <img src="<?php echo get_template_directory_uri(); ?>/inc/img/logo-footer.svg" alt="" class="footer-logo"> -->
-					<!-- <h2>Logo Here</h2> -->
-					<h2><img class="travel-logo2" src="<?php echo get_template_directory_uri(); ?>/inc/img/logo.png" alt=""></h2>
+					<h2><img class="travel-logo2" src="<?php the_field('footer_logo', 'option'); ?>" alt=""></h2>
 					<p>All hotels and vacation rental properties listed on this website are independently owned and
 						operated. Accepted payment methods:</p>
 					<img src="<?php echo get_template_directory_uri(); ?>/inc/img/payments.png" alt="" class="payment-image">
@@ -81,21 +79,30 @@
 			<div class="s-1">
 				<h3>Contact Us</h3>
 				<div class="social">
-					<p class="p-12">Yogee Media, 123</p>
-					<p class="p-13">Wijeya Road, Gampaha</p>
+					<!-- <p class="p-12">Yogee Media, 123</p>
+					<p class="p-13">Wijeya Road, Gampaha</p> -->
 					<ul>
 						<li>
-							<p><i class="far fa-envelope"></i><span>Wijeya Road, gampaha</span></p>
+							<p><a class="text-muted" href="mailto:test@email.com"><i class="far fa-envelope"></i><span>test@email.com</span></a></p>
 						</li>
 						<li>
-							<p><i class="fas fa-phone"></i><span>+41 888 963 55</span></p>
+							<p><a href="tel:" class="text-muted"><i class="fas fa-phone"></i><span>+41 888 963 55</span></a></p>
 						</li>
 
 						<li>
-							<p><i class="fas fa-fax"></i><span>+41 789 562 74</span></p>
+							<p><a href="tel:" class="text-muted"><i class="fas fa-fax"></i><span>+41 789 562 74</span></a></p>
 						</li>
 					</ul>
 				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="footer-section">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="footer-content text-center">
+				<p class="mb-0">copyrights @ <script>document.write(new Date().getFullYear())</script> Perfect Itinerary. All rights reserved</p>
 			</div>
 		</div>
 	</div>

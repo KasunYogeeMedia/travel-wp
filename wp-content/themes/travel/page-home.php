@@ -22,7 +22,7 @@ get_header();  ?>
                     </div>
                     <div class="col-sm-6 mt-4 mt-sm-0">
                         <div class="img">
-                            <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/video.png" alt="">
+                            <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/video.png" alt="Perfect Itinerary">
                             <h2 class="text-uppercase click">click here for video guide</h2>
 
                             <!-- Button trigger modal -->
@@ -130,21 +130,21 @@ get_header();  ?>
 
     </div>
     <div class="text">
-    <div class="line">
+        <div class="line">
 
-</div>
+        </div>
         <div class="heading">
             <h5 class="wrapper-main-text">AT THE HEART OF COMMUNICATION</h5>
             <h2>People say</h2>
         </div>
 
         <div class="para">
-        <p class="form-para">"Suspendisse quis luctus leo.Maeceans sit amet sapien dolor.Sed non diam venenatis, lacinia leo ut, aliquet lectus. In various dictum massa sed fringilla. Suspendisse sit amet ultricies erat, interdum tempus velit"</p><br>
+            <p class="form-para">"Suspendisse quis luctus leo.Maeceans sit amet sapien dolor.Sed non diam venenatis, lacinia leo ut, aliquet lectus. In various dictum massa sed fringilla. Suspendisse sit amet ultricies erat, interdum tempus velit"</p><br>
 
             <div class="box flex">
                 <div class="box-img">
                     <div class="img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/inc/img/kate-palmer-150x150.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/inc/img/kate-palmer-150x150.jpg" alt="Perfect Itinerary">
                     </div>
                     <div class="name">
                         <h5>KATE PALMER</h5>
@@ -170,101 +170,107 @@ get_header();  ?>
 
             <div class="container-fluid mt-4">
                 <div class="steps2-images">
-                    <div class="card card-action">
-                        <img src="<?php echo get_template_directory_uri(); ?>/inc/img/coronavirus-rome-trapped-in-the-most-beautiful-city-in-the-worldromenew.jpg" class="card-img-top" alt="...">
-                        <div class="card-overlay">
-                            <div class="card-body">
-                                <div class="text">
-                                    <a href="blogpage1.html">
-                                        <h3 class="countries-name">Rome</h3>
-                                    </a>
-                                    <p class="countries-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero distinctio
-                                        tenetur placeat qui pariatur facilis soluta autem quos aliquam velit natus ipsa,
-                                        enim accusantium quae similique, consectetur earum? Minima, explicabo? </p>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6 col-lg-4">
+                            <div class="card card-action">
+                                <img src="<?php echo get_template_directory_uri(); ?>/inc/img/coronavirus-rome-trapped-in-the-most-beautiful-city-in-the-worldromenew.jpg" class="card-img-top" alt="Perfect Itinerary">
+                                <div class="card-overlay">
+                                    <div class="card-body">
+                                        <div class="text">
+                                            <a href="blog/">
+                                                <h3 class="countries-name">Rome</h3>
+                                            </a>
+                                            <p class="countries-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero distinctio
+                                                tenetur placeat qui pariatur facilis soluta autem quos aliquam velit natus ipsa,
+                                                enim accusantium quae similique, consectetur earum? Minima, explicabo? </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card card-action">
-                        <img src="<?php echo get_template_directory_uri(); ?>/inc/img/HDR-Photography-Beautiful-Paris-Presetpro.com_-1024x683new.jpg" class="card-img-top" alt="...">
-                        <div class="card-overlay">
-                            <div class="card-body">
-                                <div class="text">
-                                    <a href="">
-                                        <h3 class="countries-name">Paris</h3>
-                                    </a>
-                                    <p class="countries-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero distinctio
-                                        tenetur placeat qui pariatur facilis soluta autem quos aliquam velit natus ipsa,
-                                        enim accusantium quae similique, consectetur earum? Minima, explicabo? </p>
+                        <div class="col-sm-6 col-md-6 col-lg-4">
+                            <div class="card card-action">
+                                <img src="<?php echo get_template_directory_uri(); ?>/inc/img/HDR-Photography-Beautiful-Paris-Presetpro.com_-1024x683new.jpg" class="card-img-top" alt="Perfect Itinerary">
+                                <div class="card-overlay">
+                                    <div class="card-body">
+                                        <div class="text">
+                                            <a href="blog/">
+                                                <h3 class="countries-name">Paris</h3>
+                                            </a>
+                                            <p class="countries-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero distinctio
+                                                tenetur placeat qui pariatur facilis soluta autem quos aliquam velit natus ipsa,
+                                                enim accusantium quae similique, consectetur earum? Minima, explicabo? </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
-                    </div>
-
-                    <div class="card card-action">
-                        <img src="<?php echo get_template_directory_uri(); ?>/inc/img/2968902_17101113310057652035dubainew.jpg" class="card-img-top" alt="...">
-                        <div class="card-overlay">
-                            <div class="card-body">
-                                <div class="text">
-                                    <a href="">
-                                        <h3 class="countries-name">Dubai</h3>
-                                    </a>
-                                    <p class="countries-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero distinctio
-                                        tenetur placeat qui pariatur facilis soluta autem quos aliquam velit natus ipsa,
-                                        enim accusantium quae similique, consectetur earum? Minima, explicabo? </p>
+                        <div class="col-sm-6 col-md-6 col-lg-4">
+                            <div class="card card-action">
+                                <img src="<?php echo get_template_directory_uri(); ?>/inc/img/2968902_17101113310057652035dubainew.jpg" class="card-img-top" alt="Perfect Itinerary">
+                                <div class="card-overlay">
+                                    <div class="card-body">
+                                        <div class="text">
+                                            <a href="blog/">
+                                                <h3 class="countries-name">Dubai</h3>
+                                            </a>
+                                            <p class="countries-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero distinctio
+                                                tenetur placeat qui pariatur facilis soluta autem quos aliquam velit natus ipsa,
+                                                enim accusantium quae similique, consectetur earum? Minima, explicabo? </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container-fluid mt-4">
-                <div class="steps2-images">
-                    <div class="card card-action">
-                        <img src="<?php echo get_template_directory_uri(); ?>/inc/img/photo-1555109307-f7d9da25c244newyorknew.jpg" class="card-img-top" alt="...">
-                        <div class="card-overlay">
-                            <div class="card-body">
-                                <div class="text">
-                                    <a href="">
-                                        <h3 class="countries-name">NYC</h3>
-                                    </a>
-                                    <p class="countries-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero distinctio
-                                        tenetur placeat qui pariatur facilis soluta autem quos aliquam velit natus ipsa,
-                                        enim accusantium quae similique, consectetur earum? Minima, explicabo? </p>
+                        <div class="col-sm-6 col-md-6 col-lg-4">
+                            <div class="card card-action">
+                                <img src="<?php echo get_template_directory_uri(); ?>/inc/img/photo-1555109307-f7d9da25c244newyorknew.jpg" class="card-img-top" alt="Perfect Itinerary">
+                                <div class="card-overlay">
+                                    <div class="card-body">
+                                        <div class="text">
+                                            <a href="blog/">
+                                                <h3 class="countries-name">NYC</h3>
+                                            </a>
+                                            <p class="countries-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero distinctio
+                                                tenetur placeat qui pariatur facilis soluta autem quos aliquam velit natus ipsa,
+                                                enim accusantium quae similique, consectetur earum? Minima, explicabo? </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card card-action">
-                        <img src="<?php echo get_template_directory_uri(); ?>/inc/img/London-Eye-Pictures-720x404londonnew.jpg" class="card-img-top" alt="...">
-                        <div class="card-overlay">
-                            <div class="card-body">
-                                <div class="text">
-                                    <a href="">
-                                        <h3 class="countries-name">London</h3>
-                                    </a>
-                                    <p class="countries-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero distinctio
-                                        tenetur placeat qui pariatur facilis soluta autem quos aliquam velit natus ipsa,
-                                        enim accusantium quae similique, consectetur earum? Minima, explicabo? </p>
+                        <div class="col-sm-6 col-md-6 col-lg-4">
+                            <div class="card card-action">
+                                <img src="<?php echo get_template_directory_uri(); ?>/inc/img/London-Eye-Pictures-720x404londonnew.jpg" class="card-img-top" alt="Perfect Itinerary">
+                                <div class="card-overlay">
+                                    <div class="card-body">
+                                        <div class="text">
+                                            <a href="blog/">
+                                                <h3 class="countries-name">London</h3>
+                                            </a>
+                                            <p class="countries-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero distinctio
+                                                tenetur placeat qui pariatur facilis soluta autem quos aliquam velit natus ipsa,
+                                                enim accusantium quae similique, consectetur earum? Minima, explicabo? </p>
+                                        </div>
+                                    </div>
                                 </div>
+
                             </div>
                         </div>
-
-                    </div>
-
-                    <div class="card card-action">
-                        <img src="<?php echo get_template_directory_uri(); ?>/inc/img/aa43530936bcbc9f6c9bc4d0c2c12474ohunew.jpg" class="card-img-top" alt="...">
-                        <div class="card-overlay">
-                            <div class="card-body">
-                                <div class="text">
-                                    <a href="">
-                                        <h3 class="countries-name">Oahu</h3>
-                                    </a>
-                                    <p class="countries-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero distinctio
-                                        tenetur placeat qui pariatur facilis soluta autem quos aliquam velit natus ipsa,
-                                        enim accusantium quae similique, consectetur earum? Minima, explicabo? </p>
+                        <div class="col-sm-6 col-md-6 col-lg-4">
+                            <div class="card card-action">
+                                <img src="<?php echo get_template_directory_uri(); ?>/inc/img/aa43530936bcbc9f6c9bc4d0c2c12474ohunew.jpg" class="card-img-top" alt="Perfect Itinerary">
+                                <div class="card-overlay">
+                                    <div class="card-body">
+                                        <div class="text">
+                                            <a href="blog/">
+                                                <h3 class="countries-name">Oahu</h3>
+                                            </a>
+                                            <p class="countries-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero distinctio
+                                                tenetur placeat qui pariatur facilis soluta autem quos aliquam velit natus ipsa,
+                                                enim accusantium quae similique, consectetur earum? Minima, explicabo? </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -301,10 +307,10 @@ get_header();  ?>
                 <div class="partners-right">
                     <div class="row r-1">
                         <div class="col logos-s">
-                            <a href="https://www.booking.com/index.en-gb.html?label=gen173nr-1BCAEoggI46AdIM1gEaIUBiAEBmAEJuAEXyAEM2AEB6AEBiAIBqAIDuAKZm_KeBsACAdICJDJmMWZhMDA3LWE2NDYtNGM1YS1hZDM4LWE4ZmRkNjE1NTllNtgCBeACAQ&sid=8ad28074e6722df796d09bab274ec954&keep_landing=1&sb_price_type=total&"><img src="<?php echo get_template_directory_uri(); ?>/inc/img/247454a990efac1952e44dddbf30c58677aa0fd8.png" alt="" class="logo-s1"></a>
+                            <a href="https://www.booking.com/index.en-gb.html?label=gen173nr-1BCAEoggI46AdIM1gEaIUBiAEBmAEJuAEXyAEM2AEB6AEBiAIBqAIDuAKZm_KeBsACAdICJDJmMWZhMDA3LWE2NDYtNGM1YS1hZDM4LWE4ZmRkNjE1NTllNtgCBeACAQ&sid=8ad28074e6722df796d09bab274ec954&keep_landing=1&sb_price_type=total&"><img src="<?php echo get_template_directory_uri(); ?>/inc/img/247454a990efac1952e44dddbf30c58677aa0fd8.png" alt="Perfect Itinerary" class="logo-s1"></a>
                         </div>
                         <div class="col logos-s">
-                            <a href="https://tourscanner.com/"> <img src="<?php echo get_template_directory_uri(); ?>/inc/img/Logo-icon-500x500.png" alt="" class="logo-s2"></a>
+                            <a href="https://tourscanner.com/"> <img src="<?php echo get_template_directory_uri(); ?>/inc/img/Logo-icon-500x500.png" alt="Perfect Itinerary" class="logo-s2"></a>
                         </div>
                     </div>
                 </div>

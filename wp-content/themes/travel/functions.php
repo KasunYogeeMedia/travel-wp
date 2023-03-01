@@ -261,34 +261,48 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
 // register a new menu
 register_nav_menu('main-menu', 'Main menu');
 
-function get_api_data() { 
+function get_api_data()
+{
 	$api_key = "E64AD6845F1C447FA768AA345CD76731";
 	$url = "https://api.content.tripadvisor.com/api/v1/location/search";
-	
+
 	// Set parameters for the search
 	$params = array(
 		"key" => $api_key,
 		"searchQuery" => "kandy",
-		"category"=> "hotels",
+		"category" => "hotels",
 		"language" => "en",
 
-	  );
-	  
-	  // Build query string
-	  $query_string = http_build_query($params);
-	  
-	  // Make request to API
-	  $ch = curl_init();
-	  curl_setopt($ch, CURLOPT_URL, $url . "?" . $query_string);
-	  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	  $response = curl_exec($ch);
-	  curl_close($ch);
-	  
-	  // Parse JSON response
-	  $results = json_decode($response);
-	  
-	  // Process results
-	  return $results;
-  
+	);
 
+	// Build query string
+	$query_string = http_build_query($params);
+
+	// Make request to API
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, $url . "?" . $query_string);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	$response = curl_exec($ch);
+	curl_close($ch);
+
+	// Parse JSON response
+	$results = json_decode($response);
+
+	// Process results
+	return $results;
+}
+// Travels Custom post type function
+add_action('pre_get_posts', 'add_my_post_types_to_query');
+
+function add_my_post_types_to_query($query)
+{
+	if (is_home() && $query->is_main_query())
+		$query->set('post_type', array('post', 'travel_blogs'));
+	return $query;
+}
+
+if( function_exists('acf_add_options_page') ) {
+    
+    acf_add_options_page();
+    
 }
