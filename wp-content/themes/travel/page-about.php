@@ -9,7 +9,7 @@ get_header();  ?>
 <!-- banner about section start -->
 <section class="about-us">
     <div class="container-fluid ss-2">
-        <div class="aboutus-banner banner" style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/home3.jpg)">
+        <div class="aboutus-banner banner" style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/about.jpg)">
             <h1 class="centered">About Us</h1>
         </div>
     </div>

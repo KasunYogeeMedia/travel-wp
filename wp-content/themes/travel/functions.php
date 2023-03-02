@@ -258,7 +258,7 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
 		$output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
 	}
 }
-// register a new menu
+// register a new menu in header
 register_nav_menu('main-menu', 'Main menu');
 
 function get_api_data()
@@ -301,8 +301,14 @@ function add_my_post_types_to_query($query)
 	return $query;
 }
 
-if( function_exists('acf_add_options_page') ) {
-    
-    acf_add_options_page();
-    
+if (function_exists('acf_add_options_page')) {
+
+	acf_add_options_page();
 }
+
+// Register the menu in footer
+function register_footer_menu()
+{
+	register_nav_menu('footer_menu', __('Footer Menu'));
+}
+add_action('init', 'register_footer_menu');

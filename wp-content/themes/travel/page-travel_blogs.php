@@ -7,7 +7,7 @@ Template Name: Travels
 
 <section class="top_banner">
     <div class="container-fluid ss-2">
-        <div class="banner" style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/home3.jpg)">
+        <div class="banner" style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/blogs.jpg)">
             <h1 class="centered">Travel Blog</h1>
         </div>
     </div>

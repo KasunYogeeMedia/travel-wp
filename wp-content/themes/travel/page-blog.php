@@ -9,7 +9,7 @@ get_header();  ?>
 <section class="blogpage1">
     <div class="container-fluid blog1">
         <div class="blog-image text-center">
-            <img src="<?php echo get_template_directory_uri(); ?>/inc/img/coronavirus-rome-trapped-in-the-most-beautiful-city-in-the-worldromenew.jpg" alt="Perfect Itinerary" class="img-fluid rome">
+            <img src="<?php echo get_template_directory_uri(); ?>/inc/img/blogs.jpg" alt="Perfect Itinerary" class="img-fluid rome">
             <div class="blog1page-news">
                 <h4 class="blog-image-title">Rome</h4>
                 <p class="blogpage1-date">15 Dec 2022 </p>

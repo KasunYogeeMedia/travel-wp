@@ -69,16 +69,30 @@
 					<div class="social-media-icon">
 						<ul class="navbar-nav sm-icons social-icons pt-md-22 px-md-2 d-inline">
 
-							<div class="social-media">
-								<a class="nav-link" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-							</div>
-
-							<div class="social-media">
-								<a class="nav-link" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-							</div>
-							<div class="social-media">
-								<a class="nav-link" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-							</div>
+							<?php
+							$fb = get_field('facebook_link', 'option');
+							?>
+							<?php if ($fb) : ?>
+								<div class="social-media">
+									<a class="nav-link" href="<?php echo $fb; ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
+								</div>
+							<?php endif; ?>
+							<?php
+							$insta = get_field('instagram_link', 'option');
+							?>
+							<?php if ($insta) : ?>
+								<div class="social-media">
+									<a class="nav-link" href="<?php echo $insta; ?>" target="_blank"><i class="fab fa-instagram"></i></a>
+								</div>
+							<?php endif; ?>
+							<?php
+							$twit = get_field('twitter_link', 'option');
+							?>
+							<?php if ($twit) : ?>
+								<div class="social-media">
+									<a class="nav-link" href="<?php echo $twit; ?>" target="_blank"><i class="fab fa-twitter"></i></a>
+								</div>
+							<?php endif; ?>
 						</ul>
 					</div>
 				</div>

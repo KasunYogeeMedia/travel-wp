@@ -32,7 +32,15 @@
 				<div class="s-11">
 					<h3>Our Pages</h3>
 					<div class="social">
-						<ul>
+						<?php
+						wp_nav_menu(array(
+							'theme_location' => 'footer_menu',
+							'container' => false,
+							'menu_class' => 'footer_menu',
+							'fallback_cb' => '__return_false'
+						));
+						?>
+						<!-- <ul>
 							<li>
 								<p>Plan</p>
 							</li>
@@ -48,9 +56,7 @@
 							<li>
 								<p>USD</p>
 							</li>
-
-
-						</ul>
+						</ul> -->
 					</div>
 				</div>
 
@@ -62,15 +68,21 @@
 				<h3>Recent News</h3>
 				<div class="social">
 					<ul>
-						<li>
-							<p><i class="fas fa-leaf-maple"></i>Blog Title 01</p>
-						</li>
-						<li>
-							<p><i class="fas fa-leaf-maple"></i>Blog Title 02</p>
-						</li>
-						<li>
-							<p><i class="fas fa-leaf-maple"></i>Blog Title 03</p>
-						</li>
+						<?php
+						$args = array('post_type' => 'travel_blogs', 'posts_per_page' => 10);
+						$the_query = new WP_Query($args);
+						?>
+						<?php if ($the_query->have_posts()) : ?>
+							<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+								<li>
+									<p><a href="<?php the_permalink(); ?>" class="text-muted"><i class="fas fa-leaf-maple"></i><?php the_title(); ?></a></p>
+								</li>
+							<?php endwhile;
+							wp_reset_postdata(); ?>
+						<?php else :  ?>
+							<p><?php _e('Sorry, There is no posts yet.'); ?></p>
+						<?php endif; ?>
+
 					</ul>
 				</div>
 			</div>
@@ -82,16 +94,30 @@
 					<!-- <p class="p-12">Yogee Media, 123</p>
 					<p class="p-13">Wijeya Road, Gampaha</p> -->
 					<ul>
-						<li>
-							<p><a class="text-muted" href="mailto:test@email.com"><i class="far fa-envelope"></i><span>test@email.com</span></a></p>
-						</li>
-						<li>
-							<p><a href="tel:" class="text-muted"><i class="fas fa-phone"></i><span>+41 888 963 55</span></a></p>
-						</li>
-
-						<li>
-							<p><a href="tel:" class="text-muted"><i class="fas fa-fax"></i><span>+41 789 562 74</span></a></p>
-						</li>
+						<?php
+						$email = get_field('email_address', 'option');
+						?>
+						<?php if ($email) : ?>
+							<li>
+								<p><a class="text-muted" href="mailto:<?php echo $email; ?>"><i class="far fa-envelope"></i><span><?php echo $email; ?></span></a></p>
+							</li>
+						<?php endif; ?>
+						<?php
+						$mobile_no = get_field('mobile_number', 'option');
+						?>
+						<?php if ($mobile_no) : ?>
+							<li>
+								<p><a href="tel:<?php echo $mobile_no; ?>" class="text-muted"><i class="fas fa-phone"></i><span><?php echo $mobile_no; ?></span></a></p>
+							</li>
+						<?php endif; ?>
+						<?php
+						$land_number = get_field('land_number', 'option');
+						?>
+						<?php if ($land_number) : ?>
+							<li>
+								<p><a href="tel:<?php echo $land_number; ?>" class="text-muted"><i class="fas fa-fax"></i><span><?php echo $land_number; ?></span></a></p>
+							</li>
+						<?php endif; ?>
 					</ul>
 				</div>
 			</div>
@@ -102,7 +128,9 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="footer-content text-center">
-				<p class="mb-0">copyrights @ <script>document.write(new Date().getFullYear())</script> Perfect Itinerary. All rights reserved</p>
+				<p class="mb-0">copyrights @ <script>
+						document.write(new Date().getFullYear())
+					</script> Perfect Itinerary. All rights reserved</p>
 			</div>
 		</div>
 	</div>
