@@ -3038,6 +3038,7 @@ section.footer-section {
   font-weight: 300;
   margin: 10px;
   margin-left: 40px;
+  min-width: 300px;
 }
 
 .fa-plus-circle {
@@ -3086,9 +3087,7 @@ section.footer-section {
 }
 .buttonOpt {
   float: left;
-  margin: 0 5px 0 0;
-  width: 100px;
-  height: 40px;
+  width: 100%;
   position: relative;
 }
 
@@ -3110,6 +3109,12 @@ section.footer-section {
 .buttonOpt input[type="radio"]:checked + label {
   background: #20b8be;
   border-radius: 4px;
+}
+.buttonOpt button{
+  border-radius: 0% !important;
+}
+.buttonOpt button:focus{
+  background: #20b8be !important;
 }
 
 .buttonOpt label {
@@ -3164,6 +3169,7 @@ section.footer-section {
     font-weight: 300;
     margin: 10px;
     margin-left: 20px;
+    min-width: 200px;
   }
 
   .fa-plus-circle {
@@ -3239,6 +3245,10 @@ button.btn_popup {
 button.btn_popup:hover {
   -webkit-box-shadow: 0px 0px 15px -2px #000000; 
 box-shadow: 0px 0px 15px -2px #000000;
+}
+.modal .btn.btn-default {
+  background: #0d6efd;
+  padding: 5px;
 }
 /* Kasun Styles */
 
@@ -3409,5 +3419,25 @@ img.travel-logo2 {
   }
   img.travel-logo2 {
     margin: 0 auto;
+  }
+}
+
+/* Inside modal styles  */
+.data_show{
+  margin-left: 2px;
+  width: 300px;
+  position: relative;
+}
+.sel_tit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0px 0px 50px rgb(0 0 0 / 85%);
+  color: #fff;
+}
+@media (max-width: 576px) {
+  .data_show{
+    width: 200px;
   }
 }

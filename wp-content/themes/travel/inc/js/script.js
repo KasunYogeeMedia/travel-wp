@@ -1,4 +1,33 @@
 // Custom script here
+
+// Function to update the selected option data display area
+function updateSelectedOption(imageSrc, title, price) {
+  // Update the image source
+  document.getElementById("selectedOptionImage").src = imageSrc;
+  // Update the title
+  document.getElementById("selectedOptionTitle").innerHTML = title;
+  // Update the price
+  document.getElementById("selectedOptionPrice").innerHTML = price;
+}
+
+// Add click event listeners to the Choose buttons inside each option
+document.querySelectorAll(".option .submit-btn").forEach(function(button) {
+  button.addEventListener("click", function() {
+      // Get the data for the selected option
+      var imageSrc = this.parentNode.parentNode
+          .querySelector(".img-fluid")
+          .getAttribute("src");
+      var title =
+          this.parentNode.parentNode.querySelector(".option-title").innerHTML;
+      var price =
+          this.parentNode.parentNode.querySelector(".option-price").innerHTML;
+      // Update the selected option data display area
+      updateSelectedOption(imageSrc, title, price);
+  });
+});
+
+
+
 // Navbar toggle
 $(document).ready(function () {
   $(".navbar-toggler").click(function () {
@@ -78,3 +107,6 @@ $(document).ready(function () {
 
   // document ready
 });
+
+
+

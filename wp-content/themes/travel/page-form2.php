@@ -2,8 +2,8 @@
 /*
 Template Name: Form2
 */
-get_header();  
-echo get_api_data();
+get_header();
+// echo get_api_data();
 ?>
 <!-- ////////////////Form2 page content Start////////////////// -->
 
@@ -60,39 +60,41 @@ echo get_api_data();
                                         <div id="myImageSelect" class="p-2 p-sm-5">
                                             <h2 class="mb-4">Choose Hotel</h2>
                                             <div class="row">
-                                            <?php foreach($results->data as $data){ ?>
-                                                <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
-                                                    <div class="caption row my-2">
-                                                        <div class="col">
-                                                           <a href="<?php echo $data->webURL;?>"> <span class="text-primary"><?php echo $data->title;?></span></a>
-                                                        </div>
-                                                        <div class="col text-end">
-                                                            <span class="text-end"><?php echo $data->priceFormatted;?></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="star mb-2">
-                                                        <?php 
-                                                       $rating = (int) $data->rating;
-                                                     
-                                                       $x = 1;
+                                                <?php foreach ($results->data as $data) { ?>
 
-                                                       while($x <= 5) {
-                                                         if( $rating >= $x){?>
-                                                            <span class="fa fa-star checked"></span>
-                                                         <?php }else{ ?> 
-                                                            <span class="fa fa-star"></span>
-                                                        <?php }
-                                                         $x++;
-                                                       } 
-                                                       ?>
+                                                    <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
+                                                        <div class="option">
+                                                            <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
+                                                            <div class="caption row my-2">
+                                                                <div class="col">
+                                                                    <a href="<?php echo $data->webURL; ?>"> <span class="option-title text-primary"><?php echo $data->title; ?></span></a>
+                                                                </div>
+                                                                <div class="col text-end">
+                                                                    <span class="option-price text-end"><?php echo $data->priceFormatted; ?></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="star mb-2">
+                                                                <?php
+                                                                $rating = (int) $data->rating;
 
+                                                                $x = 1;
+
+                                                                while ($x <= 5) {
+                                                                    if ($rating >= $x) { ?>
+                                                                        <span class="fa fa-star checked"></span>
+                                                                    <?php } else { ?>
+                                                                        <span class="fa fa-star"></span>
+                                                                <?php }
+                                                                    $x++;
+                                                                }
+                                                                ?>
+
+                                                            </div>
+                                                            <div class="buttonOpt w-100">
+                                                                <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
-                                                    </div>
-                                                </div>
                                                 <?php  } ?>
 
                                             </div>
@@ -103,10 +105,17 @@ echo get_api_data();
                                     </div>
                                 </div>
                             </div>
+                            <div id="selectedOption1" class="ms-2 ms-sm-5 ps-3">
+                                <div class="data_show">
+                                    <img class="mb-2 w-100" id="selectedOptionImage1" src="" alt="">
+                                    <h6 class="sel_tit" id="selectedOptionTitle1"></h6>
+                                    <p class="d-none" id="selectedOptionPrice1"></p>
+                                </div>
+                            </div>
                         </div>
 
-
                     </div>
+                    <!-- select option working section -->
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="breakfast" name="optradio" value="breakfast">
                         <label class="form-check-label" for="breakfast">Breakfast</label>
@@ -122,91 +131,97 @@ echo get_api_data();
                                             <h2 class="mb-4">Choose Hotel</h2>
                                             <div class="row">
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
-                                                    <div class="caption row my-2">
-                                                        <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
+                                                    <div class="option">
+                                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
+                                                        <div class="caption row my-2">
+                                                            <div class="col">
+                                                                <a href="">
+                                                                    <span class="option-title text-primary">Fox Kandy 1</span>
+                                                                </a>
+                                                            </div>
+                                                            <div class="col text-end">
+                                                                <span class="option-price text-end">USD 100</span>
+                                                            </div>
                                                         </div>
-                                                        <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
+                                                        <div class="star mb-2">
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star"></span>
+                                                            <span class="fa fa-star"></span>
                                                         </div>
-                                                    </div>
-                                                    <div class="star mb-2">
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star"></span>
-                                                        <span class="fa fa-star"></span>
-                                                    </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
+                                                        <div class="buttonOpt w-100">
+                                                            <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
-                                                    <div class="caption row my-2">
-                                                        <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
+                                                    <div class="option">
+                                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
+                                                        <div class="caption row my-2">
+                                                            <div class="col">
+                                                                <a href=""><span class="option-title text-primary">Fox Kandy 2</span></a>
+                                                            </div>
+                                                            <div class="col text-end">
+                                                                <span class="option-price text-end">USD 110</span>
+                                                            </div>
                                                         </div>
-                                                        <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
+                                                        <div class="star mb-2">
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star"></span>
+                                                            <span class="fa fa-star"></span>
                                                         </div>
-                                                    </div>
-                                                    <div class="star mb-2">
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star"></span>
-                                                        <span class="fa fa-star"></span>
-                                                    </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
+                                                        <div class="buttonOpt w-100">
+                                                            <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
-                                                    <div class="caption row my-2">
-                                                        <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
+                                                    <div class="option">
+                                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
+                                                        <div class="caption row my-2">
+                                                            <div class="col">
+                                                                <a href=""><span class="option-title text-primary">Fox Kandy 3</span></a>
+                                                            </div>
+                                                            <div class="col text-end">
+                                                                <span class="option-price text-end">USD 120</span>
+                                                            </div>
                                                         </div>
-                                                        <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
+                                                        <div class="star mb-2">
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star"></span>
+                                                            <span class="fa fa-star"></span>
                                                         </div>
-                                                    </div>
-                                                    <div class="star mb-2">
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star"></span>
-                                                        <span class="fa fa-star"></span>
-                                                    </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
+                                                        <div class="buttonOpt w-100">
+                                                            <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
-                                                    <div class="caption row my-2">
-                                                        <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
+                                                    <div class="option">
+                                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
+                                                        <div class="caption row my-2">
+                                                            <div class="col">
+                                                                <a href=""><span class="option-title text-primary">Fox Kandy 4</span></a>
+                                                            </div>
+                                                            <div class="col text-end">
+                                                                <span class="option-price text-end">USD 130</span>
+                                                            </div>
                                                         </div>
-                                                        <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
+                                                        <div class="star mb-2">
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star"></span>
+                                                            <span class="fa fa-star"></span>
                                                         </div>
-                                                    </div>
-                                                    <div class="star mb-2">
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star"></span>
-                                                        <span class="fa fa-star"></span>
-                                                    </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
+                                                        <div class="buttonOpt w-100">
+                                                            <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -217,8 +232,16 @@ echo get_api_data();
                                     </div>
                                 </div>
                             </div>
+                            <div id="selectedOption" class="ms-2 ms-sm-5 ps-3">
+                                <div class="data_show">
+                                    <img class="mb-2 w-100" id="selectedOptionImage" src="" alt="">
+                                    <h6 class="sel_tit" id="selectedOptionTitle"></h6>
+                                    <p class="d-none" id="selectedOptionPrice"></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <!-- select option working section -->
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="morning" name="optradio" value="morning">
                         <label class="form-check-label" for="morning">Morning Excursions</label>
@@ -233,31 +256,31 @@ echo get_api_data();
                                         <div id="myImageSelect" class="p-2 p-sm-5">
                                             <h2 class="mb-4">Choose Hotel</h2>
                                             <div class="row">
-                                            <?php foreach($results->data as $data){ ?>
-                                                <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                    <img class="img-fluid" src="<?php echo $data->thumbnailHiResURL; ?>" alt="Option 1">
-                                                    <div class="caption row my-2">
-                                                        <div class="col">
-                                                            <span class="text-primary"><?php echo $data->title;?></span>
+                                                <?php foreach ($results->data as $data) { ?>
+                                                    <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
+                                                        <img class="img-fluid" src="<?php echo $data->thumbnailHiResURL; ?>" alt="Option 1">
+                                                        <div class="caption row my-2">
+                                                            <div class="col">
+                                                                <span class="option-title text-primary"><?php echo $data->title; ?></span>
+                                                            </div>
+                                                            <div class="col text-end">
+                                                                <span class="option-price text-end"><?php echo $data->priceFormatted; ?></span>
+                                                            </div>
                                                         </div>
-                                                        <div class="col text-end">
-                                                            <span class="text-end"><?php echo $data->priceFormatted;?></span>
+                                                        <div class="star mb-2">
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star"></span>
+                                                            <span class="fa fa-star"></span>
+                                                        </div>
+                                                        <div class="buttonOpt w-100">
+                                                            <input type="radio" id="a50" name="check-substitution-2" />
+                                                            <label class="btn btn-default text-light" for="a50">Choose</label>
                                                         </div>
                                                     </div>
-                                                    <div class="star mb-2">
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star"></span>
-                                                        <span class="fa fa-star"></span>
-                                                    </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
-                                                    </div>
-                                                </div>
-                                          <?php  } ?>
-                                              
+                                                <?php  } ?>
+
                                             </div>
                                         </div>
                                         <div class="modal-footer">
@@ -276,7 +299,7 @@ echo get_api_data();
                         <label class="form-check-label" for="lunch">Lunch</label>
                         <div class="ch_btn">
                             <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal4">
-                            a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="Modal4" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -289,10 +312,10 @@ echo get_api_data();
                                                     <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
                                                     <div class="caption row my-2">
                                                         <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
+                                                            <span class="option-title text-primary">Fox Kandy</span>
                                                         </div>
                                                         <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
+                                                            <span class="option-price text-end">USD 110</span>
                                                         </div>
                                                     </div>
                                                     <div class="star mb-2">
@@ -302,7 +325,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                         <span class="fa fa-star"></span>
                                                     </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
+                                                    <div class="buttonOpt w-100">
                                                         <input type="radio" id="a50" name="check-substitution-2" />
                                                         <label class="btn btn-default text-light" for="a50">Choose</label>
                                                     </div>
@@ -311,10 +334,10 @@ echo get_api_data();
                                                     <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
                                                     <div class="caption row my-2">
                                                         <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
+                                                            <span class="option-title text-primary">Fox Kandy</span>
                                                         </div>
                                                         <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
+                                                            <span class="option-price text-end">USD 110</span>
                                                         </div>
                                                     </div>
                                                     <div class="star mb-2">
@@ -324,7 +347,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                         <span class="fa fa-star"></span>
                                                     </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
+                                                    <div class="buttonOpt w-100">
                                                         <input type="radio" id="a50" name="check-substitution-2" />
                                                         <label class="btn btn-default text-light" for="a50">Choose</label>
                                                     </div>
@@ -333,10 +356,10 @@ echo get_api_data();
                                                     <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
                                                     <div class="caption row my-2">
                                                         <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
+                                                            <span class="option-title text-primary">Fox Kandy</span>
                                                         </div>
                                                         <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
+                                                            <span class="option-price text-end">USD 110</span>
                                                         </div>
                                                     </div>
                                                     <div class="star mb-2">
@@ -346,7 +369,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                         <span class="fa fa-star"></span>
                                                     </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
+                                                    <div class="buttonOpt w-100">
                                                         <input type="radio" id="a50" name="check-substitution-2" />
                                                         <label class="btn btn-default text-light" for="a50">Choose</label>
                                                     </div>
@@ -355,10 +378,10 @@ echo get_api_data();
                                                     <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
                                                     <div class="caption row my-2">
                                                         <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
+                                                            <span class="option-title text-primary">Fox Kandy</span>
                                                         </div>
                                                         <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
+                                                            <span class="option-price text-end">USD 110</span>
                                                         </div>
                                                     </div>
                                                     <div class="star mb-2">
@@ -368,7 +391,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                         <span class="fa fa-star"></span>
                                                     </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
+                                                    <div class="buttonOpt w-100">
                                                         <input type="radio" id="a50" name="check-substitution-2" />
                                                         <label class="btn btn-default text-light" for="a50">Choose</label>
                                                     </div>
@@ -381,7 +404,7 @@ echo get_api_data();
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                     <div class="form-check">
@@ -402,10 +425,10 @@ echo get_api_data();
                                                     <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
                                                     <div class="caption row my-2">
                                                         <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
+                                                            <span class="option-title text-primary">Fox Kandy</span>
                                                         </div>
                                                         <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
+                                                            <span class="option-price text-end">USD 110</span>
                                                         </div>
                                                     </div>
                                                     <div class="star mb-2">
@@ -415,7 +438,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                         <span class="fa fa-star"></span>
                                                     </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
+                                                    <div class="buttonOpt w-100">
                                                         <input type="radio" id="a50" name="check-substitution-2" />
                                                         <label class="btn btn-default text-light" for="a50">Choose</label>
                                                     </div>
@@ -424,10 +447,10 @@ echo get_api_data();
                                                     <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
                                                     <div class="caption row my-2">
                                                         <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
+                                                            <span class="option-title text-primary">Fox Kandy</span>
                                                         </div>
                                                         <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
+                                                            <span class="option-price text-end">USD 110</span>
                                                         </div>
                                                     </div>
                                                     <div class="star mb-2">
@@ -437,7 +460,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                         <span class="fa fa-star"></span>
                                                     </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
+                                                    <div class="buttonOpt w-100">
                                                         <input type="radio" id="a50" name="check-substitution-2" />
                                                         <label class="btn btn-default text-light" for="a50">Choose</label>
                                                     </div>
@@ -446,10 +469,10 @@ echo get_api_data();
                                                     <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
                                                     <div class="caption row my-2">
                                                         <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
+                                                            <span class="option-title text-primary">Fox Kandy</span>
                                                         </div>
                                                         <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
+                                                            <span class="option-price text-end">USD 110</span>
                                                         </div>
                                                     </div>
                                                     <div class="star mb-2">
@@ -459,7 +482,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                         <span class="fa fa-star"></span>
                                                     </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
+                                                    <div class="buttonOpt w-100">
                                                         <input type="radio" id="a50" name="check-substitution-2" />
                                                         <label class="btn btn-default text-light" for="a50">Choose</label>
                                                     </div>
@@ -468,10 +491,10 @@ echo get_api_data();
                                                     <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
                                                     <div class="caption row my-2">
                                                         <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
+                                                            <span class="option-title text-primary">Fox Kandy</span>
                                                         </div>
                                                         <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
+                                                            <span class="option-price text-end">USD 110</span>
                                                         </div>
                                                     </div>
                                                     <div class="star mb-2">
@@ -481,7 +504,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                         <span class="fa fa-star"></span>
                                                     </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
+                                                    <div class="buttonOpt w-100">
                                                         <input type="radio" id="a50" name="check-substitution-2" />
                                                         <label class="btn btn-default text-light" for="a50">Choose</label>
                                                     </div>
@@ -501,7 +524,7 @@ echo get_api_data();
                         <label class="form-check-label" for="dinner">Dinner</label>
                         <div class="ch_btn">
                             <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal6">
-                            a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="Modal6" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -514,10 +537,10 @@ echo get_api_data();
                                                     <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
                                                     <div class="caption row my-2">
                                                         <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
+                                                            <span class="option-title text-primary">Fox Kandy</span>
                                                         </div>
                                                         <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
+                                                            <span class="option-price text-end">USD 110</span>
                                                         </div>
                                                     </div>
                                                     <div class="star mb-2">
@@ -527,7 +550,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                         <span class="fa fa-star"></span>
                                                     </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
+                                                    <div class="buttonOpt w-100">
                                                         <input type="radio" id="a50" name="check-substitution-2" />
                                                         <label class="btn btn-default text-light" for="a50">Choose</label>
                                                     </div>
@@ -536,10 +559,10 @@ echo get_api_data();
                                                     <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
                                                     <div class="caption row my-2">
                                                         <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
+                                                            <span class="option-title text-primary">Fox Kandy</span>
                                                         </div>
                                                         <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
+                                                            <span class="option-price text-end">USD 110</span>
                                                         </div>
                                                     </div>
                                                     <div class="star mb-2">
@@ -549,7 +572,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                         <span class="fa fa-star"></span>
                                                     </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
+                                                    <div class="buttonOpt w-100">
                                                         <input type="radio" id="a50" name="check-substitution-2" />
                                                         <label class="btn btn-default text-light" for="a50">Choose</label>
                                                     </div>
@@ -558,10 +581,10 @@ echo get_api_data();
                                                     <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
                                                     <div class="caption row my-2">
                                                         <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
+                                                            <span class="option-title text-primary">Fox Kandy</span>
                                                         </div>
                                                         <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
+                                                            <span class="option-price text-end">USD 110</span>
                                                         </div>
                                                     </div>
                                                     <div class="star mb-2">
@@ -571,7 +594,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                         <span class="fa fa-star"></span>
                                                     </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
+                                                    <div class="buttonOpt w-100">
                                                         <input type="radio" id="a50" name="check-substitution-2" />
                                                         <label class="btn btn-default text-light" for="a50">Choose</label>
                                                     </div>
@@ -580,10 +603,10 @@ echo get_api_data();
                                                     <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
                                                     <div class="caption row my-2">
                                                         <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
+                                                            <span class="option-title text-primary">Fox Kandy</span>
                                                         </div>
                                                         <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
+                                                            <span class="option-price text-end">USD 110</span>
                                                         </div>
                                                     </div>
                                                     <div class="star mb-2">
@@ -593,7 +616,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                         <span class="fa fa-star"></span>
                                                     </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
+                                                    <div class="buttonOpt w-100">
                                                         <input type="radio" id="a50" name="check-substitution-2" />
                                                         <label class="btn btn-default text-light" for="a50">Choose</label>
                                                     </div>
@@ -626,10 +649,10 @@ echo get_api_data();
                                                     <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
                                                     <div class="caption row my-2">
                                                         <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
+                                                            <span class="option-title text-primary">Fox Kandy</span>
                                                         </div>
                                                         <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
+                                                            <span class="option-price text-end">USD 110</span>
                                                         </div>
                                                     </div>
                                                     <div class="star mb-2">
@@ -639,7 +662,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                         <span class="fa fa-star"></span>
                                                     </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
+                                                    <div class="buttonOpt w-100">
                                                         <input type="radio" id="a50" name="check-substitution-2" />
                                                         <label class="btn btn-default text-light" for="a50">Choose</label>
                                                     </div>
@@ -648,10 +671,10 @@ echo get_api_data();
                                                     <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
                                                     <div class="caption row my-2">
                                                         <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
+                                                            <span class="option-title text-primary">Fox Kandy</span>
                                                         </div>
                                                         <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
+                                                            <span class="option-price text-end">USD 110</span>
                                                         </div>
                                                     </div>
                                                     <div class="star mb-2">
@@ -661,7 +684,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                         <span class="fa fa-star"></span>
                                                     </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
+                                                    <div class="buttonOpt w-100">
                                                         <input type="radio" id="a50" name="check-substitution-2" />
                                                         <label class="btn btn-default text-light" for="a50">Choose</label>
                                                     </div>
@@ -670,10 +693,10 @@ echo get_api_data();
                                                     <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
                                                     <div class="caption row my-2">
                                                         <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
+                                                            <span class="option-title text-primary">Fox Kandy</span>
                                                         </div>
                                                         <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
+                                                            <span class="option-price text-end">USD 110</span>
                                                         </div>
                                                     </div>
                                                     <div class="star mb-2">
@@ -683,7 +706,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                         <span class="fa fa-star"></span>
                                                     </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
+                                                    <div class="buttonOpt w-100">
                                                         <input type="radio" id="a50" name="check-substitution-2" />
                                                         <label class="btn btn-default text-light" for="a50">Choose</label>
                                                     </div>
@@ -692,10 +715,10 @@ echo get_api_data();
                                                     <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
                                                     <div class="caption row my-2">
                                                         <div class="col">
-                                                            <span class="text-primary">Fox Kandy</span>
+                                                            <span class="option-title text-primary">Fox Kandy</span>
                                                         </div>
                                                         <div class="col text-end">
-                                                            <span class="text-end">USD 110</span>
+                                                            <span class="option-price text-end">USD 110</span>
                                                         </div>
                                                     </div>
                                                     <div class="star mb-2">
@@ -705,7 +728,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                         <span class="fa fa-star"></span>
                                                     </div>
-                                                    <div class="buttonOpt w-100 bg-primary">
+                                                    <div class="buttonOpt w-100">
                                                         <input type="radio" id="a50" name="check-substitution-2" />
                                                         <label class="btn btn-default text-light" for="a50">Choose</label>
                                                     </div>
