@@ -3,7 +3,7 @@
 Template Name: Form2
 */
 get_header();
-echo get_api_data();
+// echo get_api_data();
 ?>
 <!-- ////////////////Form2 page content Start////////////////// -->
 
@@ -46,12 +46,16 @@ echo get_api_data();
             </div>
             <div class="container">
                 <div class="choose_sec py-5 position-relative">
+                    <!-- Choose your stay -->
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="stay" name="optradio" value="stay">
                         <label class="form-check-label" for="stay">Choose Your Stay</label>
                         <div class="ch_btn">
                             <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal1">
-                                choose now <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                <div id="btn1_inside" class="btn_inside text-center">
+                                    choose now <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                    <span id="btn1_price"></span>
+                                </div>
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -105,23 +109,20 @@ echo get_api_data();
                                     </div>
                                 </div>
                             </div>
-                            <div id="selectedOption1" class="ms-2 ms-sm-5 ps-3">
-                                <div class="data_show">
-                                    <img class="mb-2 w-100" id="selectedOptionImage1" src="" alt="">
-                                    <h6 class="sel_tit" id="selectedOptionTitle1"></h6>
-                                    <p class="d-none" id="selectedOptionPrice1"></p>
-                                </div>
-                            </div>
+
                         </div>
 
                     </div>
-                    <!-- select option working section -->
+                    <!-- Breakfast -->
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="breakfast" name="optradio" value="breakfast">
                         <label class="form-check-label" for="breakfast">Breakfast</label>
                         <div class="ch_btn">
                             <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal2">
-                                a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                <div id="btn2_inside" class="btn_inside text-center">
+                                    a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                    <span id="btn2_price"></span>
+                                </div>
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -232,22 +233,18 @@ echo get_api_data();
                                     </div>
                                 </div>
                             </div>
-                            <div id="selectedOption" class="ms-2 ms-sm-5 ps-3">
-                                <div class="data_show">
-                                    <img class="mb-2 w-100" id="selectedOptionImage" src="" alt="">
-                                    <h6 class="sel_tit" id="selectedOptionTitle"></h6>
-                                    <p class="d-none" id="selectedOptionPrice"></p>
-                                </div>
-                            </div>
                         </div>
                     </div>
-                    <!-- select option working section -->
+                    <!-- Morning Excursions -->
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="morning" name="optradio" value="morning">
                         <label class="form-check-label" for="morning">Morning Excursions</label>
                         <div class="ch_btn">
                             <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal3">
-                                Choose <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                <div id="btn3_inside" class="btn_inside text-center">
+                                    Choose <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                    <span id="btn3_price"></span>
+                                </div>
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="Modal3" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -294,12 +291,16 @@ echo get_api_data();
                         </div>
 
                     </div>
+                    <!-- Lunch -->
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="lunch" name="optradio" value="stay">
                         <label class="form-check-label" for="lunch">Lunch</label>
                         <div class="ch_btn">
                             <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal4">
-                                a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                <div id="btn4_inside" class="btn_inside text-center">
+                                    a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                    <span id="btn4_price"></span>
+                                </div>
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="Modal4" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -309,10 +310,10 @@ echo get_api_data();
                                             <h2 class="mb-4">Choose Hotel</h2>
                                             <div class="row">
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
+                                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home2.jpg" alt="Option 1">
                                                     <div class="caption row my-2">
                                                         <div class="col">
-                                                            <span class="option-title text-primary">Fox Kandy</span>
+                                                            <span class="option-title text-primary">Lunch 1</span>
                                                         </div>
                                                         <div class="col text-end">
                                                             <span class="option-price text-end">USD 110</span>
@@ -326,15 +327,14 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                     </div>
                                                     <div class="buttonOpt w-100">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
+                                                        <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
+                                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home2.jpg" alt="Option 1">
                                                     <div class="caption row my-2">
                                                         <div class="col">
-                                                            <span class="option-title text-primary">Fox Kandy</span>
+                                                            <span class="option-title text-primary">Lunch 2</span>
                                                         </div>
                                                         <div class="col text-end">
                                                             <span class="option-price text-end">USD 110</span>
@@ -348,15 +348,14 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                     </div>
                                                     <div class="buttonOpt w-100">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
+                                                        <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
+                                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home2.jpg" alt="Option 1">
                                                     <div class="caption row my-2">
                                                         <div class="col">
-                                                            <span class="option-title text-primary">Fox Kandy</span>
+                                                            <span class="option-title text-primary">Lunch 3</span>
                                                         </div>
                                                         <div class="col text-end">
                                                             <span class="option-price text-end">USD 110</span>
@@ -370,15 +369,14 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                     </div>
                                                     <div class="buttonOpt w-100">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
+                                                        <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
+                                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home2.jpg" alt="Option 1">
                                                     <div class="caption row my-2">
                                                         <div class="col">
-                                                            <span class="option-title text-primary">Fox Kandy</span>
+                                                            <span class="option-title text-primary">Lunch 4</span>
                                                         </div>
                                                         <div class="col text-end">
                                                             <span class="option-price text-end">USD 110</span>
@@ -392,8 +390,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                     </div>
                                                     <div class="buttonOpt w-100">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
+                                                        <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -404,15 +401,18 @@ echo get_api_data();
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
+                    <!-- Evening Excursions -->
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="evening" name="optradio" value="evening">
                         <label class="form-check-label" for="evening">Evening Excursions</label>
                         <div class="ch_btn">
                             <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal5">
-                                Choose <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                <div id="btn5_inside" class="btn_inside text-center">
+                                    Choose <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                    <span id="btn5_price"></span>
+                                </div>
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="Modal5" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -439,8 +439,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                     </div>
                                                     <div class="buttonOpt w-100">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
+                                                        <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
@@ -461,8 +460,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                     </div>
                                                     <div class="buttonOpt w-100">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
+                                                        <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
@@ -483,8 +481,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                     </div>
                                                     <div class="buttonOpt w-100">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
+                                                        <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
@@ -505,8 +502,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                     </div>
                                                     <div class="buttonOpt w-100">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
+                                                        <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -519,12 +515,16 @@ echo get_api_data();
                             </div>
                         </div>
                     </div>
+                    <!-- Dinner -->
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="dinner" name="optradio" value="dinner">
                         <label class="form-check-label" for="dinner">Dinner</label>
                         <div class="ch_btn">
                             <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal6">
-                                a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                <div id="btn6_inside" class="btn_inside text-center">
+                                    a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                    <span id="btn6_price"></span>
+                                </div>
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="Modal6" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -551,8 +551,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                     </div>
                                                     <div class="buttonOpt w-100">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
+                                                        <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
@@ -573,8 +572,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                     </div>
                                                     <div class="buttonOpt w-100">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
+                                                        <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
@@ -595,8 +593,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                     </div>
                                                     <div class="buttonOpt w-100">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
+                                                        <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
@@ -617,8 +614,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                     </div>
                                                     <div class="buttonOpt w-100">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
+                                                        <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -631,12 +627,16 @@ echo get_api_data();
                             </div>
                         </div>
                     </div>
+                    <!-- Night Life -->
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="night" name="optradio" value="night">
                         <label class="form-check-label" for="night">Night Life</label>
                         <div class="ch_btn">
                             <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal7">
-                                Choose <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                <div id="btn7_inside" class="btn_inside text-center">
+                                    Choose <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                    <span id="btn7_price"></span>
+                                </div>
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="Modal7" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -663,8 +663,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                     </div>
                                                     <div class="buttonOpt w-100">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
+                                                        <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
@@ -685,8 +684,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                     </div>
                                                     <div class="buttonOpt w-100">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
+                                                        <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
@@ -707,8 +705,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                     </div>
                                                     <div class="buttonOpt w-100">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
+                                                        <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
@@ -729,8 +726,7 @@ echo get_api_data();
                                                         <span class="fa fa-star"></span>
                                                     </div>
                                                     <div class="buttonOpt w-100">
-                                                        <input type="radio" id="a50" name="check-substitution-2" />
-                                                        <label class="btn btn-default text-light" for="a50">Choose</label>
+                                                        <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
                                                     </div>
                                                 </div>
                                             </div>
