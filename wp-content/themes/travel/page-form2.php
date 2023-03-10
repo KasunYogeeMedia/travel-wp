@@ -298,7 +298,7 @@ get_header();
                     <!-- Lunch -->
                     <div id="select_4" class="form-check">
                         <input type="checkbox" id="sel4" class="form-check-input" name="optradio">
-                        <label class="form-check-label" for="breakfast">Breakfast</label>
+                        <label class="form-check-label" for="breakfast">Lunch</label>
                         <div class="ch_btn">
                             <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal4">
                                 <div id="btn4_inside" class="btn_inside text-center">
@@ -315,7 +315,7 @@ get_header();
                                             <div class="row">
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
                                                     <div class="option">
-                                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
+                                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home2.jpg" alt="Option 1">
                                                         <div class="caption row my-2">
                                                             <div class="col">
                                                                 <a href="">
@@ -341,7 +341,7 @@ get_header();
                                                 </div>
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
                                                     <div class="option">
-                                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
+                                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home2.jpg" alt="Option 1">
                                                         <div class="caption row my-2">
                                                             <div class="col">
                                                                 <a href=""><span class="option-title text-primary">Lunch 2</span></a>
@@ -365,7 +365,7 @@ get_header();
                                                 </div>
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
                                                     <div class="option">
-                                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
+                                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home2.jpg" alt="Option 1">
                                                         <div class="caption row my-2">
                                                             <div class="col">
                                                                 <a href=""><span class="option-title text-primary">Lunch 3</span></a>
@@ -389,7 +389,7 @@ get_header();
                                                 </div>
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
                                                     <div class="option">
-                                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
+                                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home2.jpg" alt="Option 1">
                                                         <div class="caption row my-2">
                                                             <div class="col">
                                                                 <a href=""><span class="option-title text-primary">Lunch 4</span></a>

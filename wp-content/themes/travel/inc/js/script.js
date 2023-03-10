@@ -34,7 +34,7 @@ document
 // Morning Excursions
 // Lunch
 // Function to update the selected option data display area
-function updateSelectedOption2(imageSrc, title, price, location) {
+function updateSelectedOption4(imageSrc, title, price, location) {
   document.getElementById("btn4_inside").style.backgroundImage =
       "url('" + imageSrc + "')";
   document.getElementById("btn4_inside").innerHTML = title;
@@ -57,7 +57,7 @@ document
           var location =
               this.parentNode.parentNode.querySelector(".loc_name").value;
           // Update the selected option data display area
-          updateSelectedOption2(imageSrc, title, price, location);
+          updateSelectedOption4(imageSrc, title, price, location);
       });
   });
 // Evening Excursions
