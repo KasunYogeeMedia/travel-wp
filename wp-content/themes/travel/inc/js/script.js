@@ -4,55 +4,65 @@
 // Breakfast
 // Function to update the selected option data display area
 
-function updateSelectedOption2(imageSrc, title, price) {
-  document.getElementById("btn2_inside").style.backgroundImage = "url('" + imageSrc + "')";
+function updateSelectedOption2(imageSrc, title, price, location) {
+  document.getElementById("btn2_inside").style.backgroundImage =
+    "url('" + imageSrc + "')";
   document.getElementById("btn2_inside").innerHTML = title;
   document.getElementById("btn2_price").innerHTML = price;
+  document.getElementById("sel2").value = location;
 }
 // Add click event listeners to the Choose buttons inside each option
-document.querySelectorAll("#Modal2 .option .submit-btn").forEach(function (button) {
-  button.addEventListener("click", function () {
-    // Get the data for the selected option
-    var imageSrc = this.parentNode.parentNode
-      .querySelector(".img-fluid")
-      .getAttribute("src");
-    var title =
-      this.parentNode.parentNode.querySelector(".option-title").innerHTML;
-    var price =
-      this.parentNode.parentNode.querySelector(".option-price").innerHTML;
-    // Update the selected option data display area
-    updateSelectedOption2(imageSrc, title, price);
+document
+  .querySelectorAll("#Modal2 .option .submit-btn")
+  .forEach(function (button) {
+    button.addEventListener("click", function () {
+      // Get the data for the selected option
+      var imageSrc = this.parentNode.parentNode
+        .querySelector(".img-fluid")
+        .getAttribute("src");
+      var title =
+        this.parentNode.parentNode.querySelector(".option-title").innerHTML;
+      var price =
+        this.parentNode.parentNode.querySelector(".option-price").innerHTML;
+      var location =
+        this.parentNode.parentNode.querySelector(".loc_name").value;
+      // Update the selected option data display area
+      updateSelectedOption2(imageSrc, title, price, location);
+    });
   });
-});
-
 
 // Morning Excursions
 // Lunch
 // Function to update the selected option data display area
-function updateSelectedOption4(imageSrc, title, price) {
-  document.getElementById("btn4_inside").style.backgroundImage = "url('" + imageSrc + "')";
+function updateSelectedOption2(imageSrc, title, price, location) {
+  document.getElementById("btn4_inside").style.backgroundImage =
+      "url('" + imageSrc + "')";
   document.getElementById("btn4_inside").innerHTML = title;
   document.getElementById("btn4_price").innerHTML = price;
+  document.getElementById("sel4").value = location;
 }
 // Add click event listeners to the Choose buttons inside each option
-document.querySelectorAll("#Modal4 .option .submit-btn").forEach(function (button) {
-  button.addEventListener("click", function () {
-    // Get the data for the selected option
-    var imageSrc = this.parentNode.parentNode
-      .querySelector(".img-fluid")
-      .getAttribute("src");
-    var title =
-      this.parentNode.parentNode.querySelector(".option-title").innerHTML;
-    var price =
-      this.parentNode.parentNode.querySelector(".option-price").innerHTML;
-    // Update the selected option data display area
-    updateSelectedOption4(imageSrc, title, price);
+document
+  .querySelectorAll("#Modal4 .option .submit-btn")
+  .forEach(function (button) {
+      button.addEventListener("click", function () {
+          // Get the data for the selected option
+          var imageSrc = this.parentNode.parentNode
+              .querySelector(".img-fluid")
+              .getAttribute("src");
+          var title =
+              this.parentNode.parentNode.querySelector(".option-title").innerHTML;
+          var price =
+              this.parentNode.parentNode.querySelector(".option-price").innerHTML;
+          var location =
+              this.parentNode.parentNode.querySelector(".loc_name").value;
+          // Update the selected option data display area
+          updateSelectedOption2(imageSrc, title, price, location);
+      });
   });
-});
 // Evening Excursions
 // Dinner
 // Night Life
-
 
 // Navbar toggle
 $(document).ready(function () {
@@ -133,6 +143,3 @@ $(document).ready(function () {
 
   // document ready
 });
-
-
-

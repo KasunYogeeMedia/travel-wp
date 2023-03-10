@@ -54,21 +54,35 @@ get_header();  ?>
                 <div class="row mt-5">
                     <div class="col-md-6">
                         <div class="input-group date" id="datepicker">
-                            <input class="form-control text-secondary form-control-lg px-5 py-3" type="text" name="daterange" placeholder="Select date range" />
+                            <input id="date" class="form-control text-secondary form-control-lg px-5 py-3 date_range" type="text" name="daterange" placeholder="Select date range" />
+                            <input name="datediff" id="datediff" type="hidden">
                         </div>
 
                         <script>
+                            let diffInDays; // declare diffInDays outside the function
+
                             $(function() {
                                 $('input[name="daterange"]').daterangepicker({
                                     opens: 'left',
-                                    startDate: moment(),
-                                    endDate: moment().add(7, 'days')
-                                }, function(start, end, label) {
-                                    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+                                
+                                }, function(startDate, endDate, label) {
+
+                                    // Convert the start and end dates to Moment objects
+                                    const start = moment(startDate, 'MM/DD/YYYY');
+                                    const end = moment(endDate, 'MM/DD/YYYY');
+
+                                    // Calculate the difference in days between the two dates
+                                    diffInDays = end.diff(start, 'days');
+
+                                    // set the value of the input field
+                                    // date = document.getElementById("date");
+                                    document.getElementById("datediff").value = diffInDays;
+                                    // console.log(diffInDays);
+                                    
+
                                 });
                             });
                         </script>
-
 
                     </div>
                 </div>
