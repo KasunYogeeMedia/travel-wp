@@ -52,20 +52,24 @@ get_header();  ?>
                     </div>
                 </div>
                 <div class="row mt-5">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <div class="input-group date" id="datepicker">
-                            <!-- <input class="form-control text-secondary form-control-lg px-5 py-3" type="date" id="birthday" name="when" placeholder="When" name="date"> -->
-                            <input class="form-control text-secondary form-control-lg px-5 py-3" type="text" name="daterange" value="Select Date Range" />
+                            <input class="form-control text-secondary form-control-lg px-5 py-3" type="text" name="daterange" placeholder="Select date range" />
                         </div>
+
                         <script>
                             $(function() {
                                 $('input[name="daterange"]').daterangepicker({
-                                    opens: 'left'
+                                    opens: 'left',
+                                    startDate: moment(),
+                                    endDate: moment().add(7, 'days')
                                 }, function(start, end, label) {
                                     console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
                                 });
                             });
                         </script>
+
+
                     </div>
                 </div>
                 <div class="row mt-4 pb-5">
