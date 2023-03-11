@@ -19,6 +19,7 @@ get_header();
                         </h2>
                         <span class="text-light sub_head">20th of Feb 2023</span>
                     </div>
+
                     <div class="col-md-5 mt-4 mt-md-0">
                         <div class="input-group mb-2">
                             <input class="form-control form-control-lg border-end-0 border px-5 py-3" type="search" placeholder="Where you want to go?" id="example-search-input">
@@ -48,10 +49,10 @@ get_header();
                 <div class="choose_sec py-5 position-relative">
                     <!-- Choose your stay -->
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="stay" name="optradio" value="stay">
+                        <input type="checkbox" class="form-check-input" id="stay" name="optradio" value="avendra">
                         <label class="form-check-label" for="stay">Choose Your Stay</label>
                         <div class="ch_btn">
-                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal1">
+                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal1" >
                                 <div id="btn1_inside" class="btn_inside text-center">
                                     choose now <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                                     <span id="btn1_price"></span>
@@ -64,42 +65,7 @@ get_header();
                                         <div id="myImageSelect" class="p-2 p-sm-5">
                                             <h2 class="mb-4">Choose Hotel</h2>
                                             <div class="row">
-                                                <?php foreach ($results->data as $data) { ?>
-
-                                                    <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                        <div class="option">
-                                                            <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
-                                                            <div class="caption row my-2">
-                                                                <div class="col">
-                                                                    <a href="<?php echo $data->webURL; ?>"> <span class="option-title text-primary"><?php echo $data->title; ?></span></a>
-                                                                </div>
-                                                                <div class="col text-end">
-                                                                    <span class="option-price text-end"><?php echo $data->priceFormatted; ?></span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="star mb-2">
-                                                                <?php
-                                                                $rating = (int) $data->rating;
-
-                                                                $x = 1;
-
-                                                                while ($x <= 5) {
-                                                                    if ($rating >= $x) { ?>
-                                                                        <span class="fa fa-star checked"></span>
-                                                                    <?php } else { ?>
-                                                                        <span class="fa fa-star"></span>
-                                                                <?php }
-                                                                    $x++;
-                                                                }
-                                                                ?>
-
-                                                            </div>
-                                                            <div class="buttonOpt w-100">
-                                                                <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                <?php  } ?>
+                                               
 
                                             </div>
                                         </div>
@@ -118,7 +84,7 @@ get_header();
                         <input type="checkbox" class="form-check-input" id="breakfast" name="optradio" value="breakfast">
                         <label class="form-check-label" for="breakfast">Breakfast</label>
                         <div class="ch_btn">
-                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal2">
+                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal2" id='btnGetData'>
                                 <div id="btn2_inside" class="btn_inside text-center">
                                     a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                                     <span id="btn2_price"></span>
@@ -746,7 +712,46 @@ get_header();
     </form>
 </div>
 <!-- Form section -->
+<?php $ajax_handler_url = plugins_url( 'post-data/post-data.php' );?>
 
 <!-- ////////////////Form2 page content End////////////////// -->
+<script>
+jQuery.ajax({
+    url: '<?php echo admin_url( 'admin-ajax.php' ); ?>', // the PHP script that contains the function
+    type: 'POST',
+    data: {
+        action: 'my_custom_ajax_endpoint', // the name of the AJAX action
+        search_keyword: 'hilton' // the data to pass to the function
+        
+    },
+    success: function(response) {
+        console.log(response)
+    },
+    error: function(xhr, status, error) {
+        console.log("Error: " + error);
+    }
+});
 
-<?php get_footer(); ?>
+$(document).ready(function() {
+  $("#btnGetData").click(function() {
+    $.ajax({
+      url: "<?php echo admin_url( 'admin-ajax.php' ); ?>", // Replace with your URL
+      type: "POST",
+      data: {
+        action: 'my_custom_ajax_endpoint',
+        search_keyword: $("#breakfast").val()
+      },
+      success: function(response) {
+        console.log(response)
+      },
+      error: function(xhr, status, error) {
+        console.log("Error: " + error);
+      }
+    });
+  });
+});
+</script>
+<?php get_footer(); 
+
+?>
+

@@ -16,11 +16,11 @@ get_header();  ?>
             <span class="text-light sub_head">Choose your stay, find what to do and where to eat</span>
         </div>
         <div class="form">
-            <form method="POST" action="<?php bloginfo('url'); ?>/form-2/">
+            <form method="POST" action="<?php bloginfo('url'); ?>/form-2/" id="myForm">
                 <div class="row mt-5">
                     <div class="col-md-12">
                         <div class="input-group">
-                            <input class="form-control form-control-lg border-end-0 border px-5 py-3" type="search" placeholder="Where you want to go?" id="example-search-input" name="search">
+                            <input class="form-control form-control-lg border-end-0 border px-5 py-3" type="search" placeholder="Where you want to go?" id="search" name="search">
                             <span class="input-group-append">
                                 <button class="btn btn-lg bg-white border-start-0 border ms-n5 rounded-0 rounded-end mt-0 py-3" type="button">
                                     <i class="fa fa-search fa-2x pt-1"></i>
@@ -32,7 +32,7 @@ get_header();  ?>
                 <div class="row mt-5">
                     <div class="col-md-6">
                         <div class="input-group">
-                            <select class="form-select text-secondary form-select-lg px-5 py-3" aria-label="Default select example" name="adults">
+                            <select class="form-select text-secondary form-select-lg px-5 py-3" aria-label="Default select example" name="adults" id="adults">
                                 <option selected>Adults</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
@@ -42,7 +42,7 @@ get_header();  ?>
                     </div>
                     <div class="col-md-6 mt-5 mt-md-0">
                         <div class="input-group">
-                            <select class="form-select text-secondary form-select-lg px-5 py-3" aria-label="Default select example" name="childern">
+                            <select class="form-select text-secondary form-select-lg px-5 py-3" aria-label="Default select example" name="childern" id="childern">
                                 <option selected>Children</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
@@ -55,17 +55,30 @@ get_header();  ?>
                     <div class="col-md-12">
                         <div class="input-group date" id="datepicker">
                             <!-- <input class="form-control text-secondary form-control-lg px-5 py-3" type="date" id="birthday" name="when" placeholder="When" name="date"> -->
-                            <input class="form-control text-secondary form-control-lg px-5 py-3" type="text" name="daterange" value="Select Date Range" />
-                        </div>
-                        <script>
-                            $(function() {
-                                $('input[name="daterange"]').daterangepicker({
-                                    opens: 'left'
-                                }, function(start, end, label) {
-                                    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-                                });
+                           <input class="form-control text-secondary form-control-lg px-5 py-3" type="text" name="daterange" id="date"/>
+
+                    <script>
+                        let diffInDays; // declare diffInDays outside the function
+
+                        $(function() {
+                            $('input[name="daterange"]').daterangepicker({
+                                opens: 'left'
+                            }, function(startDate, endDate, label) {
+
+                                // Convert the start and end dates to Moment objects
+                                const start = moment(startDate, 'MM/DD/YYYY');
+                                const end = moment(endDate, 'MM/DD/YYYY');
+
+                                // Calculate the difference in days between the two dates
+                                diffInDays = end.diff(start, 'days');
+
+                                // set the value of the input field
+                            // date = document.getElementById("date");
+                                document.getElementById("date").value = diffInDays;
+                                
                             });
-                        </script>
+                        });
+                    </script>
                     </div>
                 </div>
                 <div class="row mt-4 pb-5">
@@ -82,3 +95,5 @@ get_header();  ?>
 <!-- ////////////////Form1 page content End////////////////// -->
 
 <?php get_footer(); ?>
+
+

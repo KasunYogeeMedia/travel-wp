@@ -312,3 +312,58 @@ function register_footer_menu()
 	register_nav_menu('footer_menu', __('Footer Menu'));
 }
 add_action('init', 'register_footer_menu');
+
+function my_acf_init() {
+	acf_update_setting('google_api_key', 'AIzaSyCDY5NB991GzLR9RMnH2usCDgpONPdq2Mo' );
+  }
+  
+  add_action('acf/init', 'my_acf_init');
+
+  add_action( 'wp_ajax_my_custom_ajax_endpoint', 'my_custom_ajax_endpoint' );
+  add_action( 'wp_ajax_nopriv_my_custom_ajax_endpoint', 'my_custom_ajax_endpoint' );
+
+	function my_custom_ajax_endpoint() {
+		$custom_post_data = get_custom_post_type_data();
+		//echo json_encode($custom_post_data);
+		wp_send_json_success( $custom_post_data );
+		wp_die();
+	}
+
+
+  function get_custom_post_type_data() {
+    $search_keyword = $_POST['search_keyword'];
+	$args = array(
+	 'post_type' => 'hotel', // replace with your custom post type slug
+	 's' => $search_keyword, // search keyword
+	 'posts_per_page' => -1 // get all matching posts
+   );
+   
+ 
+	 $posts = get_posts($args);
+ 
+	 $data = [];
+	 $i = 0;
+ 
+	 foreach($posts as $post) {
+		 $data[$i]['id'] = $post->ID;
+		 $data[$i]['name'] = $post->post_title;
+		 $data[$i]['latitude '] = get_field('field_64098068609ff');
+		 $data[$i]['longitude '] = get_field('field_640980b160a00');
+		 //$data[$i]['location'] = $location;
+		 $data[$i]['address'] = get_field('field_6409811d60a01');
+		 $data[$i]['hotline'] = get_field('field_6409844d6870d');
+		 $data[$i]['email'] = get_field('field_64098ec8e4360');
+		 $data[$i]['ratings'] = get_field('field_64098eeee4361');
+		 $data[$i]['price_range'] = get_field('field_6409910da7c60');
+		 $data[$i]['description'] = get_field('field_6409914af77ca');
+		 $data[$i]['stars'] = get_field('field_64099164f77cb');
+		 $data[$i]['featured_image']['large'] = get_the_post_thumbnail_url($post->ID, 'large');
+		 $i++;
+	 }
+ 
+	 wp_reset_postdata();
+    
+	 echo json_encode($data);
+	 wp_die();
+ }
+ 
