@@ -52,33 +52,40 @@ get_header();  ?>
                     </div>
                 </div>
                 <div class="row mt-5">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <div class="input-group date" id="datepicker">
-                            <!-- <input class="form-control text-secondary form-control-lg px-5 py-3" type="date" id="birthday" name="when" placeholder="When" name="date"> -->
-                           <input class="form-control text-secondary form-control-lg px-5 py-3" type="text" name="daterange" id="date"/>
 
-                    <script>
-                        let diffInDays; // declare diffInDays outside the function
+                            <input id="date" class="form-control text-secondary form-control-lg px-5 py-3 date_range" type="text" name="daterange" placeholder="Select date range" />
+                            <input name="datediff" id="datediff" type="hidden">
+                        </div>
 
-                        $(function() {
-                            $('input[name="daterange"]').daterangepicker({
-                                opens: 'left'
-                            }, function(startDate, endDate, label) {
+                        <script>
+                            let diffInDays; // declare diffInDays outside the function
 
-                                // Convert the start and end dates to Moment objects
-                                const start = moment(startDate, 'MM/DD/YYYY');
-                                const end = moment(endDate, 'MM/DD/YYYY');
-
-                                // Calculate the difference in days between the two dates
-                                diffInDays = end.diff(start, 'days');
-
-                                // set the value of the input field
-                            // date = document.getElementById("date");
-                                document.getElementById("date").value = diffInDays;
+                            $(function() {
+                                $('input[name="daterange"]').daterangepicker({
+                                    opens: 'left',
                                 
+                                }, function(startDate, endDate, label) {
+
+                                    // Convert the start and end dates to Moment objects
+                                    const start = moment(startDate, 'MM/DD/YYYY');
+                                    const end = moment(endDate, 'MM/DD/YYYY');
+
+                                    // Calculate the difference in days between the two dates
+                                    diffInDays = end.diff(start, 'days');
+
+                                    // set the value of the input field
+                                    // date = document.getElementById("date");
+                                    document.getElementById("datediff").value = diffInDays;
+                                    // console.log(diffInDays);
+                                    
+
+                                });
                             });
-                        });
-                    </script>
+                        </script>
+
+
                     </div>
                 </div>
                 <div class="row mt-4 pb-5">

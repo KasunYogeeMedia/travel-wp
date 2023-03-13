@@ -49,7 +49,7 @@ get_header();
                 <div class="choose_sec py-5 position-relative">
                     <!-- Choose your stay -->
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="stay" name="optradio" value="avendra">
+                        <input type="checkbox" class="form-check-input" id="stay" name="optradio" value="stay">
                         <label class="form-check-label" for="stay">Choose Your Stay</label>
                         <div class="ch_btn">
                             <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal1" >
@@ -80,15 +80,15 @@ get_header();
 
                     </div>
                     <!-- Breakfast -->
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="breakfast" name="optradio" value="breakfast">
+                    <div id="select_2" class="form-check">
+                        <input type="checkbox" id="sel2" class="form-check-input" name="optradio">
                         <label class="form-check-label" for="breakfast">Breakfast</label>
                         <div class="ch_btn">
                             <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal2" id='btnGetData'>
                                 <div id="btn2_inside" class="btn_inside text-center">
                                     a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
-                                    <span id="btn2_price"></span>
                                 </div>
+                                <input type="hidden" id="btn2_price">
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -105,6 +105,7 @@ get_header();
                                                                 <a href="">
                                                                     <span class="option-title text-primary">Fox Kandy 1</span>
                                                                 </a>
+                                                                <input type="hidden" class="loc_name" name="loc_name" value="Location 1">
                                                             </div>
                                                             <div class="col text-end">
                                                                 <span class="option-price text-end">USD 100</span>
@@ -128,6 +129,7 @@ get_header();
                                                         <div class="caption row my-2">
                                                             <div class="col">
                                                                 <a href=""><span class="option-title text-primary">Fox Kandy 2</span></a>
+                                                                <input type="hidden" class="loc_name" name="loc_name" value="Location 2">
                                                             </div>
                                                             <div class="col text-end">
                                                                 <span class="option-price text-end">USD 110</span>
@@ -151,6 +153,7 @@ get_header();
                                                         <div class="caption row my-2">
                                                             <div class="col">
                                                                 <a href=""><span class="option-title text-primary">Fox Kandy 3</span></a>
+                                                                <input type="hidden" class="loc_name" name="loc_name" value="Location 3">
                                                             </div>
                                                             <div class="col text-end">
                                                                 <span class="option-price text-end">USD 120</span>
@@ -174,6 +177,7 @@ get_header();
                                                         <div class="caption row my-2">
                                                             <div class="col">
                                                                 <a href=""><span class="option-title text-primary">Fox Kandy 4</span></a>
+                                                                <input type="hidden" class="loc_name" name="loc_name" value="Location 4">
                                                             </div>
                                                             <div class="col text-end">
                                                                 <span class="option-price text-end">USD 130</span>
@@ -202,7 +206,7 @@ get_header();
                         </div>
                     </div>
                     <!-- Morning Excursions -->
-                    <div class="form-check">
+                    <div id="select_3" class="form-check">
                         <input type="checkbox" class="form-check-input" id="morning" name="optradio" value="morning">
                         <label class="form-check-label" for="morning">Morning Excursions</label>
                         <div class="ch_btn">
@@ -258,15 +262,15 @@ get_header();
 
                     </div>
                     <!-- Lunch -->
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="lunch" name="optradio" value="stay">
-                        <label class="form-check-label" for="lunch">Lunch</label>
+                    <div id="select_4" class="form-check">
+                        <input type="checkbox" id="sel4" class="form-check-input" name="optradio">
+                        <label class="form-check-label" for="breakfast">Lunch</label>
                         <div class="ch_btn">
                             <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal4">
                                 <div id="btn4_inside" class="btn_inside text-center">
                                     a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
-                                    <span id="btn4_price"></span>
                                 </div>
+                                <input type="hidden" id="btn4_price">
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="Modal4" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -276,87 +280,101 @@ get_header();
                                             <h2 class="mb-4">Choose Hotel</h2>
                                             <div class="row">
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home2.jpg" alt="Option 1">
-                                                    <div class="caption row my-2">
-                                                        <div class="col">
-                                                            <span class="option-title text-primary">Lunch 1</span>
+                                                    <div class="option">
+                                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home2.jpg" alt="Option 1">
+                                                        <div class="caption row my-2">
+                                                            <div class="col">
+                                                                <a href="">
+                                                                    <span class="option-title text-primary">Lunch 1</span>
+                                                                </a>
+                                                                <input type="hidden" class="loc_name" name="loc_name" value="Location 1">
+                                                            </div>
+                                                            <div class="col text-end">
+                                                                <span class="option-price text-end">USD 100</span>
+                                                            </div>
                                                         </div>
-                                                        <div class="col text-end">
-                                                            <span class="option-price text-end">USD 110</span>
+                                                        <div class="star mb-2">
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star"></span>
+                                                            <span class="fa fa-star"></span>
                                                         </div>
-                                                    </div>
-                                                    <div class="star mb-2">
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star"></span>
-                                                        <span class="fa fa-star"></span>
-                                                    </div>
-                                                    <div class="buttonOpt w-100">
-                                                        <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
+                                                        <div class="buttonOpt w-100">
+                                                            <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home2.jpg" alt="Option 1">
-                                                    <div class="caption row my-2">
-                                                        <div class="col">
-                                                            <span class="option-title text-primary">Lunch 2</span>
+                                                    <div class="option">
+                                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home2.jpg" alt="Option 1">
+                                                        <div class="caption row my-2">
+                                                            <div class="col">
+                                                                <a href=""><span class="option-title text-primary">Lunch 2</span></a>
+                                                                <input type="hidden" class="loc_name" name="loc_name" value="Location 2">
+                                                            </div>
+                                                            <div class="col text-end">
+                                                                <span class="option-price text-end">USD 110</span>
+                                                            </div>
                                                         </div>
-                                                        <div class="col text-end">
-                                                            <span class="option-price text-end">USD 110</span>
+                                                        <div class="star mb-2">
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star"></span>
+                                                            <span class="fa fa-star"></span>
                                                         </div>
-                                                    </div>
-                                                    <div class="star mb-2">
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star"></span>
-                                                        <span class="fa fa-star"></span>
-                                                    </div>
-                                                    <div class="buttonOpt w-100">
-                                                        <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
+                                                        <div class="buttonOpt w-100">
+                                                            <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home2.jpg" alt="Option 1">
-                                                    <div class="caption row my-2">
-                                                        <div class="col">
-                                                            <span class="option-title text-primary">Lunch 3</span>
+                                                    <div class="option">
+                                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home2.jpg" alt="Option 1">
+                                                        <div class="caption row my-2">
+                                                            <div class="col">
+                                                                <a href=""><span class="option-title text-primary">Lunch 3</span></a>
+                                                                <input type="hidden" class="loc_name" name="loc_name" value="Location 3">
+                                                            </div>
+                                                            <div class="col text-end">
+                                                                <span class="option-price text-end">USD 120</span>
+                                                            </div>
                                                         </div>
-                                                        <div class="col text-end">
-                                                            <span class="option-price text-end">USD 110</span>
+                                                        <div class="star mb-2">
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star"></span>
+                                                            <span class="fa fa-star"></span>
                                                         </div>
-                                                    </div>
-                                                    <div class="star mb-2">
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star"></span>
-                                                        <span class="fa fa-star"></span>
-                                                    </div>
-                                                    <div class="buttonOpt w-100">
-                                                        <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
+                                                        <div class="buttonOpt w-100">
+                                                            <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home2.jpg" alt="Option 1">
-                                                    <div class="caption row my-2">
-                                                        <div class="col">
-                                                            <span class="option-title text-primary">Lunch 4</span>
+                                                    <div class="option">
+                                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home2.jpg" alt="Option 1">
+                                                        <div class="caption row my-2">
+                                                            <div class="col">
+                                                                <a href=""><span class="option-title text-primary">Lunch 4</span></a>
+                                                                <input type="hidden" class="loc_name" name="loc_name" value="Location 4">
+                                                            </div>
+                                                            <div class="col text-end">
+                                                                <span class="option-price text-end">USD 130</span>
+                                                            </div>
                                                         </div>
-                                                        <div class="col text-end">
-                                                            <span class="option-price text-end">USD 110</span>
+                                                        <div class="star mb-2">
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star"></span>
+                                                            <span class="fa fa-star"></span>
                                                         </div>
-                                                    </div>
-                                                    <div class="star mb-2">
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star"></span>
-                                                        <span class="fa fa-star"></span>
-                                                    </div>
-                                                    <div class="buttonOpt w-100">
-                                                        <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
+                                                        <div class="buttonOpt w-100">
+                                                            <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -370,7 +388,7 @@ get_header();
                         </div>
                     </div>
                     <!-- Evening Excursions -->
-                    <div class="form-check">
+                    <div id="select_5" class="form-check">
                         <input type="checkbox" class="form-check-input" id="evening" name="optradio" value="evening">
                         <label class="form-check-label" for="evening">Evening Excursions</label>
                         <div class="ch_btn">
@@ -482,7 +500,7 @@ get_header();
                         </div>
                     </div>
                     <!-- Dinner -->
-                    <div class="form-check">
+                    <div id="select_6" class="form-check">
                         <input type="checkbox" class="form-check-input" id="dinner" name="optradio" value="dinner">
                         <label class="form-check-label" for="dinner">Dinner</label>
                         <div class="ch_btn">
@@ -594,7 +612,7 @@ get_header();
                         </div>
                     </div>
                     <!-- Night Life -->
-                    <div class="form-check">
+                    <div id="select_7" class="form-check">
                         <input type="checkbox" class="form-check-input" id="night" name="optradio" value="night">
                         <label class="form-check-label" for="night">Night Life</label>
                         <div class="ch_btn">
