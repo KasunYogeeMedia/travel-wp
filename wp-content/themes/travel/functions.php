@@ -322,6 +322,9 @@ function my_acf_init() {
   add_action( 'wp_ajax_my_custom_ajax_endpoint', 'my_custom_ajax_endpoint' );
   add_action( 'wp_ajax_nopriv_my_custom_ajax_endpoint', 'my_custom_ajax_endpoint' );
 
+  add_action( 'wp_ajax_my_custom_ajax_endpoint1', 'my_custom_ajax_endpoint1' );
+  add_action( 'wp_ajax_nopriv_my_custom_ajax_endpoint1', 'my_custom_ajax_endpoint1' );
+
 	function my_custom_ajax_endpoint() {
 		$custom_post_data = get_custom_post_type_data();
 		//echo json_encode($custom_post_data);
@@ -329,6 +332,12 @@ function my_acf_init() {
 		wp_die();
 	}
 
+	function my_custom_ajax_endpoint1() {
+		$custom_post_data = get_custom_post_type_data1();
+		//echo json_encode($custom_post_data);
+		wp_send_json_success( $custom_post_data );
+		wp_die();
+	}
 
   function get_custom_post_type_data() {
     $search_keyword = $_POST['search_keyword'];
@@ -347,16 +356,16 @@ function my_acf_init() {
 	 foreach($posts as $post) {
 		 $data[$i]['id'] = $post->ID;
 		 $data[$i]['name'] = $post->post_title;
-		 $data[$i]['latitude '] = get_field('field_64098068609ff');
-		 $data[$i]['longitude '] = get_field('field_640980b160a00');
-		 //$data[$i]['location'] = $location;
-		 $data[$i]['address'] = get_field('field_6409811d60a01');
-		 $data[$i]['hotline'] = get_field('field_6409844d6870d');
-		 $data[$i]['email'] = get_field('field_64098ec8e4360');
-		 $data[$i]['ratings'] = get_field('field_64098eeee4361');
-		 $data[$i]['price_range'] = get_field('field_6409910da7c60');
-		 $data[$i]['description'] = get_field('field_6409914af77ca');
-		 $data[$i]['stars'] = get_field('field_64099164f77cb');
+		 $data[$i]['latitude '] = get_field('field_64098068609ff', $post->ID);
+		 $data[$i]['longitude '] = get_field('field_640980b160a00', $post->ID);
+		 $data[$i]['location'] = get_field('field_640d58a3b833e', $post->ID);
+		 $data[$i]['address'] = get_field('field_6409811d60a01', $post->ID);
+		 $data[$i]['hotline'] = get_field('field_6409844d6870d', $post->ID);
+		 $data[$i]['email'] = get_field('field_64098ec8e4360', $post->ID);
+		 $data[$i]['ratings'] = get_field('field_64098eeee4361', $post->ID);
+		 $data[$i]['price_range'] = get_field('field_6409910da7c60', $post->ID);
+		 $data[$i]['description'] = get_field('field_6409914af77ca', $post->ID);
+		 $data[$i]['stars'] = get_field('field_64099164f77cb', $post->ID);
 		 $data[$i]['featured_image']['large'] = get_the_post_thumbnail_url($post->ID, 'large');
 		 $i++;
 	 }
@@ -367,3 +376,39 @@ function my_acf_init() {
 	 wp_die();
  }
  
+ function get_custom_post_type_data1() {
+    $search_keyword = $_POST['search_keyword'];
+	$args = array(
+	 'post_type' => 'excursion', // replace with your custom post type slug
+	 's' => $search_keyword, // search keyword
+	 'posts_per_page' => -1 // get all matching posts
+   );
+   
+ 
+	 $posts = get_posts($args);
+ 
+	 $data = [];
+	 $i = 0;
+ 
+	 foreach($posts as $post) {
+		 $data[$i]['id'] = $post->ID;
+		 $data[$i]['name'] = $post->post_title;
+		 $data[$i]['latitude '] = get_field('field_6409b1e7aca3e', $post->ID);
+		 $data[$i]['longitude '] = get_field('field_6409b1e7b04b1', $post->ID);
+		 $data[$i]['location'] = get_field('field_640d58cbdc41a', $post->ID);
+		 $data[$i]['address'] = get_field('field_6409b1e7b424b', $post->ID);
+		 $data[$i]['hotline'] = get_field('field_6409b1e7b79ed', $post->ID);
+		 $data[$i]['email'] = get_field('field_6409b1e7bb62b', $post->ID);
+		 $data[$i]['ratings'] = get_field('field_6409b1e7befa5', $post->ID);
+		 $data[$i]['price_range'] = get_field('field_6409b1e7c2976', $post->ID);
+		 $data[$i]['description'] = get_field('field_6409b1e7c6364', $post->ID);
+		 $data[$i]['stars'] = get_field('field_6409b1e7c9dd9', $post->ID);
+		 $data[$i]['featured_image']['large'] = get_the_post_thumbnail_url($post->ID, 'large');
+		 $i++;
+	 }
+ 
+	 wp_reset_postdata();
+    
+	 echo json_encode($data);
+	 wp_die();
+ }

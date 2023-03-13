@@ -1,5 +1,30 @@
 // Custom script here
-
+function updateSelectedOption(imageSrc, title, price, location) {
+  document.getElementById("btn1_inside").style.backgroundImage =
+    "url('" + imageSrc + "')";
+  document.getElementById("btn1_inside").innerHTML = title;
+  document.getElementById("btn1_price").innerHTML = price;
+  document.getElementById("sel1").value = location;
+}
+// Add click event listeners to the Choose buttons inside each option
+document
+  .querySelectorAll("#Modal1 .option .submit-btn")
+  .forEach(function (button) {
+    button.addEventListener("click", function () {
+      // Get the data for the selected option
+      var imageSrc = this.parentNode.parentNode
+        .querySelector(".img-fluid")
+        .getAttribute("src");
+      var title =
+        this.parentNode.parentNode.querySelector(".option-title").innerHTML;
+      var price =
+        this.parentNode.parentNode.querySelector(".option-price").innerHTML;
+      var location =
+        this.parentNode.parentNode.querySelector(".loc_name").value;
+      // Update the selected option data display area
+      updateSelectedOption(imageSrc, title, price, location);
+    });
+  });
 // Choose Your Stay scripts
 // Breakfast
 // Function to update the selected option data display area

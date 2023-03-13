@@ -2,8 +2,20 @@
 /*
 Template Name: Form2
 */
+
+if(!empty($_POST['search'])) {
+// Initialize the session
+session_start();
+$_SESSION['keyword'] = $_POST['search'];  
+$_SESSION['adults']= $_POST['adults'];  
+$_SESSION['childern'] = $_POST['childern'];
+$_SESSION['datediff'] = $_POST['datediff'];
+}
 get_header();
-// echo get_api_data();
+
+  
+
+           
 ?>
 <!-- ////////////////Form2 page content Start////////////////// -->
 
@@ -49,7 +61,7 @@ get_header();
                 <div class="choose_sec py-5 position-relative">
                     <!-- Choose your stay -->
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="stay" name="optradio" value="stay">
+                        <input type="checkbox" class="form-check-input" id="sel1" name="optradio" value='avendra'>
                         <label class="form-check-label" for="stay">Choose Your Stay</label>
                         <div class="ch_btn">
                             <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal1" >
@@ -64,7 +76,7 @@ get_header();
                                     <div class="modal-content">
                                         <div id="myImageSelect" class="p-2 p-sm-5">
                                             <h2 class="mb-4">Choose Hotel</h2>
-                                            <div class="row">
+                                            <div class="row" id='stay_data'>
                                                
 
                                             </div>
@@ -81,10 +93,10 @@ get_header();
                     </div>
                     <!-- Breakfast -->
                     <div id="select_2" class="form-check">
-                        <input type="checkbox" id="sel2" class="form-check-input" name="optradio">
+                        <input type="checkbox" id="sel2" class="form-check-input" name="optradio" value='colombo'>
                         <label class="form-check-label" for="breakfast">Breakfast</label>
                         <div class="ch_btn">
-                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal2" id='btnGetData'>
+                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal2" id='breakfast'>
                                 <div id="btn2_inside" class="btn_inside text-center">
                                     a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                                 </div>
@@ -96,105 +108,10 @@ get_header();
                                     <div class="modal-content">
                                         <div id="myImageSelect" class="p-2 p-sm-5">
                                             <h2 class="mb-4">Choose Hotel</h2>
-                                            <div class="row">
-                                                <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                    <div class="option">
-                                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
-                                                        <div class="caption row my-2">
-                                                            <div class="col">
-                                                                <a href="">
-                                                                    <span class="option-title text-primary">Fox Kandy 1</span>
-                                                                </a>
-                                                                <input type="hidden" class="loc_name" name="loc_name" value="Location 1">
-                                                            </div>
-                                                            <div class="col text-end">
-                                                                <span class="option-price text-end">USD 100</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="star mb-2">
-                                                            <span class="fa fa-star checked"></span>
-                                                            <span class="fa fa-star checked"></span>
-                                                            <span class="fa fa-star checked"></span>
-                                                            <span class="fa fa-star"></span>
-                                                            <span class="fa fa-star"></span>
-                                                        </div>
-                                                        <div class="buttonOpt w-100">
-                                                            <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                    <div class="option">
-                                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
-                                                        <div class="caption row my-2">
-                                                            <div class="col">
-                                                                <a href=""><span class="option-title text-primary">Fox Kandy 2</span></a>
-                                                                <input type="hidden" class="loc_name" name="loc_name" value="Location 2">
-                                                            </div>
-                                                            <div class="col text-end">
-                                                                <span class="option-price text-end">USD 110</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="star mb-2">
-                                                            <span class="fa fa-star checked"></span>
-                                                            <span class="fa fa-star checked"></span>
-                                                            <span class="fa fa-star checked"></span>
-                                                            <span class="fa fa-star"></span>
-                                                            <span class="fa fa-star"></span>
-                                                        </div>
-                                                        <div class="buttonOpt w-100">
-                                                            <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                    <div class="option">
-                                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
-                                                        <div class="caption row my-2">
-                                                            <div class="col">
-                                                                <a href=""><span class="option-title text-primary">Fox Kandy 3</span></a>
-                                                                <input type="hidden" class="loc_name" name="loc_name" value="Location 3">
-                                                            </div>
-                                                            <div class="col text-end">
-                                                                <span class="option-price text-end">USD 120</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="star mb-2">
-                                                            <span class="fa fa-star checked"></span>
-                                                            <span class="fa fa-star checked"></span>
-                                                            <span class="fa fa-star checked"></span>
-                                                            <span class="fa fa-star"></span>
-                                                            <span class="fa fa-star"></span>
-                                                        </div>
-                                                        <div class="buttonOpt w-100">
-                                                            <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                    <div class="option">
-                                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg" alt="Option 1">
-                                                        <div class="caption row my-2">
-                                                            <div class="col">
-                                                                <a href=""><span class="option-title text-primary">Fox Kandy 4</span></a>
-                                                                <input type="hidden" class="loc_name" name="loc_name" value="Location 4">
-                                                            </div>
-                                                            <div class="col text-end">
-                                                                <span class="option-price text-end">USD 130</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="star mb-2">
-                                                            <span class="fa fa-star checked"></span>
-                                                            <span class="fa fa-star checked"></span>
-                                                            <span class="fa fa-star checked"></span>
-                                                            <span class="fa fa-star"></span>
-                                                            <span class="fa fa-star"></span>
-                                                        </div>
-                                                        <div class="buttonOpt w-100">
-                                                            <button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            <div class="row" id="breakfast_data">
+                                                
+                                                
+                                                
                                             </div>
                                         </div>
                                         <div class="modal-footer">
@@ -207,10 +124,11 @@ get_header();
                     </div>
                     <!-- Morning Excursions -->
                     <div id="select_3" class="form-check">
-                        <input type="checkbox" class="form-check-input" id="morning" name="optradio" value="morning">
+                        <input type="checkbox" class="form-check-input" id="sel3" name="optradio" value="morning">
                         <label class="form-check-label" for="morning">Morning Excursions</label>
                         <div class="ch_btn">
-                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal3">
+                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal3" id='morning_excursions'>
+
                                 <div id="btn3_inside" class="btn_inside text-center">
                                     Choose <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                                     <span id="btn3_price"></span>
@@ -222,32 +140,10 @@ get_header();
                                     <div class="modal-content">
                                         <div id="myImageSelect" class="p-2 p-sm-5">
                                             <h2 class="mb-4">Choose Hotel</h2>
-                                            <div class="row">
-                                                <?php foreach ($results->data as $data) { ?>
-                                                    <div class="col-sm-6 col-md-4 col-lg-3 border p-3">
-                                                        <img class="img-fluid" src="<?php echo $data->thumbnailHiResURL; ?>" alt="Option 1">
-                                                        <div class="caption row my-2">
-                                                            <div class="col">
-                                                                <span class="option-title text-primary"><?php echo $data->title; ?></span>
-                                                            </div>
-                                                            <div class="col text-end">
-                                                                <span class="option-price text-end"><?php echo $data->priceFormatted; ?></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="star mb-2">
-                                                            <span class="fa fa-star checked"></span>
-                                                            <span class="fa fa-star checked"></span>
-                                                            <span class="fa fa-star checked"></span>
-                                                            <span class="fa fa-star"></span>
-                                                            <span class="fa fa-star"></span>
-                                                        </div>
-                                                        <div class="buttonOpt w-100">
-                                                            <input type="radio" id="a50" name="check-substitution-2" />
-                                                            <label class="btn btn-default text-light" for="a50">Choose</label>
-                                                        </div>
-                                                    </div>
-                                                <?php  } ?>
-
+                                            <div class="row" id="morning_excursions_data">
+                                                
+                                                
+                                                
                                             </div>
                                         </div>
                                         <div class="modal-footer">
@@ -729,6 +625,7 @@ get_header();
         </div>
     </form>
 </div>
+
 <!-- Form section -->
 <?php $ajax_handler_url = plugins_url( 'post-data/post-data.php' );?>
 
@@ -739,30 +636,136 @@ jQuery.ajax({
     type: 'POST',
     data: {
         action: 'my_custom_ajax_endpoint', // the name of the AJAX action
-        search_keyword: 'hilton' // the data to pass to the function
+        search_keyword: '<?php echo $_SESSION['keyword'];?>' // the data to pass to the function
         
     },
-    success: function(response) {
-        console.log(response)
+    success: function(data) {
+        console.log(data);
+        let response = JSON.parse(data);
+        let s = '';
+            for (var i = 0; i < response.length; i++) {
+                s += '<div class="col-sm-6 col-md-4 col-lg-3 border p-3">';
+                s += '<div class="option">';
+                s += '<img class="img-fluid" src="' + response[i].featured_image.large + '" alt="Option 1">';
+                s += '<div class="caption row my-2">';
+                s += ' <div class="col">';
+                s += '<a href="">';
+                s += '<span class="option-title text-primary">' + response[i].name + '</span>';
+                s += '</a>';
+                s += '<input type="hidden" class="loc_name" name="loc_name" value="' + response[i].location + '">';
+                s += ' </div>';
+                s += '<div class="col text-end">';
+                s += '<span class="option-price text-end">' + response[i].price_range + '</span>';
+                s += '</div>';
+                s += '</div>';
+                s += '<div class="star mb-2">';
+                s += '' + response[i].price_range + '';
+                s += '</div>';
+                s += '<div class="buttonOpt w-100">';
+                s += '<button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>';
+                s += '</div>';
+                s += '</div>';
+                s += '</div>';
+
+                
+               // <option value="' + response[i].id + '">' + response[i].name + '</option>';
+            }
+            $("#stay_data").html(s);
     },
     error: function(xhr, status, error) {
         console.log("Error: " + error);
     }
 });
 
+
 $(document).ready(function() {
-  $("#btnGetData").click(function() {
+  $("#breakfast").click(function() {
     $.ajax({
       url: "<?php echo admin_url( 'admin-ajax.php' ); ?>", // Replace with your URL
       type: "POST",
       data: {
         action: 'my_custom_ajax_endpoint',
-        search_keyword: $("#breakfast").val()
+        search_keyword: $("#sel1").val()
       },
-      success: function(response) {
-        console.log(response)
+      success: function(data) {
+        console.log(data);
+        let response = JSON.parse(data);
+        let s = '';
+            for (var i = 0; i < response.length; i++) {
+                s += '<div class="col-sm-6 col-md-4 col-lg-3 border p-3">';
+                s += '<div class="option">';
+                s += '<img class="img-fluid" src="' + response[i].featured_image.large + '" alt="Option 1">';
+                s += '<div class="caption row my-2">';
+                s += ' <div class="col">';
+                s += '<a href="">';
+                s += '<span class="option-title text-primary">' + response[i].name + '</span>';
+                s += '</a>';
+                s += '<input type="hidden" class="loc_name" name="loc_name" value="' + response[i].location + '">';
+                s += ' </div>';
+                s += '<div class="col text-end">';
+                s += '<span class="option-price text-end">' + response[i].price_range + '</span>';
+                s += '</div>';
+                s += '</div>';
+                s += '<div class="star mb-2">';
+                s += '' + response[i].price_range + '';
+                s += '</div>';
+                s += '<div class="buttonOpt w-100">';
+                s += '<button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>';
+                s += '</div>';
+                s += '</div>';
+                s += '</div>';
+               // <option value="' + response[i].id + '">' + response[i].name + '</option>';
+            }
+            $("#breakfast_data").html(s);
       },
       error: function(xhr, status, error) {
+        console.log("Error: " + error);
+      }
+    });
+  });
+});
+
+$(document).ready(function() {
+    $("#morning_excursions").click(function() {
+    $.ajax({
+      url: "<?php echo admin_url( 'admin-ajax.php' ); ?>", // Replace with your URL
+      type: "POST",
+      data: {
+        action: 'my_custom_ajax_endpoint1',
+        search_keyword: $("#sel2").val()
+      },
+      success: function(data) {
+        console.log(data);
+        let response = JSON.parse(data);
+        let s = '';
+            for (var i = 0; i < response.length; i++) {
+                s += '<div class="col-sm-6 col-md-4 col-lg-3 border p-3">';
+                s += '<div class="option">';
+                s += '<img class="img-fluid" src="' + response[i].featured_image.large + '" alt="Option 1">';
+                s += '<div class="caption row my-2">';
+                s += ' <div class="col">';
+                s += '<a href="">';
+                s += '<span class="option-title text-primary">' + response[i].name + '</span>';
+                s += '</a>';
+                s += '<input type="hidden" class="loc_name" name="loc_name" value="' + response[i].location + '">';
+                s += ' </div>';
+                s += '<div class="col text-end">';
+                s += '<span class="option-price text-end">' + response[i].price_range + '</span>';
+                s += '</div>';
+                s += '</div>';
+                s += '<div class="star mb-2">';
+                s += '' + response[i].price_range + '';
+                s += '</div>';
+                s += '<div class="buttonOpt w-100">';
+                s += '<button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>';
+                s += '</div>';
+                s += '</div>';
+                s += '</div>';
+               // <option value="' + response[i].id + '">' + response[i].name + '</option>';
+            }
+            $("#morning_excursions_data").html(s);
+      },
+        error: function(xhr, status, error) {
         console.log("Error: " + error);
       }
     });
