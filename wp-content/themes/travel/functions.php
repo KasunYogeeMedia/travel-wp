@@ -412,3 +412,8 @@ function my_acf_init() {
 	 echo json_encode($data);
 	 wp_die();
  }
+
+ function enqueue_jspdf() {
+	wp_enqueue_script( 'jspdf', 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js', array(), '2.3.1', true );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_jspdf' );

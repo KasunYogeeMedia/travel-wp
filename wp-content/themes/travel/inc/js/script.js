@@ -8,11 +8,19 @@ function updateSelectedOption1(imageSrc, title, price, location) {
 }
 
 function updateSelectedOption2(imageSrc, title, price, location) {
-  document.getElementById("btn2_inside").style.backgroundImage =
-    "url('" + imageSrc + "')";
+  document.getElementById("btn2_inside").style.backgroundImage = "url('" + imageSrc + "')";
   document.getElementById("btn2_inside").innerHTML = title;
   document.getElementById("btn2_price").innerHTML = price;
   document.getElementById("sel2").value = location;
+  var expireDate = new Date();
+  expireDate.setTime(expireDate.getTime() + (60 * 60 * 1000));
+  // Save the data to a cookie
+  document.cookie = "imageSrc=" + imageSrc + ";";
+  document.cookie = "title=" + title + ";";
+  document.cookie = "price=" + price + ";";
+  document.cookie = "location=" + location + ";";
+
+
 }
 
 function updateSelectedOption4(imageSrc, title, price, location) {

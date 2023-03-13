@@ -621,7 +621,10 @@ get_header();
 </div>
 
 <!-- Form section -->
-<?php $ajax_handler_url = plugins_url('post-data/post-data.php'); ?>
+<?php 
+    $ajax_handler_url = plugins_url('post-data/post-data.php'); 
+    $theme_url = get_template_directory_uri();
+?>
 
 <!-- ////////////////Form2 page content End////////////////// -->
 <script>
@@ -734,6 +737,35 @@ get_header();
 
                         // Update the selected option data display area
                         updateSelectedOption2(imageSrc, title, price, location);
+
+                        const cookiesStr = document.cookie;
+
+                        // Split the string into individual cookies
+                        const cookiesArr = cookiesStr.split('; ');
+
+                        // Create an object to store the cookies
+                        const cookiesObj = {};
+
+                        // Loop through the cookies and add them to the object
+                        for (const cookie of cookiesArr) {
+                        const [name, value] = cookie.split('=');
+                        cookiesObj[name] = value;
+                        }
+
+                        // Convert the object to a JSON string
+                       // const cookiesJson = JSON.stringify(cookiesObj);
+                        var cookiesJson = JSON.stringify(cookiesObj);
+                        var xhr = new XMLHttpRequest();
+                        xhr.open('POST', '<?php echo $theme_url; ?>/pdf_generator.php');
+                        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                        xhr.onreadystatechange = function() {
+                            if (xhr.readyState === 4 && xhr.status === 200) {
+                                console.log('PDF generated successfully');
+                            }
+                        };
+                        xhr.send('cookiesJson=' + encodeURIComponent(cookiesJson));
+                        // Log the JSON string to the console
+                        console.log(cookiesJson);
                     });
                 },
                 error: function(xhr, status, error) {
