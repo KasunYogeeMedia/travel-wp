@@ -2754,7 +2754,7 @@ i.fas.fa-leaf-maple {
 }
 
 /* form page styles */
-.form_sec .form {
+.form_sec .form_1 {
   max-width: 800px;
   margin: auto;
 }
@@ -3110,10 +3110,10 @@ section.footer-section {
   background: #20b8be;
   border-radius: 4px;
 }
-.buttonOpt button{
+.buttonOpt button {
   border-radius: 0% !important;
 }
-.buttonOpt button:focus{
+.buttonOpt button:focus {
   background: #20b8be !important;
 }
 
@@ -3242,8 +3242,8 @@ button.btn_popup {
   transition: 0.5s;
 }
 button.btn_popup:hover {
-  -webkit-box-shadow: 0px 0px 15px -2px #000000; 
-box-shadow: 0px 0px 15px -2px #000000;
+  -webkit-box-shadow: 0px 0px 15px -2px #000000;
+  box-shadow: 0px 0px 15px -2px #000000;
 }
 .modal .btn.btn-default {
   background: #0d6efd;
@@ -3380,49 +3380,9 @@ img.travel-logo2 {
   height: auto;
   min-height: 300px;
 }
-/* travl blogs page */
-.page-template-page-travel_blogs 
-/* Mobile responsive */
-@media screen and (max-width: 1200px) and (min-width: 991px) {
-  .contact-info {
-    margin-top: 0;
-  }
-}
-@media screen and (max-width: 991px) and (min-width: 768px) {
-  .contact-info {
-    margin: 10px;
-    top: 7%;
-  }
-}
-@media (max-width: 768px) {
-  .contact-info {
-    position: relative;
-    width: 100%;
-    margin: 0;
-    top: 10px;
-    padding: 30px;
-  }
-  .Map-Area .contact_img {
-    width: 100%;
-    height: 400px;
-    margin: 20px 0px;
-  }
-  p.text-center {
-    width: 90%;
-  }
-}
-@media (max-width: 576px) {
-  section.our-details {
-    padding-left: 10%;
-    padding-bottom: 40px;
-  }
-  img.travel-logo2 {
-    margin: 0 auto;
-  }
-}
 
 /* Inside modal styles  */
-.data_show{
+.data_show {
   margin-left: 2px;
   width: 300px;
   position: relative;
@@ -3442,32 +3402,132 @@ img.travel-logo2 {
   background-position: center;
   line-height: 1.7;
 }
-.form-1 .form-select{
+.form-1 .form-select {
   background-size: 16px 20px;
 }
-.form-1 .date_range{
+.form-1 .date_range {
   display: block;
-width: 100%;
-padding: .375rem 2.25rem .375rem .75rem;
--moz-padding-start: calc(0.75rem - 3px);
-font-size: 1rem;
-font-weight: 400;
-line-height: 1.5;
-color: #212529;
-background-color: #fff;
-background-image: url("inc/img/calendar-plus.svg");
-background-repeat: no-repeat;
-background-position: right .75rem center;
-background-size: 16px 20px;
-border: 1px solid #ced4da;
-border-radius: .25rem;
-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
--webkit-appearance: none;
--moz-appearance: none;
-appearance: none;
+  width: 100%;
+  padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+  -moz-padding-start: calc(0.75rem - 3px);
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-image: url("inc/img/calendar-plus.svg");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 20px;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* step by step form */
+
+input.invalid {
+  background-color: #ffc107;
+}
+
+.tab {
+  display: none;
+}
+
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+.step.finish {
+  background-color: #04aa6d;
+}
+
+#prevBtn,
+#nextBtn {
+  min-width: 180px;
+}
+.form_bt_sec {
+  position: absolute;
+  top: 143px;
+  right: 0;
+}
+.ttle .lst_sec {
+  height: 80px;
+}
+@media screen and (min-width: 1555px) {
+  #prevBtn,
+  #nextBtn {
+    min-height: 68px;
+    border-color: #4ab678 !important;
+  }
+}
+/* Mobile responsive */
+
+@media screen and (max-width: 1200px) and (min-width: 991px) {
+  .contact-info {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .contact-info {
+    margin: 10px;
+    top: 7%;
+  }
+}
+@media screen and (max-width: 768px) and (min-width: 389px) {
+  #prevBtn,
+  #nextBtn {
+    min-height: 68px;
+    border-color: #4ab678 !important;
+  }
+}
+@media (max-width: 768px) {
+  .contact-info {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    top: 10px;
+    padding: 30px;
+  }
+  .Map-Area .contact_img {
+    width: 100%;
+    height: 400px;
+    margin: 20px 0px;
+  }
+  p.text-center {
+    width: 90%;
+  }
+  .form_bt_sec {
+    top: 360px;
+    width: 100%;
+  }
 }
 @media (max-width: 576px) {
-  .data_show{
+  section.our-details {
+    padding-left: 10%;
+    padding-bottom: 40px;
+  }
+  img.travel-logo2 {
+    margin: 0 auto;
+  }
+  .data_show {
     width: 200px;
+  }
+  .form_bt_sec {
+    top: 380px;
   }
 }
