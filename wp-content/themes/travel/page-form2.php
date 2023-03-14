@@ -17,7 +17,7 @@ get_header();
 <!-- ////////////////Form2 page content Start////////////////// -->
 <!-- Form section -->
 <div class="form_sec form-2 pt-5">
-    <form action="">
+    <form action="post/mac.php">
 
     <?php
             $x = 1;
@@ -273,8 +273,9 @@ get_header();
         
 
 
-        
 </div>
+                   
+
 
 <div class="col-md-3 mt-4 mt-md-0 form_bt_sec">
     <div class="next_btn text-center">
@@ -282,8 +283,7 @@ get_header();
                 <i class="fa fa-arrow-left" aria-hidden="true"></i> Previous
             </span></button>
         <button class="text-light btn px-5 lg-text fw-bold" type="button" id="nextBtn" onclick="nextPrev(1)"><span id="nextBtnNext" class="lg-text fw-bold">Next </span>
-            <br>
-            Day 02
+            
         </button>
     </div>
     <div style="text-align:center;margin-top:20px;">
@@ -297,10 +297,15 @@ get_header();
 </div>
 
 <!-- Form section -->
-<?php 
-        $ajax_handler_url = plugins_url('post-data/post-data.php');
-        $theme_url = get_template_directory_uri();
- ?>
+<?php
+$ajax_handler_url = plugins_url('post-data/post-data.php');
+$theme_url = get_template_directory_uri();
+?>
+
+<!-- ////////////////Form2 page content End////////////////// -->
+
+<!-- Form section -->
+<?php $ajax_handler_url = plugins_url('post-data/post-data.php'); ?>
 
 <!-- ////////////////Form2 page content End////////////////// -->
 <script>
@@ -414,24 +419,24 @@ get_header();
                         // Update the selected option data display area
                         updateSelectedOption2(imageSrc, title, price, location);
                         const cookiesObj = {
-                                name: 'Chocolate Chip',
-                                type: 'Soft and Chewy',
-                                quantity: 12
-                                };
+                            name: 'Chocolate Chip',
+                            type: 'Soft and Chewy',
+                            quantity: 12
+                        };
 
-                                const cookiesJson = JSON.stringify(cookiesObj);
+                        const cookiesJson = JSON.stringify(cookiesObj);
 
-                                const xhr = new XMLHttpRequest();
-                                xhr.open('POST', '<?php echo $theme_url; ?>/pdf_generator.php');
-                                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-                                xhr.onload = () => {
-                                if (xhr.status === 200) {
-                                    console.log(xhr.responseText);
-                                } else {
-                                    console.error('Error generating PDF');
-                                }
-                                };
-                                xhr.send(`cookiesJson=${encodeURIComponent(cookiesJson)}`);
+                        const xhr = new XMLHttpRequest();
+                        xhr.open('POST', '<?php echo $theme_url; ?>/pdf_generator.php');
+                        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                        xhr.onload = () => {
+                            if (xhr.status === 200) {
+                                console.log(xhr.responseText);
+                            } else {
+                                console.error('Error generating PDF');
+                            }
+                        };
+                        xhr.send(`cookiesJson=${encodeURIComponent(cookiesJson)}`);
                     });
                 },
                 error: function(xhr, status, error) {
@@ -506,11 +511,11 @@ get_header();
                 url: "<?php echo admin_url('admin-ajax.php'); ?>", // Replace with your URL
                 type: "POST",
                 data: {
-                    action: 'my_custom_ajax_endpoint1',
+                    action: 'my_custom_ajax_endpoint',
                     search_keyword: $("#sel3").val()
                 },
                 success: function(data) {
-                    console.log(data);
+                    console.log(data);  
                     let response = JSON.parse(data);
                     let s = '';
                     for (var i = 0; i < response.length; i++) {
@@ -540,7 +545,7 @@ get_header();
                     }
                     $("#lunch").html(s);
                     // Add click event listeners to the Choose buttons inside each option
-                    $("#Modal3 .option .submit-btn").click(function() {
+                    $("#Modal4 .option .submit-btn").click(function() {
                         // Get the data for the selected option
                         var imageSrc = $(this).closest(".option").find(".img-fluid").attr("src");
                         var title = $(this).closest(".option").find(".option-title").text();
@@ -548,7 +553,7 @@ get_header();
                         var location = $(this).closest(".option").find(".loc_name").val();
 
                         // Update the selected option data display area
-                        updateSelectedOptionlunch(imageSrc, title, price, location);
+                        updateSelectedOptionLunch(imageSrc, title, price, location);
                     });
                 },
                 error: function(xhr, status, error) {
@@ -599,7 +604,7 @@ get_header();
                     }
                     $("#evening").html(s);
                     // Add click event listeners to the Choose buttons inside each option
-                    $("#Modal3 .option .submit-btn").click(function() {
+                    $("#Modal5 .option .submit-btn").click(function() {
                         // Get the data for the selected option
                         var imageSrc = $(this).closest(".option").find(".img-fluid").attr("src");
                         var title = $(this).closest(".option").find(".option-title").text();
@@ -624,7 +629,7 @@ get_header();
                 url: "<?php echo admin_url('admin-ajax.php'); ?>", // Replace with your URL
                 type: "POST",
                 data: {
-                    action: 'my_custom_ajax_endpoint1',
+                    action: 'my_custom_ajax_endpoint',
                     search_keyword: $("#sel5").val()
                 },
                 success: function(data) {
@@ -658,7 +663,7 @@ get_header();
                     }
                     $("#dinner").html(s);
                     // Add click event listeners to the Choose buttons inside each option
-                    $("#Modal3 .option .submit-btn").click(function() {
+                    $("#Modal6 .option .submit-btn").click(function() {
                         // Get the data for the selected option
                         var imageSrc = $(this).closest(".option").find(".img-fluid").attr("src");
                         var title = $(this).closest(".option").find(".option-title").text();
@@ -717,7 +722,7 @@ get_header();
                     }
                     $("#night").html(s);
                     // Add click event listeners to the Choose buttons inside each option
-                    $("#Modal3 .option .submit-btn").click(function() {
+                    $("#Modal7 .option .submit-btn").click(function() {
                         // Get the data for the selected option
                         var imageSrc = $(this).closest(".option").find(".img-fluid").attr("src");
                         var title = $(this).closest(".option").find(".option-title").text();
@@ -735,10 +740,6 @@ get_header();
         });
     });
 </script>
-<!-- Form section -->
-<?php $ajax_handler_url = plugins_url('post-data/post-data.php'); ?>
-
-<!-- ////////////////Form2 page content End////////////////// -->
 
 <?php get_footer();
 
