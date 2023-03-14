@@ -145,7 +145,7 @@ get_header();
                         <input type="checkbox" id="sel4" class="form-check-input" name="optradio">
                         <label class="form-check-label" for="breakfast">Lunch</label>
                         <div class="ch_btn">
-                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal4">
+                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal4" id='lunch_data'>
                                 <div id="btn4_inside" class="btn_inside text-center">
                                     a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                                 </div>
@@ -174,7 +174,7 @@ get_header();
                         <input type="checkbox" class="form-check-input" id="sel5" name="optradio">
                         <label class="form-check-label" for="evening">Evening Excursions</label>
                         <div class="ch_btn">
-                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal5">
+                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal5" id='evening_excursions'>
                                 <div id="btn5_inside" class="btn_inside text-center">
                                     Choose <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                                 </div>
@@ -203,7 +203,7 @@ get_header();
                         <input type="checkbox" class="form-check-input" id="sel6" name="optradio">
                         <label class="form-check-label" for="dinner">Dinner</label>
                         <div class="ch_btn">
-                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal6">
+                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal6" id='dinner_data'>
                                 <div id="btn6_inside" class="btn_inside text-center">
                                     a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                                 </div>
@@ -232,7 +232,7 @@ get_header();
                         <input type="checkbox" class="form-check-input" id="sel7" name="optradio">
                         <label class="form-check-label" for="night">Night Life</label>
                         <div class="ch_btn">
-                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal7">
+                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal7" id='night_data'>
                                 <div id="btn7_inside" class="btn_inside text-center">
                                     Choose <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                                 </div>
@@ -729,7 +729,7 @@ get_header();
 
     // Lunch
     $(document).ready(function() {
-        $("#lunch").click(function() {
+        $("#lunch_data").click(function() {
             $.ajax({
                 url: "<?php echo admin_url('admin-ajax.php'); ?>", // Replace with your URL
                 type: "POST",
@@ -788,7 +788,7 @@ get_header();
 
     // Evening Excursions
     $(document).ready(function() {
-        $("#evening").click(function() {
+        $("#evening_excursions").click(function() {
             $.ajax({
                 url: "<?php echo admin_url('admin-ajax.php'); ?>", // Replace with your URL
                 type: "POST",
@@ -847,7 +847,7 @@ get_header();
 
     // Dinner Excursions
     $(document).ready(function() {
-        $("#dinner").click(function() {
+        $("#dinner_data").click(function() {
             $.ajax({
                 url: "<?php echo admin_url('admin-ajax.php'); ?>", // Replace with your URL
                 type: "POST",
@@ -906,7 +906,7 @@ get_header();
 
     // Night Excursions
     $(document).ready(function() {
-        $("#night").click(function() {
+        $("#night_data").click(function() {
             $.ajax({
                 url: "<?php echo admin_url('admin-ajax.php'); ?>", // Replace with your URL
                 type: "POST",
