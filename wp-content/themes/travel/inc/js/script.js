@@ -24,6 +24,9 @@ function updateSelectedOption2(imageSrc, title, price, location) {
   document.cookie = "location=" + location + ";";
 
 
+
+
+
 }
 // Morning  
 function updateSelectedOptionMorning(imageSrc, title, price, location) {

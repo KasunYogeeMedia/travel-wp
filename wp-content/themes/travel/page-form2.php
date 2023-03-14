@@ -525,7 +525,10 @@ get_header();
 </div>
 
 <!-- Form section -->
-<?php $ajax_handler_url = plugins_url('post-data/post-data.php'); ?>
+<?php 
+        $ajax_handler_url = plugins_url('post-data/post-data.php');
+        $theme_url = get_template_directory_uri();
+ ?>
 
 <!-- ////////////////Form2 page content End////////////////// -->
 <script>
@@ -638,6 +641,25 @@ get_header();
 
                         // Update the selected option data display area
                         updateSelectedOption2(imageSrc, title, price, location);
+                        const cookiesObj = {
+                                name: 'Chocolate Chip',
+                                type: 'Soft and Chewy',
+                                quantity: 12
+                                };
+
+                                const cookiesJson = JSON.stringify(cookiesObj);
+
+                                const xhr = new XMLHttpRequest();
+                                xhr.open('POST', '<?php echo $theme_url; ?>/pdf_generator.php');
+                                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                                xhr.onload = () => {
+                                if (xhr.status === 200) {
+                                    console.log(xhr.responseText);
+                                } else {
+                                    console.error('Error generating PDF');
+                                }
+                                };
+                                xhr.send(`cookiesJson=${encodeURIComponent(cookiesJson)}`);
                     });
                 },
                 error: function(xhr, status, error) {

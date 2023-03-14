@@ -1,5 +1,6 @@
 <?php
 require_once('tcpdf/tcpdf.php');
+define('ABSPATH', dirname(__FILE__) . '/');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cookiesJson'])) {
     // Get the JSON data from the POST parameter
@@ -17,10 +18,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cookiesJson'])) {
 
     // Set the path of the saved PDF file with a unique name
     $filename = 'cookies_' . uniqid() . '_' . time() . '.pdf';
-    $filepath = trailingslashit(ABSPATH) . 'wp-content/uploads/' . $filename;
+    $filepath = ABSPATH . 'wp-content/uploads/' . $filename;
 
     // Save the PDF file
-    $pdf->Output($filepath, 'F');
+    $pdf->Output( $filepath, 'F' ); 
 
     // Send a response back to the client
     echo 'PDF generated successfully';

@@ -43,7 +43,7 @@ function wl_hotels($searchKeyword) {
  // Used in this video https://www.youtube.com/watch?v=76sJL9fd12Y
  function wl_excursion() {
      $args = [
-         'numberposts' => 99999,
+         'numberposts' =>-1,
          'post_type' => 'excursion'
      ];
  
