@@ -417,7 +417,7 @@ $theme_url = get_template_directory_uri();
                         var location = $(this).closest(".option").find(".loc_name").val();
 
                         // Update the selected option data display area
-                        updateSelectedOption2(imageSrc, title, price, location);
+                        updateSelectedOptionBreakfast(imageSrc, title, price, location);
                         const cookiesObj = {
                             name: 'Chocolate Chip',
                             type: 'Soft and Chewy',
