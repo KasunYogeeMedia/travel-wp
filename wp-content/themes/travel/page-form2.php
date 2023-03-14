@@ -17,7 +17,7 @@ get_header();
 <!-- ////////////////Form2 page content Start////////////////// -->
 <!-- Form section -->
 <div class="form_sec form-2 pt-5">
-    <form id='regForm'>
+    <form id="regForm" method="POST">
 
     <?php
             $x = 1;
@@ -300,6 +300,7 @@ get_header();
         <span class="step"></span>
     </div>
 </div>
+<input type="hidden" name="json_data" id="json_data">
 </form>
 </div>
 
@@ -788,6 +789,9 @@ $theme_url = get_template_directory_uri();
             });
         });
     });
+
+
+
 </script>
 
 <?php get_footer();

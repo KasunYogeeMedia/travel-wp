@@ -69,25 +69,25 @@ function updateSelectedOptionNight(imageSrc, title, price, location) {
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
-// function showTab(n) {
-//   // This function will display the specified tab of the form...
-//   var x = document.getElementsByClassName("tab");
-//   x[n].style.display = "block";
-//   //... and fix the Previous/Next buttons:
-//   if (n == 0) {
-//     document.getElementById("prevBtn").style.display = "none";
-//   } else {
-//     document.getElementById("prevBtn").style.display = "inline";
-//   }
-//   if (n == x.length - 1) {
-//     document.getElementById("nextBtnNext").innerHTML = "Submit";
-//   } else {
-//     document.getElementById("nextBtnNext").innerHTML =
-//       "Next <i class='fa fa-arrow-right' aria-hidden='true'></i>";
-//   }
-//   //... and run a function that will display the correct step indicator:
-//   fixStepIndicator(n);
-// }
+function showTab(n) {
+  // This function will display the specified tab of the form...
+  var x = document.getElementsByClassName("tab");
+  x[n].style.display = "block";
+  //... and fix the Previous/Next buttons:
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+  }
+  if (n == x.length - 1) {
+    document.getElementById("nextBtnNext").innerHTML = "Submit";
+  } else {
+    document.getElementById("nextBtnNext").innerHTML =
+      "Next <i class='fa fa-arrow-right' aria-hidden='true'></i>";
+  }
+  //... and run a function that will display the correct step indicator:
+  fixStepIndicator(n);
+}
 
 
 function showTab(n) {
@@ -103,10 +103,11 @@ function showTab(n) {
   if (n == (x.length - 1)) {
     document.getElementById("nextBtn").style.display = "none";
     var submitBtn = document.createElement("button");
-    submitBtn.setAttribute("type", "submit");
-    submitBtn.setAttribute("id", "submitBtn");
+    submitBtn.setAttribute("type", "button");
+    submitBtn.setAttribute("id", "submit-button");
     submitBtn.innerHTML = "Submit";
     document.getElementById("regForm").appendChild(submitBtn);
+    
   } else {
     document.getElementById("nextBtn").style.display = "inline";
     var submitBtn = document.getElementById("submitBtn");
@@ -120,6 +121,7 @@ function showTab(n) {
 }
 
 
+
 function nextPrev(n) {
   // This function will figure out which tab to display
   var x = document.getElementsByClassName("tab");
@@ -131,35 +133,16 @@ function nextPrev(n) {
   currentTab = currentTab + n;
   // if you have reached the end of the form...
   if (currentTab >= x.length) {
+    let formData = {};
+    let formElements = document.querySelectorAll("#regForm input, #regForm select, #regForm textarea");
+    formElements.forEach(function(element) {
+        formData[element.name] = element.value;
+    });
+    let jsonData = JSON.stringify(formData);
+    console.log(jsonData);
     // ... the form gets submitted:
     // document.getElementById("regForm").submit();
     // document.getElementById("nextBtn").type = "submit";
-
-    let submitButton = document.getElementById("submitBtn");
-    submitButton.addEventListener("click", function (event) {
-      event.preventDefault(); // Prevent the default form submission behavior
-
-      let formData = {};
-      let formElements = document.querySelectorAll(
-        "#regForm input, #regForm select, #regForm textarea"
-      );
-
-      formElements.forEach(function (element) {
-        formData[element.name] = element.value;
-      });
-
-      let jsonData = JSON.stringify(formData);
-
-      let xhr = new XMLHttpRequest();
-      xhr.open("POST", "http://travel-wp.test/form-2/", true);
-      xhr.setRequestHeader("Content-Type", "application/json");
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          console.log(xhr.responseText);
-        }
-      };
-      xhr.send(jsonData);
-    });
     return false;
   }
   // Otherwise, display the correct tab:
