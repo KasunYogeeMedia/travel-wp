@@ -387,7 +387,7 @@ get_header();
                         <input type="checkbox" id="sel4" class="form-check-input" name="optradio">
                         <label class="form-check-label" for="breakfast">Lunch</label>
                         <div class="ch_btn">
-                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal4">
+                            <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal4" id="">
                                 <div id="btn4_inside" class="btn_inside text-center">
                                     a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                                 </div>
@@ -399,7 +399,7 @@ get_header();
                                     <div class="modal-content">
                                         <div id="myImageSelect" class="p-2 p-sm-5">
                                             <h2 class="mb-4">Choose Hotel</h2>
-                                            <div class="row" id="lunch">
+                                            <div class="row" id="lunch_data">
 
                                             </div>
                                         </div>
@@ -525,10 +525,15 @@ get_header();
 </div>
 
 <!-- Form section -->
-<?php 
-        $ajax_handler_url = plugins_url('post-data/post-data.php');
-        $theme_url = get_template_directory_uri();
- ?>
+<?php
+$ajax_handler_url = plugins_url('post-data/post-data.php');
+$theme_url = get_template_directory_uri();
+?>
+
+<!-- ////////////////Form2 page content End////////////////// -->
+
+<!-- Form section -->
+<?php $ajax_handler_url = plugins_url('post-data/post-data.php'); ?>
 
 <!-- ////////////////Form2 page content End////////////////// -->
 <script>
@@ -642,24 +647,24 @@ get_header();
                         // Update the selected option data display area
                         updateSelectedOption2(imageSrc, title, price, location);
                         const cookiesObj = {
-                                name: 'Chocolate Chip',
-                                type: 'Soft and Chewy',
-                                quantity: 12
-                                };
+                            name: 'Chocolate Chip',
+                            type: 'Soft and Chewy',
+                            quantity: 12
+                        };
 
-                                const cookiesJson = JSON.stringify(cookiesObj);
+                        const cookiesJson = JSON.stringify(cookiesObj);
 
-                                const xhr = new XMLHttpRequest();
-                                xhr.open('POST', '<?php echo $theme_url; ?>/pdf_generator.php');
-                                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-                                xhr.onload = () => {
-                                if (xhr.status === 200) {
-                                    console.log(xhr.responseText);
-                                } else {
-                                    console.error('Error generating PDF');
-                                }
-                                };
-                                xhr.send(`cookiesJson=${encodeURIComponent(cookiesJson)}`);
+                        const xhr = new XMLHttpRequest();
+                        xhr.open('POST', '<?php echo $theme_url; ?>/pdf_generator.php');
+                        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                        xhr.onload = () => {
+                            if (xhr.status === 200) {
+                                console.log(xhr.responseText);
+                            } else {
+                                console.error('Error generating PDF');
+                            }
+                        };
+                        xhr.send(`cookiesJson=${encodeURIComponent(cookiesJson)}`);
                     });
                 },
                 error: function(xhr, status, error) {
@@ -734,11 +739,11 @@ get_header();
                 url: "<?php echo admin_url('admin-ajax.php'); ?>", // Replace with your URL
                 type: "POST",
                 data: {
-                    action: 'my_custom_ajax_endpoint1',
+                    action: 'my_custom_ajax_endpoint',
                     search_keyword: $("#sel3").val()
                 },
                 success: function(data) {
-                    console.log(data);
+                    console.log(data);  
                     let response = JSON.parse(data);
                     let s = '';
                     for (var i = 0; i < response.length; i++) {
@@ -768,7 +773,7 @@ get_header();
                     }
                     $("#lunch").html(s);
                     // Add click event listeners to the Choose buttons inside each option
-                    $("#Modal3 .option .submit-btn").click(function() {
+                    $("#Modal4 .option .submit-btn").click(function() {
                         // Get the data for the selected option
                         var imageSrc = $(this).closest(".option").find(".img-fluid").attr("src");
                         var title = $(this).closest(".option").find(".option-title").text();
@@ -776,7 +781,7 @@ get_header();
                         var location = $(this).closest(".option").find(".loc_name").val();
 
                         // Update the selected option data display area
-                        updateSelectedOptionlunch(imageSrc, title, price, location);
+                        updateSelectedOptionLunch(imageSrc, title, price, location);
                     });
                 },
                 error: function(xhr, status, error) {
@@ -827,7 +832,7 @@ get_header();
                     }
                     $("#evening").html(s);
                     // Add click event listeners to the Choose buttons inside each option
-                    $("#Modal3 .option .submit-btn").click(function() {
+                    $("#Modal5 .option .submit-btn").click(function() {
                         // Get the data for the selected option
                         var imageSrc = $(this).closest(".option").find(".img-fluid").attr("src");
                         var title = $(this).closest(".option").find(".option-title").text();
@@ -852,7 +857,7 @@ get_header();
                 url: "<?php echo admin_url('admin-ajax.php'); ?>", // Replace with your URL
                 type: "POST",
                 data: {
-                    action: 'my_custom_ajax_endpoint1',
+                    action: 'my_custom_ajax_endpoint',
                     search_keyword: $("#sel5").val()
                 },
                 success: function(data) {
@@ -886,7 +891,7 @@ get_header();
                     }
                     $("#dinner").html(s);
                     // Add click event listeners to the Choose buttons inside each option
-                    $("#Modal3 .option .submit-btn").click(function() {
+                    $("#Modal6 .option .submit-btn").click(function() {
                         // Get the data for the selected option
                         var imageSrc = $(this).closest(".option").find(".img-fluid").attr("src");
                         var title = $(this).closest(".option").find(".option-title").text();
@@ -945,7 +950,7 @@ get_header();
                     }
                     $("#night").html(s);
                     // Add click event listeners to the Choose buttons inside each option
-                    $("#Modal3 .option .submit-btn").click(function() {
+                    $("#Modal7 .option .submit-btn").click(function() {
                         // Get the data for the selected option
                         var imageSrc = $(this).closest(".option").find(".img-fluid").attr("src");
                         var title = $(this).closest(".option").find(".option-title").text();
@@ -963,10 +968,6 @@ get_header();
         });
     });
 </script>
-<!-- Form section -->
-<?php $ajax_handler_url = plugins_url('post-data/post-data.php'); ?>
-
-<!-- ////////////////Form2 page content End////////////////// -->
 
 <?php get_footer();
 

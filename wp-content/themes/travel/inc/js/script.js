@@ -9,25 +9,6 @@ function updateSelectedOptionStay(imageSrc, title, price, location) {
   document.getElementById("sel1").value = location;
 }
 
-function updateSelectedOption2(imageSrc, title, price, location) {
-  document.getElementById("btn2_inside").style.backgroundImage =
-    "url('" + imageSrc + "')";
-  document.getElementById("btn2_inside").innerHTML = title;
-  document.getElementById("btn2_price").innerHTML = price;
-  document.getElementById("sel2").value = location;
-  var expireDate = new Date();
-  expireDate.setTime(expireDate.getTime() + (60 * 60 * 1000));
-  // Save the data to a cookie
-  document.cookie = "imageSrc=" + imageSrc + ";";
-  document.cookie = "title=" + title + ";";
-  document.cookie = "price=" + price + ";";
-  document.cookie = "location=" + location + ";";
-
-
-
-
-
-}
 // Morning  
 function updateSelectedOptionMorning(imageSrc, title, price, location) {
   document.getElementById("btn3_inside").style.backgroundImage =
