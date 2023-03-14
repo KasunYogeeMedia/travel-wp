@@ -17,7 +17,7 @@ get_header();
 <!-- ////////////////Form2 page content Start////////////////// -->
 <!-- Form section -->
 <div class="form_sec form-2 pt-5">
-    <form action="">
+    <form id="regForm" action="">
         <div class="tab">
             <div class="container-fluid pt-5">
                 <div class="ttle py-5 border-bottom">
@@ -136,7 +136,14 @@ get_header();
                                 </div>
                             </div>
                             <button type="button" class="addBtn" id="myButton1">Add another <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i></button>
-                            <div id="sectionContainer1"></div>
+                            <div id="sectionContainer1">
+                                <div class="morning-excursions-section">
+                                    <div id="btn3_inside_{{ section_id }}" class="btn_inside text-center">
+                                        Choose <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                    </div>
+                                    <input type="hidden" id="btn3_price_{{ section_id }}">
+                                </div>
+                            </div>
                         </div>
 
                     </div>
@@ -743,7 +750,7 @@ $theme_url = get_template_directory_uri();
                     search_keyword: $("#sel3").val()
                 },
                 success: function(data) {
-                    console.log(data);  
+                    console.log(data);
                     let response = JSON.parse(data);
                     let s = '';
                     for (var i = 0; i < response.length; i++) {
