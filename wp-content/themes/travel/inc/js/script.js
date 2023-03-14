@@ -69,6 +69,26 @@ function updateSelectedOptionNight(imageSrc, title, price, location) {
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
+// function showTab(n) {
+//   // This function will display the specified tab of the form...
+//   var x = document.getElementsByClassName("tab");
+//   x[n].style.display = "block";
+//   //... and fix the Previous/Next buttons:
+//   if (n == 0) {
+//     document.getElementById("prevBtn").style.display = "none";
+//   } else {
+//     document.getElementById("prevBtn").style.display = "inline";
+//   }
+//   if (n == x.length - 1) {
+//     document.getElementById("nextBtnNext").innerHTML = "Submit";
+//   } else {
+//     document.getElementById("nextBtnNext").innerHTML =
+//       "Next <i class='fa fa-arrow-right' aria-hidden='true'></i>";
+//   }
+//   //... and run a function that will display the correct step indicator:
+//   fixStepIndicator(n);
+// }
+
 
 function showTab(n) {
   // This function will display the specified tab of the form...
@@ -113,9 +133,9 @@ function nextPrev(n) {
   if (currentTab >= x.length) {
     // ... the form gets submitted:
     // document.getElementById("regForm").submit();
-    document.getElementById("nextBtn").type = "submit";
+    // document.getElementById("nextBtn").type = "submit";
 
-    let submitButton = document.getElementById("nextBtn");
+    let submitButton = document.getElementById("submitBtn");
     submitButton.addEventListener("click", function (event) {
       event.preventDefault(); // Prevent the default form submission behavior
 
@@ -131,7 +151,7 @@ function nextPrev(n) {
       let jsonData = JSON.stringify(formData);
 
       let xhr = new XMLHttpRequest();
-      xhr.open("POST", "your-url-here", true);
+      xhr.open("POST", "http://travel-wp.test/form-2/", true);
       xhr.setRequestHeader("Content-Type", "application/json");
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
