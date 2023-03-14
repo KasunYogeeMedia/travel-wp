@@ -101,7 +101,30 @@ var currentTab = 0; // Current tab is set to be the first tab (0)
         // if you have reached the end of the form...
         if (currentTab >= x.length) {
             // ... the form gets submitted:
-            document.getElementById("regForm").submit();
+             document.getElementById("regForm").submit();
+            let submitButton = document.getElementById("nextBtn");
+              submitButton.addEventListener("click", function(event) {
+                  event.preventDefault(); // Prevent the default form submission behavior
+                  
+                  let formData = {};
+                  let formElements = document.querySelectorAll("#regForm input, #regForm select, #regForm textarea");
+
+                  formElements.forEach(function(element) {
+                      formData[element.name] = element.value;
+                  });
+
+                  let jsonData = JSON.stringify(formData);
+
+                  let xhr = new XMLHttpRequest();
+                  xhr.open("POST", "your-url-here", true);
+                  xhr.setRequestHeader("Content-Type", "application/json");
+                  xhr.onreadystatechange = function() {
+                      if (xhr.readyState === 4 && xhr.status === 200) {
+                          console.log(xhr.responseText);
+                      }
+                  };
+                  xhr.send(jsonData);
+              });
             return false;
         }
         // Otherwise, display the correct tab:
