@@ -22,7 +22,7 @@ get_header();
     <?php
             $x = 1;
 
-            while($x <= $_SESSION['datediff']) { ?>
+            while($x <= $_SESSION['datediff']) {  ?>
            <div class="tab">
             <div class="container-fluid pt-5">
                 <div class="ttle py-5 border-bottom">
