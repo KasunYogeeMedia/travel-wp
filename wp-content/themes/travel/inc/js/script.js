@@ -232,50 +232,54 @@ $(document).ready(function () {
   });
 });
 
-// Add another section Function
-function createNewSection1() {
-  var newDiv = document.createElement("div");
-  newDiv.setAttribute("id", "newSection1");
 
-  var textIconDiv = document.createElement("div");
-  textIconDiv.setAttribute("id", "text-icon-div1");
+/////////////////////////////////////////////////////////////////////////////////////////// Add another section Function
 
-  var text = document.createElement("p");
-  text.innerHTML = "Text";
-  textIconDiv.appendChild(text);
+// function createNewSection1() {
+//   var newDiv = document.createElement("div");
+//   newDiv.setAttribute("id", "newSection1");
 
-  var icon = document.createElement("i");
-  icon.setAttribute("class", "fa fa-2x fa-plus-circle"); // replace "icon-name" with the appropriate icon class
-  textIconDiv.appendChild(icon);
+//   var textIconDiv = document.createElement("div");
+//   textIconDiv.setAttribute("id", "text-icon-div1");
 
-  newDiv.appendChild(textIconDiv);
+//   var text = document.createElement("p");
+//   text.innerHTML = "Text";
+//   textIconDiv.appendChild(text);
 
-  var closeButton = document.createElement("button");
-  var closeText = document.createTextNode("Close");
-  closeButton.appendChild(closeText);
-  closeButton.setAttribute("class", "close-button");
-  closeButton.setAttribute("onclick", "closeSection(this)");
+//   var icon = document.createElement("i");
+//   icon.setAttribute("class", "fa fa-2x fa-plus-circle"); // replace "icon-name" with the appropriate icon class
+//   textIconDiv.appendChild(icon);
 
-  newDiv.appendChild(closeButton);
-  newDiv.setAttribute("class", "newSec");
-  document.getElementById("sectionContainer1").appendChild(newDiv);
-}
+//   newDiv.appendChild(textIconDiv);
 
-function closeSection(element) {
-  element.parentNode.remove();
-}
-document
-  .getElementById("myButton1")
-  .addEventListener("click", function (event) {
-    event.preventDefault();
-    createNewSection1();
-  });
-document
-  .getElementById("myButton2")
-  .addEventListener("click", function (event) {
-    event.preventDefault();
-    createNewSection2();
-  });
+//   var closeButton = document.createElement("button");
+//   var closeText = document.createTextNode("Close");
+//   closeButton.appendChild(closeText);
+//   closeButton.setAttribute("class", "close-button");
+//   closeButton.setAttribute("onclick", "closeSection(this)");
+
+//   newDiv.appendChild(closeButton);
+//   newDiv.setAttribute("class", "newSec");
+//   document.getElementById("sectionContainer1").appendChild(newDiv);
+// }
+
+// function closeSection(element) {
+//   element.parentNode.remove();
+// }
+// document
+//   .getElementById("myButton1")
+//   .addEventListener("click", function (event) {
+//     event.preventDefault();
+//     createNewSection1();
+//   });
+// document
+//   .getElementById("myButton2")
+//   .addEventListener("click", function (event) {
+//     event.preventDefault();
+//     createNewSection2();
+//   });
+
+//////////////////////////////////////////////////////////////////////////////////////////// Add another section Function
 
 // video model
 $(document).ready(function () {
