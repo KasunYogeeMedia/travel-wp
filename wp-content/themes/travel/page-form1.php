@@ -88,7 +88,7 @@ get_header();  ?>
 
                     </div>
                 </div>
-                <div class="row mt-4 pb-5">
+                <div class="row mt-5 pb-5">
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-primary bg-green mb-2 btn-lg w-100 fw-bold px-5 py-3">Lets Plan</button>
                     </div>

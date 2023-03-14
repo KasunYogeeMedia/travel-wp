@@ -59,14 +59,14 @@ get_header();
                             <input type="checkbox" id="sel1" class="form-check-input" name="optradio">
                             <label class="form-check-label" for="stay">Choose Your Stay</label>
                             <div class="ch_btn">
-                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal1">
+                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal1<?php echo $x; ?>">
                                     <div id="btn1_inside" class="btn_inside text-center">
                                         choose now <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                                     </div>
                                     <input type="hidden" id="btn1_price">
                                 </button>
                                 <!-- Modal -->
-                                <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="Modal1<?php echo $x; ?>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div id="myImageSelect" class="p-2 p-sm-5">
@@ -89,13 +89,13 @@ get_header();
                             <input type="checkbox" id="sel2" class="form-check-input" name="optradio">
                             <label class="form-check-label" for="breakfast">Breakfast</label>
                             <div class="ch_btn">
-                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal2" id='breakfast'>
+                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal2<?php echo $x; ?>" id='breakfast'>
                                     <div id="btn2_inside" class="btn_inside text-center">
                                         a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                                     </div>
                                     <input type="hidden" id="btn2_price">
                                 </button>
-                                <div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="Modal2<?php echo $x; ?>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div id="myImageSelect" class="p-2 p-sm-5">
@@ -112,20 +112,19 @@ get_header();
                                 </div>
                             </div>
                         </div>
-
                         <!-- Morning Excursions -->
                         <div id="select_3" class="form-check">
                             <input type="checkbox" id="sel3" class="form-check-input" name="optradio">
                             <label class="form-check-label" for="morning">Morning Excursions</label>
                             <div class="ch_btn">
-                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal3" id='morning_excursions'>
+                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal3<?php echo $x; ?>" id='morning_excursions'>
                                     <div id="btn3_inside" class="btn_inside text-center">
                                         Choose <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                                     </div>
                                     <input type="hidden" id="btn3_price">
                                 </button>
                                 <!-- Modal -->
-                                <div class="modal fade" id="Modal3" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="Modal3<?php echo $x; ?>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div id="myImageSelect" class="p-2 p-sm-5">
@@ -148,14 +147,14 @@ get_header();
                             <input type="checkbox" id="sel4" class="form-check-input" name="optradio">
                             <label class="form-check-label" for="breakfast">Lunch</label>
                             <div class="ch_btn">
-                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal4" id='lunch_data'>
+                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal4<?php echo $x; ?>" id='lunch_data'>
                                     <div id="btn4_inside" class="btn_inside text-center">
                                         a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                                     </div>
                                     <input type="hidden" id="btn4_price">
                                 </button>
                                 <!-- Modal -->
-                                <div class="modal fade" id="Modal4" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="Modal4<?php echo $x; ?>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div id="myImageSelect" class="p-2 p-sm-5">
@@ -177,14 +176,14 @@ get_header();
                             <input type="checkbox" class="form-check-input" id="sel5" name="optradio">
                             <label class="form-check-label" for="evening">Evening Excursions</label>
                             <div class="ch_btn">
-                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal5" id='evening_excursions'>
+                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal5<?php echo $x; ?>" id='evening_excursions'>
                                     <div id="btn5_inside" class="btn_inside text-center">
                                         Choose <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                                     </div>
                                     <input type="hidden" id="btn5_price">
                                 </button>
                                 <!-- Modal -->
-                                <div class="modal fade" id="Modal5" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="Modal5<?php echo $x; ?>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div id="myImageSelect" class="p-2 p-sm-5">
@@ -206,14 +205,14 @@ get_header();
                             <input type="checkbox" class="form-check-input" id="sel6" name="optradio">
                             <label class="form-check-label" for="dinner">Dinner</label>
                             <div class="ch_btn">
-                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal6" id='dinner_data'>
+                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal6<?php echo $x; ?>" id='dinner_data'>
                                     <div id="btn6_inside" class="btn_inside text-center">
                                         a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                                     </div>
                                     <input type="hidden" id="btn6_price">
                                 </button>
                                 <!-- Modal -->
-                                <div class="modal fade" id="Modal6" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="Modal6<?php echo $x; ?>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div id="myImageSelect" class="p-2 p-sm-5">
@@ -235,14 +234,14 @@ get_header();
                             <input type="checkbox" class="form-check-input" id="sel7" name="optradio">
                             <label class="form-check-label" for="night">Night Life</label>
                             <div class="ch_btn">
-                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal7" id='night_data'>
+                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal7<?php echo $x; ?>" id='night_data'>
                                     <div id="btn7_inside" class="btn_inside text-center">
                                         Choose <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                                     </div>
                                     <input type="hidden" id="btn7_price">
                                 </button>
                                 <!-- Modal -->
-                                <div class="modal fade" id="Modal7" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="Modal7<?php echo $x; ?>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div id="myImageSelect" class="p-2 p-sm-5">
@@ -356,7 +355,7 @@ $theme_url = get_template_directory_uri();
             $("#stay_data").html(s);
 
             // Add click event listeners to the Choose buttons inside each option
-            $("#Modal1 .option .submit-btn").click(function() {
+            $("#select_1 .option .submit-btn").click(function() {
                 // Get the data for the selected option
                 var imageSrc = $(this).closest(".option").find(".img-fluid").attr("src");
                 var title = $(this).closest(".option").find(".option-title").text();
@@ -420,7 +419,7 @@ $theme_url = get_template_directory_uri();
                     $("#breakfast_data").html(s);
 
                     // Add click event listeners to the Choose buttons inside each option
-                    $("#Modal2 .option .submit-btn").click(function() {
+                    $("#select_2 .option .submit-btn").click(function() {
                         // Get the data for the selected option
                         var imageSrc = $(this).closest(".option").find(".img-fluid").attr("src");
                         var title = $(this).closest(".option").find(".option-title").text();
@@ -503,7 +502,7 @@ $theme_url = get_template_directory_uri();
                     }
                     $("#morning_excursions_data").html(s);
                     // Add click event listeners to the Choose buttons inside each option
-                    $("#Modal3 .option .submit-btn").click(function() {
+                    $("#select_3 .option .submit-btn").click(function() {
                         // Get the data for the selected option
                         var imageSrc = $(this).closest(".option").find(".img-fluid").attr("src");
                         var title = $(this).closest(".option").find(".option-title").text();
@@ -568,7 +567,7 @@ $theme_url = get_template_directory_uri();
                     }
                     $("#lunch").html(s);
                     // Add click event listeners to the Choose buttons inside each option
-                    $("#Modal4 .option .submit-btn").click(function() {
+                    $("#select_4 .option .submit-btn").click(function() {
                         // Get the data for the selected option
                         var imageSrc = $(this).closest(".option").find(".img-fluid").attr("src");
                         var title = $(this).closest(".option").find(".option-title").text();
@@ -633,7 +632,7 @@ $theme_url = get_template_directory_uri();
                     }
                     $("#evening").html(s);
                     // Add click event listeners to the Choose buttons inside each option
-                    $("#Modal5 .option .submit-btn").click(function() {
+                    $("#select_5 .option .submit-btn").click(function() {
                         // Get the data for the selected option
                         var imageSrc = $(this).closest(".option").find(".img-fluid").attr("src");
                         var title = $(this).closest(".option").find(".option-title").text();
@@ -698,7 +697,7 @@ $theme_url = get_template_directory_uri();
                     }
                     $("#dinner").html(s);
                     // Add click event listeners to the Choose buttons inside each option
-                    $("#Modal6 .option .submit-btn").click(function() {
+                    $("#select_6 .option .submit-btn").click(function() {
                         // Get the data for the selected option
                         var imageSrc = $(this).closest(".option").find(".img-fluid").attr("src");
                         var title = $(this).closest(".option").find(".option-title").text();
@@ -763,7 +762,7 @@ $theme_url = get_template_directory_uri();
                     }
                     $("#night").html(s);
                     // Add click event listeners to the Choose buttons inside each option
-                    $("#Modal7 .option .submit-btn").click(function() {
+                    $("#select_7 .option .submit-btn").click(function() {
                         // Get the data for the selected option
                         var imageSrc = $(this).closest(".option").find(".img-fluid").attr("src");
                         var title = $(this).closest(".option").find(".option-title").text();

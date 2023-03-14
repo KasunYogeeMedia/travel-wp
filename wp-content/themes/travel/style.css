@@ -3475,6 +3475,19 @@ input.invalid {
     border-color: #4ab678 !important;
   }
 }
+
+
+/* hide unwanted sections template default */
+#secondary {
+	display: none;
+}
+
+/* Login Page styles */
+.w3eden .wpdmlogin{
+  
+}
+
+
 /* Mobile responsive */
 
 @media screen and (max-width: 1200px) and (min-width: 991px) {
