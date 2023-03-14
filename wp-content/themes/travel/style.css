@@ -910,8 +910,12 @@ button.btn-new {
 .gallery-para {
   text-align: justify;
 }
-
+.log_reg{
+  padding-top: 50px;
+  height: calc(100vh - 82.5px);
+}
 /*footer*/
+
 .footer-content p {
   text-align: center;
 }
@@ -3484,7 +3488,7 @@ input.invalid {
 
 /* Login Page styles */
 .w3eden .wpdmlogin{
-  
+
 }
 
 
