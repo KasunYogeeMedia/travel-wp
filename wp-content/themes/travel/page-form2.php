@@ -17,7 +17,7 @@ get_header();
 <!-- ////////////////Form2 page content Start////////////////// -->
 <!-- Form section -->
 <div class="form_sec form-2 pt-5">
-    <form id="regForm" method="POST">
+    <form id="regForm" method="POST" action="http://travel-wp.test/form-2/">
 
         <?php
         $x = 1;
@@ -139,7 +139,27 @@ get_header();
                                         </div>
                                     </div>
                                 </div>
-                                <button type="button" class="addBtn" data-bs-toggle="modal" data-bs-target="#Modal3" id="myButton1">Add another <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i></button>
+                                <!-- <button type="button" class="addBtn" data-bs-toggle="modal" data-bs-target="#Modal3" id="myButton1">Add another <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i></button> -->
+
+                                <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#Modal3<?php echo $x; ?>" id="add_another">Add Another</button>
+
+                                <div id="btn4" class="btn btn-default w-100 mb-3">
+                                    <div id="btn4_inside" class="row">
+                                        <div class="col-3">
+                                            <div class="btn-image"></div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="btn-details">
+                                                <div id="btn4_title"></div>
+                                                <div id="btn4_location"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div id="btn4_price" class="btn-price"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                         <!-- Lunch -->
@@ -520,6 +540,46 @@ $theme_url = get_template_directory_uri();
         });
     });
 
+
+    // new sec
+    $(document).ready(function() {
+        // ...
+
+        // Add click event listener to "Add Another" button
+        $("#add_another").click(function() {
+            // Open the modal
+            $('#myModal').modal('show');
+
+            // Update the new section with the selected data
+            $("#select_3 .option .submit-btn").click(function() {
+                // Get the data for the selected option
+                var imageSrc = $(this).closest(".option").find(".img-fluid").attr("src");
+                var title = $(this).closest(".option").find(".option-title").text();
+                var price = $(this).closest(".option").find(".option-price").text();
+                var location = $(this).closest(".option").find(".loc_name").val();
+
+                // Update the new section with the selected data
+                $("#btn4_inside").html(
+                    '<div class="col-3">' +
+                    '<div class="btn-image" style="background-image:url(' + imageSrc + ')"></div>' +
+                    '</div>' +
+                    '<div class="col-6">' +
+                    '<div class="btn-details">' +
+                    '<div id="btn4_title">' + title + '</div>' +
+                    '<div id="btn4_location">' + location + '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="col-3">' +
+                    '<div id="btn4_price" class="btn-price">' + price + '</div>' +
+                    '</div>'
+                );
+            });
+        });
+    });
+
+    // new sec
+
+
     // Lunch
     $(document).ready(function() {
         $("#lunch_data").click(function() {
@@ -779,9 +839,6 @@ $theme_url = get_template_directory_uri();
             });
         });
     });
-
-
-
 </script>
 
 <?php get_footer();
