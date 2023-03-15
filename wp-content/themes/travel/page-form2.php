@@ -822,36 +822,7 @@ $theme_url = get_template_directory_uri();
         });
     });
 </script>
-<script>
-      // get the form element
-      var form = document.forms[0];
 
-      // get the submit button element
-      var submitBtn = document.getElementById("nextBtn");
-
-      // add a click event listener to the submit button
-      submitBtn.addEventListener("click", function() {
-        // initialize a variable to keep track of the last filled element
-        var lastFilledElement = null;
-
-        // loop through all the form elements
-        for (var i = 0; i < form.elements.length; i++) {
-          var element = form.elements[i];
-
-          // check if the element is a form control that can be filled by the user
-          if (element.type !== "button" && element.type !== "submit" && element.type !== "reset" && !element.disabled) {
-            // check if the element has a value
-            if (element.value !== "") {
-              // update the lastFilledElement variable
-              lastFilledElement = element;
-            }
-          }
-        }
-
-        // display the value of the last filled element in an alert box
-        alert("Last filled element: " + (lastFilledElement ? lastFilledElement.value : "None"));
-      });
-    </script>
 
 <?php get_footer();
 
