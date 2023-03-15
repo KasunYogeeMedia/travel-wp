@@ -526,7 +526,7 @@ $theme_url = get_template_directory_uri();
     // new sec
     $(document).ready(function() {
         // ...
-
+        
         // Add click event listener to "Add Another" button
         $("#add_another").click(function() {
             // Open the modal
