@@ -90,6 +90,37 @@ function showTab(n) {
 }
 
 
+// function showTab(n) {
+//   // This function will display the specified tab of the form...
+//   var x = document.getElementsByClassName("tab");
+//   x[n].style.display = "block";
+//   //... and fix the Previous/Next buttons:
+//   if (n == 0) {
+//     document.getElementById("prevBtn").style.display = "none";
+//   } else {
+//     document.getElementById("prevBtn").style.display = "inline";
+//   }
+//   if (n == (x.length - 1)) {
+//     document.getElementById("nextBtn").style.display = "none";
+//     var submitBtn = document.createElement("button");
+//     submitBtn.setAttribute("type", "button");
+//     submitBtn.setAttribute("id", "submit-button");
+//     submitBtn.innerHTML = "Submit";
+//     document.getElementById("regForm").appendChild(submitBtn);
+    
+//   } else {
+//     document.getElementById("nextBtn").style.display = "inline";
+//     var submitBtn = document.getElementById("submitBtn");
+//     if (submitBtn) {
+//       submitBtn.parentNode.removeChild(submitBtn);
+//     }
+//     document.getElementById("nextBtn").innerHTML = "Next";
+//   }
+//   //... and run a function that will display the correct step indicator:
+//   fixStepIndicator(n)
+// }
+
+
 function showTab(n) {
   // This function will display the specified tab of the form...
   var x = document.getElementsByClassName("tab");
@@ -101,20 +132,9 @@ function showTab(n) {
     document.getElementById("prevBtn").style.display = "inline";
   }
   if (n == (x.length - 1)) {
-    document.getElementById("nextBtn").style.display = "none";
-    var submitBtn = document.createElement("button");
-    submitBtn.setAttribute("type", "button");
-    submitBtn.setAttribute("id", "submit-button");
-    submitBtn.innerHTML = "Submit";
-    document.getElementById("regForm").appendChild(submitBtn);
-    
+    document.getElementById("nextBtnNext").innerHTML = "Submit";
   } else {
-    document.getElementById("nextBtn").style.display = "inline";
-    var submitBtn = document.getElementById("submitBtn");
-    if (submitBtn) {
-      submitBtn.parentNode.removeChild(submitBtn);
-    }
-    document.getElementById("nextBtn").innerHTML = "Next";
+    document.getElementById("nextBtnNext").innerHTML = "Next <i class='fa fa-arrow-right' aria-hidden='true'></i>";
   }
   //... and run a function that will display the correct step indicator:
   fixStepIndicator(n)
