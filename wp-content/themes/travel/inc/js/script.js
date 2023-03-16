@@ -1,3 +1,5 @@
+
+
 // for (let i = 0; i < data.length; i++) {
 //   const item = data[i];
 //   const index = i + 2; // to match the button IDs
@@ -38,45 +40,45 @@
 
 
 
-// function updateSelectedOption3(imageSrc, title, price, location) {
-//   document.getElementById("btn3_inside").style.backgroundImage =
-//     "url('" + imageSrc + "')";
-//   document.getElementById("btn3_inside").innerHTML = title;
-//   document.getElementById("btn3_price").innerHTML = price;
-//   document.getElementById("sel3").value = location;
-// }
+function updateSelectedOption3(imageSrc, title, price, location) {
+  document.getElementById("btn3_inside").style.backgroundImage =
+    "url('" + imageSrc + "')";
+  document.getElementById("btn3_inside").innerHTML = title;
+  document.getElementById("btn3_price").innerHTML = price;
+  document.getElementById("sel3").value = location;
+}
 
-// function updateSelectedOption4(imageSrc, title, price, location) {
-//   document.getElementById("btn4_inside").style.backgroundImage =
-//     "url('" + imageSrc + "')";
-//   document.getElementById("btn4_inside").innerHTML = title;
-//   document.getElementById("btn4_price").innerHTML = price;
-//   document.getElementById("sel4").value = location;
-// }
+function updateSelectedOption4(imageSrc, title, price, location) {
+  document.getElementById("btn4_inside").style.backgroundImage =
+    "url('" + imageSrc + "')";
+  document.getElementById("btn4_inside").innerHTML = title;
+  document.getElementById("btn4_price").innerHTML = price;
+  document.getElementById("sel4").value = location;
+}
 
-// function updateSelectedOption5(imageSrc, title, price, location) {
-//   document.getElementById("btn5_inside").style.backgroundImage =
-//     "url('" + imageSrc + "')";
-//   document.getElementById("btn5_inside").innerHTML = title;
-//   document.getElementById("btn5_price").innerHTML = price;
-//   document.getElementById("sel5").value = location;
-// }
+function updateSelectedOption5(imageSrc, title, price, location) {
+  document.getElementById("btn5_inside").style.backgroundImage =
+    "url('" + imageSrc + "')";
+  document.getElementById("btn5_inside").innerHTML = title;
+  document.getElementById("btn5_price").innerHTML = price;
+  document.getElementById("sel5").value = location;
+}
 
-// function updateSelectedOption6(imageSrc, title, price, location) {
-//   document.getElementById("btn6_inside").style.backgroundImage =
-//     "url('" + imageSrc + "')";
-//   document.getElementById("btn6_inside").innerHTML = title;
-//   document.getElementById("btn6_price").innerHTML = price;
-//   document.getElementById("sel6").value = location;
-// }
+function updateSelectedOption6(imageSrc, title, price, location) {
+  document.getElementById("btn6_inside").style.backgroundImage =
+    "url('" + imageSrc + "')";
+  document.getElementById("btn6_inside").innerHTML = title;
+  document.getElementById("btn6_price").innerHTML = price;
+  document.getElementById("sel6").value = location;
+}
 
-// function updateSelectedOption7(imageSrc, title, price, location) {
-//   document.getElementById("btn7_inside").style.backgroundImage =
-//     "url('" + imageSrc + "')";
-//   document.getElementById("btn7_inside").innerHTML = title;
-//   document.getElementById("btn7_price").innerHTML = price;
-//   document.getElementById("sel7").value = location;
-// }
+function updateSelectedOption7(imageSrc, title, price, location) {
+  document.getElementById("btn7_inside").style.backgroundImage =
+    "url('" + imageSrc + "')";
+  document.getElementById("btn7_inside").innerHTML = title;
+  document.getElementById("btn7_price").innerHTML = price;
+  document.getElementById("sel7").value = location;
+}
 
 // Step form scripts
 var currentTab = 0; // Current tab is set to be the first tab (0)
@@ -101,63 +103,6 @@ function showTab(n) {
   //... and run a function that will display the correct step indicator:
   fixStepIndicator(n);
 }
-
-// function showTab(n) {
-//   // This function will display the specified tab of the form...
-//   var x = document.getElementsByClassName("tab");
-//   x[n].style.display = "block";
-//   //... and fix the Previous/Next buttons:
-//   if (n == 0) {
-//     document.getElementById("prevBtn").style.display = "none";
-//   } else {
-//     document.getElementById("prevBtn").style.display = "inline";
-//   }
-//   if (n == (x.length - 1)) {
-//     document.getElementById("nextBtn").style.display = "none";
-//     var submitBtn = document.createElement("button");
-//     submitBtn.setAttribute("type", "button");
-//     submitBtn.setAttribute("id", "submit-button");
-//     submitBtn.innerHTML = "Submit";
-//     document.getElementById("regForm").appendChild(submitBtn);
-
-//   } else {
-//     document.getElementById("nextBtn").style.display = "inline";
-//     var submitBtn = document.getElementById("submitBtn");
-//     if (submitBtn) {
-//       submitBtn.parentNode.removeChild(submitBtn);
-//     }
-//     document.getElementById("nextBtn").innerHTML = "Next";
-//   }
-//   //... and run a function that will display the correct step indicator:
-//   fixStepIndicator(n)
-// }
-
-// function nextPrev(n) {
-//   // This function will figure out which tab to display
-//   var x = document.getElementsByClassName("tab");
-//   // Exit the function if any field in the current tab is invalid:
-//   // if (n == 1 && !validateForm()) return false;
-//   // Hide the current tab:
-//   x[currentTab].style.display = "none";
-//   // Increase or decrease the current tab by 1:
-//   currentTab = currentTab + n;
-//   // if you have reached the end of the form...
-//   if (currentTab >= x.length) {
-//     let formData = {};
-//     let formElements = document.querySelectorAll("#regForm input, #regForm select, #regForm textarea");
-//     formElements.forEach(function(element) {
-//         formData[element.name] = element.value;
-//     });
-//     let jsonData = JSON.stringify(formData);
-//     console.log(jsonData);
-//     // ... the form gets submitted:
-//     // document.getElementById("regForm").submit();
-//     // document.getElementById("nextBtn").type = "submit";
-//     return false;
-//   }
-//   // Otherwise, display the correct tab:
-//   showTab(currentTab);
-// }
 
 function nextPrev(n) {
   // This function will figure out which tab to display
@@ -234,28 +179,7 @@ function fixStepIndicator(n) {
   x[n].className += " active";
 }
 
-// Add click event listeners to the Choose buttons inside each option
-// document
-//   .querySelectorAll("#Modal1 .option .submit-btn")
-//   .forEach(function (button) {
-//     button.addEventListener("click", function () {
-//       // Get the data for the selected option
-//       var imageSrc = this.parentNode.parentNode
-//         .querySelector(".img-fluid")
-//         .getAttribute("src");
-//       var title =
-//         this.parentNode.parentNode.querySelector(".option-title").innerHTML;
-//       var price =
-//         this.parentNode.parentNode.querySelector(".option-price").innerHTML;
-//       var location =
-//         this.parentNode.parentNode.querySelector(".loc_name").value;
-//       // Update the selected option data display area
-//       updateSelectedOption(imageSrc, title, price, location);
-//     });
-//   });
-// Choose Your Stay scripts
-// Breakfast
-// Function to update the selected option data display area
+
 
 // Navbar toggle
 $(document).ready(function () {
