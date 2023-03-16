@@ -17,7 +17,7 @@ get_header();
 <!-- ////////////////Form2 page content Start////////////////// -->
 <!-- Form section -->
 <div class="form_sec form-2 pt-5">
-    <form id="regForm" method="POST" action="http://travel-wp.test/form-2/">
+    <form id="regForm" method="POST">
 
         <?php
         $x = 1;
@@ -52,7 +52,6 @@ get_header();
                         </div>
                     </div>
                 </div>
-                
                 <div class="container sing_form_sec">
                     <div class="choose_sec py-5 position-relative">
                         <!-- Choose your stay -->
@@ -365,97 +364,14 @@ $theme_url = get_template_directory_uri();
                     var price = $(this).closest(".option").find(".option-price").text();
                     var location = $(this).closest(".option").find(".loc_name").val();
 
-                // Update the selected option data display area
-                updateSelectedOptionStay(imageSrc, title, price, location);
-            });
-        },
-        error: function(xhr, status, error) {
-            console.log("Error: " + error);
-        }
-    });
+                    // Update the selected option data display area
+                    updateSelectedOption1(imageSrc, title, price, location);
 
-
-    $(document).ready(function() {
-        $("#breakfast").click(function() {
-            $.ajax({
-                url: "<?php echo admin_url('admin-ajax.php'); ?>", // Replace with your URL
-                type: "POST",
-                data: {
-                    action: 'my_custom_ajax_endpoint',
-                    search_keyword: $("#sel1").val()
-                },
-                success: function(data) {
-                    console.log(data);
-                    let response = JSON.parse(data);
-                    let s = '';
-                    for (var i = 0; i < response.length; i++) {
-                        s += '<div class="col-sm-6 col-md-4 col-lg-3 border p-3">';
-                        s += '<div class="option">';
-                        s += '<img class="img-fluid" src="' + response[i].featured_image.large + '" alt="Option 1">';
-                        s += '<div class="caption row my-2">';
-                        s += ' <div class="col">';
-                        s += '<a href="">';
-                        s += '<span class="option-title text-primary">' + response[i].name + '</span>';
-                        s += '</a>';
-                        s += '<input type="hidden" class="title" name="title" value="' + response[i].name + '">';
-                        s += '<input type="hidden" class="address" name="address" value="' + response[i].address.address + '">';
-                        s += '<input type="hidden" class="image" name="image" value="' + response[i].featured_image.large + '">';
-                        s += '<input type="hidden" class="price" name="price" value="' + response[i].price_range + '">';
-                        s += '<input type="hidden" class="hotline" name="hotline" value="' + response[i].hotline + '">';
-                        s += '<input type="hidden" class="email" name="email" value="' + response[i].email + '">';
-                        s += '<input type="hidden" class="loc_name" name="loc_name" value="' + response[i].location + '">';
-                        s += ' </div>';
-                        s += '<div class="col text-end">';
-                        s += '<span class="option-price text-end">' + response[i].price_range + '</span>';
-                        s += '</div>';
-                        s += '</div>';
-                        s += '<div class="star mb-2">';
-                        s += '' + response[i].price_range + '';
-                        s += '</div>';
-                        s += '<div class="buttonOpt w-100">';
-                        s += '<button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>';
-                        s += '</div>';
-                        s += '</div>';
-                        s += '</div>';
-                        // <option value="' + response[i].id + '">' + response[i].name + '</option>';
-                    }
-                    $("#breakfast_data").html(s);
-
-                    // Add click event listeners to the Choose buttons inside each option
-                    $("#select_2 .option .submit-btn").click(function() {
-                        // Get the data for the selected option
-                        var imageSrc = $(this).closest(".option").find(".img-fluid").attr("src");
-                        var title = $(this).closest(".option").find(".option-title").text();
-                        var price = $(this).closest(".option").find(".option-price").text();
-                        var location = $(this).closest(".option").find(".loc_name").val();
-
-                        // Update the selected option data display area
-                        updateSelectedOptionBreakfast(imageSrc, title, price, location);
-                        const cookiesObj = {
-                            name: 'Chocolate Chip',
-                            type: 'Soft and Chewy',
-                            quantity: 12
-                        };
-
-                        const cookiesJson = JSON.stringify(cookiesObj);
-
-                        const xhr = new XMLHttpRequest();
-                        xhr.open('POST', '<?php echo $theme_url; ?>/pdf_generator.php');
-                        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-                        xhr.onload = () => {
-                            if (xhr.status === 200) {
-                                console.log(xhr.responseText);
-                            } else {
-                                console.error('Error generating PDF');
-                            }
-                        };
-                        xhr.send(`cookiesJson=${encodeURIComponent(cookiesJson)}`);
-                    });
-                },
-                error: function(xhr, status, error) {
-                    console.log("Error: " + error);
-                }
-            });
+                });
+            },
+            error: function(xhr, status, error) {
+                console.log("Error: " + error);
+            }
         });
     });
 
@@ -490,13 +406,13 @@ $theme_url = get_template_directory_uri();
                     s += '<a href="">';
                     s += '<span class="option-title text-primary">' + response[i].name + '</span>';
                     s += '</a>';
-                    s += '<input type="hidden" class="title" name="title" value="' + response[i].name + '">';
-                    s += '<input type="hidden" class="address" name="address" value="' + response[i].address.address + '">';
-                    s += '<input type="hidden" class="image" name="image" value="' + response[i].featured_image.large + '">';
-                    s += '<input type="hidden" class="price" name="price" value="' + response[i].price_range + '">';
-                    s += '<input type="hidden" class="hotline" name="hotline" value="' + response[i].hotline + '">';
-                    s += '<input type="hidden" class="email" name="email" value="' + response[i].email + '">';
-                    s += '<input type="hidden" class="loc_name" name="loc_name" value="' + response[i].location + '">';
+                    s += '<input type="hidden" class="title" name="title'+id+'" value="' + response[i].name + '">';
+                    s += '<input type="hidden" class="address" name="address'+id+'" value="' + response[i].address.address + '">';
+                    s += '<input type="hidden" class="image" name="image'+id+'" value="' + response[i].featured_image.large + '">';
+                    s += '<input type="hidden" class="price" name="price'+id+'" value="' + response[i].price_range + '">';
+                    s += '<input type="hidden" class="hotline" name="hotline'+id+'" value="' + response[i].hotline + '">';
+                    s += '<input type="hidden" class="email" name="email'+id+'" value="' + response[i].email + '">';
+                    s += '<input type="hidden" class="loc_name" name="loc_name'+id+'" value="' + response[i].location + '">';
                     s += ' </div>';
                     s += '<div class="col text-end">';
                     s += '<span class="option-price text-end">' + response[i].price_range + '</span>';
@@ -541,7 +457,6 @@ $theme_url = get_template_directory_uri();
         }
     }
 </script>
-
 
 <?php get_footer();
 

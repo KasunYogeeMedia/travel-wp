@@ -1,5 +1,3 @@
-
-
 // for (let i = 0; i < data.length; i++) {
 //   const item = data[i];
 //   const index = i + 2; // to match the button IDs
@@ -40,45 +38,45 @@
 
 
 
-function updateSelectedOption3(imageSrc, title, price, location) {
-  document.getElementById("btn3_inside").style.backgroundImage =
-    "url('" + imageSrc + "')";
-  document.getElementById("btn3_inside").innerHTML = title;
-  document.getElementById("btn3_price").innerHTML = price;
-  document.getElementById("sel3").value = location;
-}
+// function updateSelectedOption3(imageSrc, title, price, location) {
+//   document.getElementById("btn3_inside").style.backgroundImage =
+//     "url('" + imageSrc + "')";
+//   document.getElementById("btn3_inside").innerHTML = title;
+//   document.getElementById("btn3_price").innerHTML = price;
+//   document.getElementById("sel3").value = location;
+// }
 
-function updateSelectedOption4(imageSrc, title, price, location) {
-  document.getElementById("btn4_inside").style.backgroundImage =
-    "url('" + imageSrc + "')";
-  document.getElementById("btn4_inside").innerHTML = title;
-  document.getElementById("btn4_price").innerHTML = price;
-  document.getElementById("sel4").value = location;
-}
+// function updateSelectedOption4(imageSrc, title, price, location) {
+//   document.getElementById("btn4_inside").style.backgroundImage =
+//     "url('" + imageSrc + "')";
+//   document.getElementById("btn4_inside").innerHTML = title;
+//   document.getElementById("btn4_price").innerHTML = price;
+//   document.getElementById("sel4").value = location;
+// }
 
-function updateSelectedOption5(imageSrc, title, price, location) {
-  document.getElementById("btn5_inside").style.backgroundImage =
-    "url('" + imageSrc + "')";
-  document.getElementById("btn5_inside").innerHTML = title;
-  document.getElementById("btn5_price").innerHTML = price;
-  document.getElementById("sel5").value = location;
-}
+// function updateSelectedOption5(imageSrc, title, price, location) {
+//   document.getElementById("btn5_inside").style.backgroundImage =
+//     "url('" + imageSrc + "')";
+//   document.getElementById("btn5_inside").innerHTML = title;
+//   document.getElementById("btn5_price").innerHTML = price;
+//   document.getElementById("sel5").value = location;
+// }
 
-function updateSelectedOption6(imageSrc, title, price, location) {
-  document.getElementById("btn6_inside").style.backgroundImage =
-    "url('" + imageSrc + "')";
-  document.getElementById("btn6_inside").innerHTML = title;
-  document.getElementById("btn6_price").innerHTML = price;
-  document.getElementById("sel6").value = location;
-}
+// function updateSelectedOption6(imageSrc, title, price, location) {
+//   document.getElementById("btn6_inside").style.backgroundImage =
+//     "url('" + imageSrc + "')";
+//   document.getElementById("btn6_inside").innerHTML = title;
+//   document.getElementById("btn6_price").innerHTML = price;
+//   document.getElementById("sel6").value = location;
+// }
 
-function updateSelectedOption7(imageSrc, title, price, location) {
-  document.getElementById("btn7_inside").style.backgroundImage =
-    "url('" + imageSrc + "')";
-  document.getElementById("btn7_inside").innerHTML = title;
-  document.getElementById("btn7_price").innerHTML = price;
-  document.getElementById("sel7").value = location;
-}
+// function updateSelectedOption7(imageSrc, title, price, location) {
+//   document.getElementById("btn7_inside").style.backgroundImage =
+//     "url('" + imageSrc + "')";
+//   document.getElementById("btn7_inside").innerHTML = title;
+//   document.getElementById("btn7_price").innerHTML = price;
+//   document.getElementById("sel7").value = location;
+// }
 
 // Step form scripts
 var currentTab = 0; // Current tab is set to be the first tab (0)
@@ -166,60 +164,38 @@ function nextPrev(n) {
   var x = document.getElementsByClassName("tab");
   // Exit the function if any field in the current tab is invalid:
   // if (n == 1 && !validateForm()) return false;
-
-  // Get all form data as an object
-  var formData = {};
-
-  var inputs = document.querySelectorAll("input, select, textarea");
-  for (var i = 0; i < inputs.length; i++) {
-    var name = inputs[i].name;
-    var value = inputs[i].value;
-
-    // Check if property already exists in formData object
-    if (formData[name]) {
-      // If property already exists, check if it's an array
-      if (Array.isArray(formData[name])) {
-        // If it's an array, add the value to the array
-        formData[name].push(value);
-      } else {
-        // If it's not an array, convert the property value to an array
-        // and add the value to the array
-        formData[name] = [formData[name], value];
-      }
-    } else {
-      // If property doesn't exist, set the value as the property value
-      formData[name] = value;
-    }
-  }
-
-  // Convert form data to JSON string
-  var jsonData = JSON.stringify(formData);
-
-  // Log the JSON data to the console
-  console.log(jsonData.optradio);
-
   // Hide the current tab:
   x[currentTab].style.display = "none";
   // Increase or decrease the current tab by 1:
   currentTab = currentTab + n;
   // if you have reached the end of the form...
   if (currentTab >= x.length) {
-    //... set the form action to the URL you want to submit the form data to:
-    // document.getElementById("regForm").action = "http://travel-wp.test/form-3/";
-    // // ... add a hidden input to the form with the JSON data...
-    // var input = document.createElement("input");
-    // input.type = "hidden";
-    // input.name = "json_data";
-    // input.value = jsonData;
-    // document.getElementById("regForm").appendChild(input);
-    // // ... submit the form:
+    // ... get form data as JSON:
+    const formData = {};
+    const inputs = document.querySelectorAll("input, select, textarea");
+    for (let i = 0; i < inputs.length; i++) {
+      const input = inputs[i];
+      if (input.name == 's' || input.name == 'optradio' || input.name == ''|| input.name == 'json_data'|| input.name == 'permalink'|| input.name == '__phash'|| input.name == 'wpdm_login[log]'|| input.name == 'wpdm_login[pwd]'|| input.name == 'rememberme'|| input.name == 'redirect_to') {
+       // formData[input.name] = input.value;
+      }else{
+        formData[input.name] = input.value;
+      }
+    }
+    const jsonData = JSON.stringify(formData);
+    // ... set the form action to the URL you want to submit the form data to:
+    document.getElementById("regForm").action = "http://travel-wp.test/form-3/";
+    // ... submit the form:
+    //document.getElementById("regForm").submit();
+
+    // ... set the form action to the URL you want to submit the form data to:
+    // document.getElementById("regForm").action = "http://travel-wp.test/form-2/";
+    // ... submit the form:
     // document.getElementById("regForm").submit();
     return false;
   }
   // Otherwise, display the correct tab:
   showTab(currentTab);
 }
-
 
 
 function validateForm() {
