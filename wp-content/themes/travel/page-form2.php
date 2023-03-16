@@ -19,254 +19,254 @@ get_header();
 <div class="form_sec form-2 pt-5">
     <form id="regForm" method="POST" action="http://travel-wp.test/form-2/">
 
-        <?php
-        $x = 1;
+            <?php
+            $x = 1;
 
-        while ($x <= $_SESSION['datediff']) { ?>
-            <div class="tab">
-                <div class="container-fluid pt-5">
-                    <div class="ttle py-5 border-bottom">
-                        <div class="row">
-                            <div class="col-md-4 form-2-tit pe-0 pe-sm-5">
-                                <h2 class="form_title text-light fw-bold text-lg mb-1">
-                                    Day <?php echo $x; ?>.
-                                </h2>
-                                <span class="text-light sub_head">20th of Feb 2023</span>
-                            </div>
-
-                            <div class="col-md-5 mt-4 mt-md-0">
-                                <div class="input-group mb-2">
-                                    <input class="form-control form-control-lg border-end-0 border px-5 py-3" type="search" placeholder="Where you want to go?" id="example-search-input">
-                                    <span class="input-group-append">
-                                        <button class="btn btn-lg bg-white border-start-0 border ms-n5 rounded-0 rounded-end mt-0 py-3" type="button">
-                                            <i class="fa fa-search fa-2x pt-1"></i>
-                                        </button>
-                                    </span>
+            while ($x <= $_SESSION['datediff']) { ?>
+                <div class="tab">
+                    <div class="container-fluid pt-5">
+                        <div class="ttle py-5 border-bottom">
+                            <div class="row">
+                                <div class="col-md-4 form-2-tit pe-0 pe-sm-5">
+                                    <h2 class="form_title text-light fw-bold text-lg mb-1">
+                                        Day <?php echo $x; ?>.
+                                    </h2>
+                                    <span class="text-light sub_head">20th of Feb 2023</span>
                                 </div>
-                                <span class="text-light sub_head">*If you change this, you will need to recreate all below
-                                    details </span>
-                            </div>
-                            <div class="col-md-3 mt-4 mt-md-0 lst_sec">
 
+                                <div class="col-md-5 mt-4 mt-md-0">
+                                    <div class="input-group mb-2">
+                                        <input class="form-control form-control-lg border-end-0 border px-5 py-3" type="search" placeholder="Where you want to go?" id="example-search-input">
+                                        <span class="input-group-append">
+                                            <button class="btn btn-lg bg-white border-start-0 border ms-n5 rounded-0 rounded-end mt-0 py-3" type="button">
+                                                <i class="fa fa-search fa-2x pt-1"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <span class="text-light sub_head">*If you change this, you will need to recreate all below
+                                        details </span>
+                                </div>
+                                <div class="col-md-3 mt-4 mt-md-0 lst_sec">
+
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="container sing_form_sec">
-                    <div class="choose_sec py-5 position-relative">
-                        <!-- Choose your stay -->
-                        <div id="select_1" class="form-check">
-                            <input type="checkbox" id="sel1" class="form-check-input" name="optradio">
-                            <label class="form-check-label" for="stay">Choose Your Stay</label>
-                            <div class="ch_btn">
-                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal1<?php echo $x; ?>" id="1" onClick="selectOpt(this.id);">
-                                    <div id="btn1_inside" class="btn_inside text-center">
-                                        choose now <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
-                                    </div>
-                                    <input type="hidden" id="btn1_price">
-                                </button>
-                                <!-- Modal -->
-                                <div class="modal fade" id="Modal1<?php echo $x; ?>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div id="myImageSelect" class="p-2 p-sm-5">
-                                                <h2 class="mb-4">Choose Hotel</h2>
-                                                <div class="row" id='select_data1'>
+                    <div class="container sing_form_sec">
+                        <div class="choose_sec py-5 position-relative">
+                            <!-- Choose your stay -->
+                            <div id="select_1" class="form-check">
+                                <input type="checkbox" id="sel1" class="form-check-input" name="optradio">
+                                <label class="form-check-label" for="stay">Choose Your Stay</label>
+                                <div class="ch_btn">
+                                    <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal1<?php echo $x; ?>" id="1" onClick="selectOpt(this.id);">
+                                        <div id="btn1_inside" class="btn_inside text-center">
+                                            choose now <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                        </div>
+                                        <input type="hidden" id="btn1_price">
+                                    </button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="Modal1<?php echo $x; ?>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div id="myImageSelect" class="p-2 p-sm-5">
+                                                    <h2 class="mb-4">Choose Hotel</h2>
+                                                    <div class="row" id='select_data1'>
 
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Breakfast -->
-                        <div id="select_2" class="form-check">
-                            <input type="checkbox" id="sel2" class="form-check-input" name="optradio">
-                            <label class="form-check-label" for="breakfast">Breakfast</label>
-                            <div class="ch_btn">
-                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal2<?php echo $x; ?>" id="2" onClick="selectOpt(this.id);">
-                                    <div id="btn2_inside" class="btn_inside text-center">
-                                        a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
-                                    </div>
-                                    <input type="hidden" id="btn2_price">
-                                </button>
-                                <div class="modal fade" id="Modal2<?php echo $x; ?>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div id="myImageSelect" class="p-2 p-sm-5">
-                                                <h2 class="mb-4">Choose Hotel</h2>
-                                                <div class="row" id="select_data2">
+                            <!-- Breakfast -->
+                            <div id="select_2" class="form-check">
+                                <input type="checkbox" id="sel2" class="form-check-input" name="optradio">
+                                <label class="form-check-label" for="breakfast">Breakfast</label>
+                                <div class="ch_btn">
+                                    <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal2<?php echo $x; ?>" id="2" onClick="selectOpt(this.id);">
+                                        <div id="btn2_inside" class="btn_inside text-center">
+                                            a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                        </div>
+                                        <input type="hidden" id="btn2_price">
+                                    </button>
+                                    <div class="modal fade" id="Modal2<?php echo $x; ?>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div id="myImageSelect" class="p-2 p-sm-5">
+                                                    <h2 class="mb-4">Choose Breakfast</h2>
+                                                    <div class="row" id="select_data2">
 
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Morning Excursions -->
-                        <div id="select_3" class="form-check">
-                            <input type="checkbox" id="sel3" class="form-check-input" name="optradio">
-                            <label class="form-check-label" for="morning">Morning Excursions</label>
-                            <div class="ch_btn">
-                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal3<?php echo $x; ?>" id="3" onClick="selectOpt(this.id);">
-                                    <div id="btn3_inside" class="btn_inside text-center">
-                                        Choose <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
-                                    </div>
-                                    <input type="hidden" id="btn3_price">
-                                </button>
-                                <!-- Modal -->
-                                <div class="modal fade" id="Modal3<?php echo $x; ?>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div id="myImageSelect" class="p-2 p-sm-5">
-                                                <h2 class="mb-4">Choose Hotel</h2>
-                                                <div class="row" id="select_data3">
+                            <!-- Morning Excursions -->
+                            <div id="select_3" class="form-check">
+                                <input type="checkbox" id="sel3" class="form-check-input" name="optradio">
+                                <label class="form-check-label" for="morning">Morning Excursions</label>
+                                <div class="ch_btn">
+                                    <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal3<?php echo $x; ?>" id="3" onClick="selectOpt(this.id);">
+                                        <div id="btn3_inside" class="btn_inside text-center">
+                                            Choose <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                        </div>
+                                        <input type="hidden" id="btn3_price">
+                                    </button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="Modal3<?php echo $x; ?>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div id="myImageSelect" class="p-2 p-sm-5">
+                                                    <h2 class="mb-4">Choose Morning Excursions</h2>
+                                                    <div class="row" id="select_data3">
 
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <button type="button" class="addBtn" data-bs-toggle="modal" data-bs-target="#Modal3" id="myButton1">Add another <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i></button>
+
                                 </div>
-                                <button type="button" class="addBtn" data-bs-toggle="modal" data-bs-target="#Modal3" id="myButton1">Add another <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i></button>
-
                             </div>
-                        </div>
-                        <!-- Lunch -->
-                        <div id="select_4" class="form-check">
-                            <input type="checkbox" id="sel4" class="form-check-input" name="optradio">
-                            <label class="form-check-label" for="breakfast">Lunch</label>
-                            <div class="ch_btn">
-                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal4<?php echo $x; ?>" id="4" onClick="selectOpt(this.id);">
-                                    <div id="btn4_inside" class="btn_inside text-center">
-                                        a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
-                                    </div>
-                                    <input type="hidden" id="btn4_price">
-                                </button>
-                                <!-- Modal -->
-                                <div class="modal fade" id="Modal4<?php echo $x; ?>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div id="myImageSelect" class="p-2 p-sm-5">
-                                                <h2 class="mb-4">Choose Hotel</h2>
-                                                <div class="row" id="select_data4">
-
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
-                                            </div>
+                            <!-- Lunch -->
+                            <div id="select_4" class="form-check">
+                                <input type="checkbox" id="sel4" class="form-check-input" name="optradio">
+                                <label class="form-check-label" for="breakfast">Lunch</label>
+                                <div class="ch_btn">
+                                    <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal4<?php echo $x; ?>" id="4" onClick="selectOpt(this.id);">
+                                        <div id="btn4_inside" class="btn_inside text-center">
+                                            a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Evening Excursions -->
-                        <div id="select_5" class="form-check">
-                            <input type="checkbox" class="form-check-input" id="sel5" name="optradio">
-                            <label class="form-check-label" for="evening">Evening Excursions</label>
-                            <div class="ch_btn">
-                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal5<?php echo $x; ?>" id="5" onClick="selectOpt(this.id);">
-                                    <div id="btn5_inside" class="btn_inside text-center">
-                                        Choose <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
-                                    </div>
-                                    <input type="hidden" id="btn5_price">
-                                </button>
-                                <!-- Modal -->
-                                <div class="modal fade" id="Modal5<?php echo $x; ?>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div id="myImageSelect" class="p-2 p-sm-5">
-                                                <h2 class="mb-4">Choose Hotel</h2>
-                                                <div class="row" id="select_data5">
+                                        <input type="hidden" id="btn4_price">
+                                    </button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="Modal4<?php echo $x; ?>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div id="myImageSelect" class="p-2 p-sm-5">
+                                                    <h2 class="mb-4">Choose Lunch</h2>
+                                                    <div class="row" id="select_data4">
 
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Dinner -->
-                        <div id="select_6" class="form-check">
-                            <input type="checkbox" class="form-check-input" id="sel6" name="optradio">
-                            <label class="form-check-label" for="dinner">Dinner</label>
-                            <div class="ch_btn">
-                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal6<?php echo $x; ?>" id="6" onClick="selectOpt(this.id);">
-                                    <div id="btn6_inside" class="btn_inside text-center">
-                                        a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
-                                    </div>
-                                    <input type="hidden" id="btn6_price">
-                                </button>
-                                <!-- Modal -->
-                                <div class="modal fade" id="Modal6<?php echo $x; ?>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div id="myImageSelect" class="p-2 p-sm-5">
-                                                <h2 class="mb-4">Choose Hotel</h2>
-                                                <div class="row" id="select_data6">
+                            <!-- Evening Excursions -->
+                            <div id="select_5" class="form-check">
+                                <input type="checkbox" class="form-check-input" id="sel5" name="optradio">
+                                <label class="form-check-label" for="evening">Evening Excursions</label>
+                                <div class="ch_btn">
+                                    <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal5<?php echo $x; ?>" id="5" onClick="selectOpt(this.id);">
+                                        <div id="btn5_inside" class="btn_inside text-center">
+                                            Choose <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                        </div>
+                                        <input type="hidden" id="btn5_price">
+                                    </button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="Modal5<?php echo $x; ?>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div id="myImageSelect" class="p-2 p-sm-5">
+                                                    <h2 class="mb-4">Choose Evening Excursions</h2>
+                                                    <div class="row" id="select_data5">
 
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Night Life -->
-                        <div id="select_7" class="form-check">
-                            <input type="checkbox" class="form-check-input" id="sel7" name="optradio">
-                            <label class="form-check-label" for="night">Night Life</label>
-                            <div class="ch_btn">
-                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal7<?php echo $x; ?>" id="7" onClick="selectOpt(this.id);">
-                                    <div id="btn7_inside" class="btn_inside text-center">
-                                        Choose <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
-                                    </div>
-                                    <input type="hidden" id="btn7_price">
-                                </button>
-                                <!-- Modal -->
-                                <div class="modal fade" id="Modal7<?php echo $x; ?>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div id="myImageSelect" class="p-2 p-sm-5">
-                                                <h2 class="mb-4">Choose Hotel</h2>
-                                                <div class="row" id="select_data7">
+                            <!-- Dinner -->
+                            <div id="select_6" class="form-check">
+                                <input type="checkbox" class="form-check-input" id="sel6" name="optradio">
+                                <label class="form-check-label" for="dinner">Dinner</label>
+                                <div class="ch_btn">
+                                    <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal6<?php echo $x; ?>" id="6" onClick="selectOpt(this.id);">
+                                        <div id="btn6_inside" class="btn_inside text-center">
+                                            a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                        </div>
+                                        <input type="hidden" id="btn6_price">
+                                    </button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="Modal6<?php echo $x; ?>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div id="myImageSelect" class="p-2 p-sm-5">
+                                                    <h2 class="mb-4">Choose Dinner</h2>
+                                                    <div class="row" id="select_data6">
 
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- Night Life -->
+                            <div id="select_7" class="form-check">
+                                <input type="checkbox" class="form-check-input" id="sel7" name="optradio">
+                                <label class="form-check-label" for="night">Night Life</label>
+                                <div class="ch_btn">
+                                    <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal7<?php echo $x; ?>" id="7" onClick="selectOpt(this.id);">
+                                        <div id="btn7_inside" class="btn_inside text-center">
+                                            Choose <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
+                                        </div>
+                                        <input type="hidden" id="btn7_price">
+                                    </button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="Modal7<?php echo $x; ?>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div id="myImageSelect" class="p-2 p-sm-5">
+                                                    <h2 class="mb-4">Choose Night Life</h2>
+                                                    <div class="row" id="select_data7">
+
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vl"></div>
                         </div>
-                        <div class="vl"></div>
                     </div>
                 </div>
-            </div>
 
-        <?php
-            $x++;
-        }
-        ?>
+            <?php
+                $x++;
+            }
+            ?>
 
 </div>
 
@@ -304,6 +304,7 @@ $theme_url = get_template_directory_uri();
 <!-- ////////////////Form2 page content End////////////////// -->
 <script>
     function selectOpt(id) {
+        console.log(id);
         var keyword = '';
         var action = '';
         if (id == 1) {
@@ -311,6 +312,13 @@ $theme_url = get_template_directory_uri();
             action = 'my_custom_ajax_endpoint';
         } else {
             keyword = $("#sel" + (id - 1)).val();
+            console.log(keyword);
+            if (keyword == 'on') {
+                keyword = $("#sel" + (id - 2)).val();
+            } else {
+                keyword = $("#sel" + (id - 1)).val();
+            }
+
             if (id % 2 == 0) {
                 action = 'my_custom_ajax_endpoint';
             } else {
@@ -326,6 +334,7 @@ $theme_url = get_template_directory_uri();
             },
             success: function(data) {
                 console.log(data);
+
                 let response = JSON.parse(data);
                 let s = '';
                 for (var i = 0; i < response.length; i++) {
