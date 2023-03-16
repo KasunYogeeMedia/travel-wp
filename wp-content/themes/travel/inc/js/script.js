@@ -151,21 +151,61 @@ function nextPrev(n) {
   var x = document.getElementsByClassName("tab");
   // Exit the function if any field in the current tab is invalid:
   // if (n == 1 && !validateForm()) return false;
+
+  // Get all form data as an object
+  var formData = {};
+
+  var inputs = document.querySelectorAll("input, select, textarea");
+  for (var i = 0; i < inputs.length; i++) {
+    var name = inputs[i].name;
+    var value = inputs[i].value;
+
+    // Check if property already exists in formData object
+    if (formData[name]) {
+      // If property already exists, check if it's an array
+      if (Array.isArray(formData[name])) {
+        // If it's an array, add the value to the array
+        formData[name].push(value);
+      } else {
+        // If it's not an array, convert the property value to an array
+        // and add the value to the array
+        formData[name] = [formData[name], value];
+      }
+    } else {
+      // If property doesn't exist, set the value as the property value
+      formData[name] = value;
+    }
+  }
+
+  // Convert form data to JSON string
+  var jsonData = JSON.stringify(formData);
+
+  // Log the JSON data to the console
+  console.log(jsonData.optradio);
+
   // Hide the current tab:
   x[currentTab].style.display = "none";
   // Increase or decrease the current tab by 1:
   currentTab = currentTab + n;
   // if you have reached the end of the form...
   if (currentTab >= x.length) {
-    // ... set the form action to the URL you want to submit the form data to:
-    document.getElementById("regForm").action = "http://travel-wp.test/form-2/";
-    // ... submit the form:
-    document.getElementById("regForm").submit();
+    //... set the form action to the URL you want to submit the form data to:
+    // document.getElementById("regForm").action = "http://travel-wp.test/form-3/";
+    // // ... add a hidden input to the form with the JSON data...
+    // var input = document.createElement("input");
+    // input.type = "hidden";
+    // input.name = "json_data";
+    // input.value = jsonData;
+    // document.getElementById("regForm").appendChild(input);
+    // // ... submit the form:
+    // document.getElementById("regForm").submit();
     return false;
   }
   // Otherwise, display the correct tab:
   showTab(currentTab);
 }
+
+
 
 function validateForm() {
   // This function deals with validation of the form fields
