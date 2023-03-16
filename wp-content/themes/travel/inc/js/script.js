@@ -1,3 +1,85 @@
+
+
+// for (let i = 0; i < data.length; i++) {
+//   const item = data[i];
+//   const index = i + 2; // to match the button IDs
+//   const btnInside = document.getElementById(`btn${index}_inside`);
+//   const btnPrice = document.getElementById(`btn${index}_price`);
+//   const sel = document.getElementById(`sel${index}`);
+
+//   btnInside.style.backgroundImage = `url('${item.img}')`;
+//   btnInside.innerHTML = item.title;
+//   btnPrice.innerHTML = item.price;
+//   sel.value = item.location;
+
+//   // call the corresponding updateSelectedOption function
+//   switch (index) {
+//     case 2:
+//       updateSelectedOption2(item.img, item.title, item.price, item.location);
+//       break;
+//     case 3:
+//       updateSelectedOption3(item.img, item.title, item.price, item.location);
+//       break;
+//     case 4:
+//       updateSelectedOption4(item.img, item.title, item.price, item.location);
+//       break;
+//     case 5:
+//       updateSelectedOption5(item.img, item.title, item.price, item.location);
+//       break;
+//     case 6:
+//       updateSelectedOption6(item.img, item.title, item.price, item.location);
+//       break;
+//     case 7:
+//       updateSelectedOption7(item.img, item.title, item.price, item.location);
+//       break;
+//     default:
+//       break;
+//   }
+// }
+
+
+
+
+function updateSelectedOption3(imageSrc, title, price, location) {
+  document.getElementById("btn3_inside").style.backgroundImage =
+    "url('" + imageSrc + "')";
+  document.getElementById("btn3_inside").innerHTML = title;
+  document.getElementById("btn3_price").innerHTML = price;
+  document.getElementById("sel3").value = location;
+}
+
+function updateSelectedOption4(imageSrc, title, price, location) {
+  document.getElementById("btn4_inside").style.backgroundImage =
+    "url('" + imageSrc + "')";
+  document.getElementById("btn4_inside").innerHTML = title;
+  document.getElementById("btn4_price").innerHTML = price;
+  document.getElementById("sel4").value = location;
+}
+
+function updateSelectedOption5(imageSrc, title, price, location) {
+  document.getElementById("btn5_inside").style.backgroundImage =
+    "url('" + imageSrc + "')";
+  document.getElementById("btn5_inside").innerHTML = title;
+  document.getElementById("btn5_price").innerHTML = price;
+  document.getElementById("sel5").value = location;
+}
+
+function updateSelectedOption6(imageSrc, title, price, location) {
+  document.getElementById("btn6_inside").style.backgroundImage =
+    "url('" + imageSrc + "')";
+  document.getElementById("btn6_inside").innerHTML = title;
+  document.getElementById("btn6_price").innerHTML = price;
+  document.getElementById("sel6").value = location;
+}
+
+function updateSelectedOption7(imageSrc, title, price, location) {
+  document.getElementById("btn7_inside").style.backgroundImage =
+    "url('" + imageSrc + "')";
+  document.getElementById("btn7_inside").innerHTML = title;
+  document.getElementById("btn7_price").innerHTML = price;
+  document.getElementById("sel7").value = location;
+}
+
 // Step form scripts
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
@@ -33,15 +115,33 @@ function nextPrev(n) {
   currentTab = currentTab + n;
   // if you have reached the end of the form...
   if (currentTab >= x.length) {
+    // ... get form data as JSON:
+    const formData = {};
+    const inputs = document.querySelectorAll("input, select, textarea");
+    for (let i = 0; i < inputs.length; i++) {
+      const input = inputs[i];
+      if (input.name == 's' || input.name == 'optradio' || input.name == ''|| input.name == 'json_data'|| input.name == 'permalink'|| input.name == '__phash'|| input.name == 'wpdm_login[log]'|| input.name == 'wpdm_login[pwd]'|| input.name == 'rememberme'|| input.name == 'redirect_to') {
+       // formData[input.name] = input.value;
+      }else{
+        formData[input.name] = input.value;
+      }
+    }
+    const jsonData = JSON.stringify(formData);
     // ... set the form action to the URL you want to submit the form data to:
-    document.getElementById("regForm").action = "http://travel-wp.test/form-2/";
+    document.getElementById("regForm").action = "http://travel-wp.test/form-3/";
     // ... submit the form:
-    document.getElementById("regForm").submit();
+    //document.getElementById("regForm").submit();
+
+    // ... set the form action to the URL you want to submit the form data to:
+    // document.getElementById("regForm").action = "http://travel-wp.test/form-2/";
+    // ... submit the form:
+    // document.getElementById("regForm").submit();
     return false;
   }
   // Otherwise, display the correct tab:
   showTab(currentTab);
 }
+
 
 function validateForm() {
   // This function deals with validation of the form fields

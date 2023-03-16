@@ -17,7 +17,7 @@ get_header();
 <!-- ////////////////Form2 page content Start////////////////// -->
 <!-- Form section -->
 <div class="form_sec form-2 pt-5">
-    <form id="regForm" method="POST" action="http://travel-wp.test/form-2/">
+    <form id="regForm" method="POST">
 
             <?php
             $x = 1;
@@ -346,13 +346,13 @@ $theme_url = get_template_directory_uri();
                     s += '<a href="">';
                     s += '<span class="option-title text-primary">' + response[i].name + '</span>';
                     s += '</a>';
-                    s += '<input type="hidden" class="title" name="title" value="' + response[i].name + '">';
-                    s += '<input type="hidden" class="address" name="address" value="' + response[i].address.address + '">';
-                    s += '<input type="hidden" class="image" name="image" value="' + response[i].featured_image.large + '">';
-                    s += '<input type="hidden" class="price" name="price" value="' + response[i].price_range + '">';
-                    s += '<input type="hidden" class="hotline" name="hotline" value="' + response[i].hotline + '">';
-                    s += '<input type="hidden" class="email" name="email" value="' + response[i].email + '">';
-                    s += '<input type="hidden" class="loc_name" name="loc_name" value="' + response[i].location + '">';
+                    s += '<input type="hidden" class="title" name="title'+id+'" value="' + response[i].name + '">';
+                    s += '<input type="hidden" class="address" name="address'+id+'" value="' + response[i].address.address + '">';
+                    s += '<input type="hidden" class="image" name="image'+id+'" value="' + response[i].featured_image.large + '">';
+                    s += '<input type="hidden" class="price" name="price'+id+'" value="' + response[i].price_range + '">';
+                    s += '<input type="hidden" class="hotline" name="hotline'+id+'" value="' + response[i].hotline + '">';
+                    s += '<input type="hidden" class="email" name="email'+id+'" value="' + response[i].email + '">';
+                    s += '<input type="hidden" class="loc_name" name="loc_name'+id+'" value="' + response[i].location + '">';
                     s += ' </div>';
                     s += '<div class="col text-end">';
                     s += '<span class="option-price text-end">' + response[i].price_range + '</span>';
