@@ -3491,6 +3491,10 @@ input.invalid {
 
 }
 
+/* global page template */
+.global_content{
+  margin-top: 20px;
+}
 
 /* Mobile responsive */
 

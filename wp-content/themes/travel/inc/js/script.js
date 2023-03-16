@@ -1,38 +1,54 @@
-// Custom script here
 
-// stay
-function updateSelectedOptionStay(imageSrc, title, price, location) {
-  document.getElementById("btn1_inside").style.backgroundImage =
-    "url('" + imageSrc + "')";
-  document.getElementById("btn1_inside").innerHTML = title;
-  document.getElementById("btn1_price").innerHTML = price;
-  document.getElementById("sel1").value = location;
-}
 
-function updateSelectedOptionBreakfast(imageSrc, title, price, location) {
-  document.getElementById("btn2_inside").style.backgroundImage =
-    "url('" + imageSrc + "')";
-  document.getElementById("btn2_inside").innerHTML = title;
-  document.getElementById("btn2_price").innerHTML = price;
-  document.getElementById("sel2").value = location;
-  var expireDate = new Date();
-  expireDate.setTime(expireDate.getTime() + 60 * 60 * 1000);
-  // Save the data to a cookie
-  document.cookie = "imageSrc=" + imageSrc + ";";
-  document.cookie = "title=" + title + ";";
-  document.cookie = "price=" + price + ";";
-  document.cookie = "location=" + location + ";";
-}
-// Morning
-function updateSelectedOptionMorning(imageSrc, title, price, location) {
+// for (let i = 0; i < data.length; i++) {
+//   const item = data[i];
+//   const index = i + 2; // to match the button IDs
+//   const btnInside = document.getElementById(`btn${index}_inside`);
+//   const btnPrice = document.getElementById(`btn${index}_price`);
+//   const sel = document.getElementById(`sel${index}`);
+
+//   btnInside.style.backgroundImage = `url('${item.img}')`;
+//   btnInside.innerHTML = item.title;
+//   btnPrice.innerHTML = item.price;
+//   sel.value = item.location;
+
+//   // call the corresponding updateSelectedOption function
+//   switch (index) {
+//     case 2:
+//       updateSelectedOption2(item.img, item.title, item.price, item.location);
+//       break;
+//     case 3:
+//       updateSelectedOption3(item.img, item.title, item.price, item.location);
+//       break;
+//     case 4:
+//       updateSelectedOption4(item.img, item.title, item.price, item.location);
+//       break;
+//     case 5:
+//       updateSelectedOption5(item.img, item.title, item.price, item.location);
+//       break;
+//     case 6:
+//       updateSelectedOption6(item.img, item.title, item.price, item.location);
+//       break;
+//     case 7:
+//       updateSelectedOption7(item.img, item.title, item.price, item.location);
+//       break;
+//     default:
+//       break;
+//   }
+// }
+
+
+
+
+function updateSelectedOption3(imageSrc, title, price, location) {
   document.getElementById("btn3_inside").style.backgroundImage =
     "url('" + imageSrc + "')";
   document.getElementById("btn3_inside").innerHTML = title;
   document.getElementById("btn3_price").innerHTML = price;
   document.getElementById("sel3").value = location;
 }
-// Lunch
-function updateSelectedOptionLunch(imageSrc, title, price, location) {
+
+function updateSelectedOption4(imageSrc, title, price, location) {
   document.getElementById("btn4_inside").style.backgroundImage =
     "url('" + imageSrc + "')";
   document.getElementById("btn4_inside").innerHTML = title;
@@ -40,24 +56,23 @@ function updateSelectedOptionLunch(imageSrc, title, price, location) {
   document.getElementById("sel4").value = location;
 }
 
-// Evening
-function updateSelectedOptionEvening(imageSrc, title, price, location) {
+function updateSelectedOption5(imageSrc, title, price, location) {
   document.getElementById("btn5_inside").style.backgroundImage =
     "url('" + imageSrc + "')";
   document.getElementById("btn5_inside").innerHTML = title;
   document.getElementById("btn5_price").innerHTML = price;
   document.getElementById("sel5").value = location;
 }
-// Dinner
-function updateSelectedOptionDinner(imageSrc, title, price, location) {
+
+function updateSelectedOption6(imageSrc, title, price, location) {
   document.getElementById("btn6_inside").style.backgroundImage =
     "url('" + imageSrc + "')";
   document.getElementById("btn6_inside").innerHTML = title;
   document.getElementById("btn6_price").innerHTML = price;
   document.getElementById("sel6").value = location;
 }
-// Night
-function updateSelectedOptionNight(imageSrc, title, price, location) {
+
+function updateSelectedOption7(imageSrc, title, price, location) {
   document.getElementById("btn7_inside").style.backgroundImage =
     "url('" + imageSrc + "')";
   document.getElementById("btn7_inside").innerHTML = title;

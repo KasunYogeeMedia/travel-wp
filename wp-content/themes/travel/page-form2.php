@@ -60,7 +60,7 @@ get_header();
                             <input type="checkbox" id="sel1" class="form-check-input" name="optradio">
                             <label class="form-check-label" for="stay">Choose Your Stay</label>
                             <div class="ch_btn">
-                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal1<?php echo $x; ?>">
+                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal1<?php echo $x; ?>" id="selectBtn1" >
                                     <div id="btn1_inside" class="btn_inside text-center">
                                         choose now <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                                     </div>
@@ -72,7 +72,7 @@ get_header();
                                         <div class="modal-content">
                                             <div id="myImageSelect" class="p-2 p-sm-5">
                                                 <h2 class="mb-4">Choose Hotel</h2>
-                                                <div class="row" id='stay_data'>
+                                                <div class="row" id='select_data1'>
 
                                                 </div>
                                             </div>
@@ -83,14 +83,13 @@ get_header();
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                         <!-- Breakfast -->
                         <div id="select_2" class="form-check">
                             <input type="checkbox" id="sel2" class="form-check-input" name="optradio">
                             <label class="form-check-label" for="breakfast">Breakfast</label>
                             <div class="ch_btn">
-                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal2<?php echo $x; ?>" id='breakfast'>
+                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal2<?php echo $x; ?>" id="2" onClick="selectOpt(this.id);">
                                     <div id="btn2_inside" class="btn_inside text-center">
                                         a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                                     </div>
@@ -101,7 +100,7 @@ get_header();
                                         <div class="modal-content">
                                             <div id="myImageSelect" class="p-2 p-sm-5">
                                                 <h2 class="mb-4">Choose Hotel</h2>
-                                                <div class="row" id="breakfast_data">
+                                                <div class="row" id="select_data2">
 
                                                 </div>
                                             </div>
@@ -118,7 +117,7 @@ get_header();
                             <input type="checkbox" id="sel3" class="form-check-input" name="optradio">
                             <label class="form-check-label" for="morning">Morning Excursions</label>
                             <div class="ch_btn">
-                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal3<?php echo $x; ?>" id='morning_excursions'>
+                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal3<?php echo $x; ?>" id="3" onClick="selectOpt(this.id);">
                                     <div id="btn3_inside" class="btn_inside text-center">
                                         Choose <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                                     </div>
@@ -130,7 +129,7 @@ get_header();
                                         <div class="modal-content">
                                             <div id="myImageSelect" class="p-2 p-sm-5">
                                                 <h2 class="mb-4">Choose Hotel</h2>
-                                                <div class="row" id="morning_excursions_data">
+                                                <div class="row" id="select_data3">
 
                                                 </div>
                                             </div>
@@ -140,26 +139,7 @@ get_header();
                                         </div>
                                     </div>
                                 </div>
-                                <!-- <button type="button" class="addBtn" data-bs-toggle="modal" data-bs-target="#Modal3" id="myButton1">Add another <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i></button> -->
-
-                                <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#Modal3<?php echo $x; ?>" id="add_another">Add Another</button>
-
-                                <div id="btn4" class="btn btn-default w-100 mb-3">
-                                    <div id="btn4_inside" class="row">
-                                        <div class="col-3">
-                                            <div class="btn-image"></div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="btn-details">
-                                                <div id="btn4_title"></div>
-                                                <div id="btn4_location"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-3">
-                                            <div id="btn4_price" class="btn-price"></div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <button type="button" class="addBtn" data-bs-toggle="modal" data-bs-target="#Modal3" id="myButton1">Add another <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i></button>
 
                             </div>
                         </div>
@@ -168,7 +148,7 @@ get_header();
                             <input type="checkbox" id="sel4" class="form-check-input" name="optradio">
                             <label class="form-check-label" for="breakfast">Lunch</label>
                             <div class="ch_btn">
-                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal4<?php echo $x; ?>" id='lunch_data'>
+                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal4<?php echo $x; ?>" id="4" onClick="selectOpt(this.id);">
                                     <div id="btn4_inside" class="btn_inside text-center">
                                         a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                                     </div>
@@ -180,7 +160,7 @@ get_header();
                                         <div class="modal-content">
                                             <div id="myImageSelect" class="p-2 p-sm-5">
                                                 <h2 class="mb-4">Choose Hotel</h2>
-                                                <div class="row" id="lunch">
+                                                <div class="row" id="select_data4">
 
                                                 </div>
                                             </div>
@@ -197,7 +177,7 @@ get_header();
                             <input type="checkbox" class="form-check-input" id="sel5" name="optradio">
                             <label class="form-check-label" for="evening">Evening Excursions</label>
                             <div class="ch_btn">
-                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal5<?php echo $x; ?>" id='evening_excursions'>
+                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal5<?php echo $x; ?>" id="5" onClick="selectOpt(this.id);">
                                     <div id="btn5_inside" class="btn_inside text-center">
                                         Choose <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                                     </div>
@@ -209,7 +189,7 @@ get_header();
                                         <div class="modal-content">
                                             <div id="myImageSelect" class="p-2 p-sm-5">
                                                 <h2 class="mb-4">Choose Hotel</h2>
-                                                <div class="row" id="evening">
+                                                <div class="row" id="select_data5">
 
                                                 </div>
                                             </div>
@@ -226,7 +206,7 @@ get_header();
                             <input type="checkbox" class="form-check-input" id="sel6" name="optradio">
                             <label class="form-check-label" for="dinner">Dinner</label>
                             <div class="ch_btn">
-                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal6<?php echo $x; ?>" id='dinner_data'>
+                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal6<?php echo $x; ?>" id="6" onClick="selectOpt(this.id);">
                                     <div id="btn6_inside" class="btn_inside text-center">
                                         a restaurant? <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                                     </div>
@@ -238,7 +218,7 @@ get_header();
                                         <div class="modal-content">
                                             <div id="myImageSelect" class="p-2 p-sm-5">
                                                 <h2 class="mb-4">Choose Hotel</h2>
-                                                <div class="row" id="dinner">
+                                                <div class="row" id="select_data6">
 
                                                 </div>
                                             </div>
@@ -255,7 +235,7 @@ get_header();
                             <input type="checkbox" class="form-check-input" id="sel7" name="optradio">
                             <label class="form-check-label" for="night">Night Life</label>
                             <div class="ch_btn">
-                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal7<?php echo $x; ?>" id='night_data'>
+                                <button type="button" class="btnCh" data-bs-toggle="modal" data-bs-target="#Modal7<?php echo $x; ?>" id="7" onClick="selectOpt(this.id);">
                                     <div id="btn7_inside" class="btn_inside text-center">
                                         Choose <i class="fa fa-2x fa-plus-circle" aria-hidden="true"></i>
                                     </div>
@@ -267,7 +247,7 @@ get_header();
                                         <div class="modal-content">
                                             <div id="myImageSelect" class="p-2 p-sm-5">
                                                 <h2 class="mb-4">Choose Hotel</h2>
-                                                <div class="row" id="night">
+                                                <div class="row" id="select_data7">
 
                                                 </div>
                                             </div>
@@ -328,60 +308,62 @@ $theme_url = get_template_directory_uri();
 
 <!-- ////////////////Form2 page content End////////////////// -->
 <script>
-    jQuery.ajax({
-        url: '<?php echo admin_url('admin-ajax.php'); ?>', // the PHP script that contains the function
-        type: 'POST',
-        data: {
-            action: 'my_custom_ajax_endpoint', // the name of the AJAX action
-            search_keyword: '<?php echo $_SESSION['keyword']; ?>' // the data to pass to the function
+    // Stay
+    $("#selectBtn1").click(function() {
+        $.ajax({
+            url: '<?php echo admin_url('admin-ajax.php'); ?>', // the PHP script that contains the function
+            type: 'POST',
+            data: {
+                action: 'my_custom_ajax_endpoint', // the name of the AJAX action
+                search_keyword: '<?php echo $_SESSION['keyword']; ?>' // the data to pass to the function
 
-        },
-        success: function(data) {
-            console.log(data);
-            let response = JSON.parse(data);
-            let s = '';
-            for (var i = 0; i < response.length; i++) {
-                s += '<div class="col-sm-6 col-md-4 col-lg-3 border p-3">';
-                s += '<div class="option">';
-                s += '<img class="img-fluid" src="' + response[i].featured_image.large + '" alt="Option 1">';
-                s += '<div class="caption row my-2">';
-                s += ' <div class="col">';
-                s += '<a href="">';
-                s += '<span class="option-title text-primary">' + response[i].name + '</span>';
-                s += '</a>';
-                s += '<input type="hidden" class="title" name="title" value="' + response[i].name + '">';
-                s += '<input type="hidden" class="address" name="address" value="' + response[i].address.address + '">';
-                s += '<input type="hidden" class="image" name="image" value="' + response[i].featured_image.large + '">';
-                s += '<input type="hidden" class="price" name="price" value="' + response[i].price_range + '">';
-                s += '<input type="hidden" class="hotline" name="hotline" value="' + response[i].hotline + '">';
-                s += '<input type="hidden" class="email" name="email" value="' + response[i].email + '">';
-                s += '<input type="hidden" class="loc_name" name="loc_name" value="' + response[i].location + '">';
-                s += ' </div>';
-                s += '<div class="col text-end">';
-                s += '<span class="option-price text-end">' + response[i].price_range + '</span>';
-                s += '</div>';
-                s += '</div>';
-                s += '<div class="star mb-2">';
-                s += '' + response[i].price_range + '';
-                s += '</div>';
-                s += '<div class="buttonOpt w-100">';
-                s += '<button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>';
-                s += '</div>';
-                s += '</div>';
-                s += '</div>';
+            },
+            success: function(data) {
+                console.log(data);
+                let response = JSON.parse(data);
+                let s = '';
+                for (var i = 0; i < response.length; i++) {
+                    s += '<div class="col-sm-6 col-md-4 col-lg-3 border p-3">';
+                    s += '<div class="option">';
+                    s += '<img class="img-fluid" src="' + response[i].featured_image.large + '" alt="Option 1">';
+                    s += '<div class="caption row my-2">';
+                    s += ' <div class="col">';
+                    s += '<a href="">';
+                    s += '<span class="option-title text-primary">' + response[i].name + '</span>';
+                    s += '</a>';
+                    s += '<input type="hidden" class="title" name="title" value="' + response[i].name + '">';
+                    s += '<input type="hidden" class="address" name="address" value="' + response[i].address.address + '">';
+                    s += '<input type="hidden" class="image" name="image" value="' + response[i].featured_image.large + '">';
+                    s += '<input type="hidden" class="price" name="price" value="' + response[i].price_range + '">';
+                    s += '<input type="hidden" class="hotline" name="hotline" value="' + response[i].hotline + '">';
+                    s += '<input type="hidden" class="email" name="email" value="' + response[i].email + '">';
+                    s += '<input type="hidden" class="loc_name" name="loc_name" value="' + response[i].location + '">';
+                    s += ' </div>';
+                    s += '<div class="col text-end">';
+                    s += '<span class="option-price text-end">' + response[i].price_range + '</span>';
+                    s += '</div>';
+                    s += '</div>';
+                    s += '<div class="star mb-2">';
+                    s += '' + response[i].price_range + '';
+                    s += '</div>';
+                    s += '<div class="buttonOpt w-100">';
+                    s += '<button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>';
+                    s += '</div>';
+                    s += '</div>';
+                    s += '</div>';
 
 
-                // <option value="' + response[i].id + '">' + response[i].name + '</option>';
-            }
-            $("#stay_data").html(s);
+                    // <option value="' + response[i].id + '">' + response[i].name + '</option>';
+                }
+                $("#select_data1").html(s);
 
-            // Add click event listeners to the Choose buttons inside each option
-            $("#select_1 .option .submit-btn").click(function() {
-                // Get the data for the selected option
-                var imageSrc = $(this).closest(".option").find(".img-fluid").attr("src");
-                var title = $(this).closest(".option").find(".option-title").text();
-                var price = $(this).closest(".option").find(".option-price").text();
-                var location = $(this).closest(".option").find(".loc_name").val();
+                // Add click event listeners to the Choose buttons inside each option
+                $(".submit-btn").click(function() {
+                    // Get the data for the selected option
+                    var imageSrc = $(this).closest(".option").find(".img-fluid").attr("src");
+                    var title = $(this).closest(".option").find(".option-title").text();
+                    var price = $(this).closest(".option").find(".option-price").text();
+                    var location = $(this).closest(".option").find(".loc_name").val();
 
                 // Update the selected option data display area
                 updateSelectedOptionStay(imageSrc, title, price, location);
@@ -449,6 +431,25 @@ $theme_url = get_template_directory_uri();
 
                         // Update the selected option data display area
                         updateSelectedOptionBreakfast(imageSrc, title, price, location);
+                        const cookiesObj = {
+                            name: 'Chocolate Chip',
+                            type: 'Soft and Chewy',
+                            quantity: 12
+                        };
+
+                        const cookiesJson = JSON.stringify(cookiesObj);
+
+                        const xhr = new XMLHttpRequest();
+                        xhr.open('POST', '<?php echo $theme_url; ?>/pdf_generator.php');
+                        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                        xhr.onload = () => {
+                            if (xhr.status === 200) {
+                                console.log(xhr.responseText);
+                            } else {
+                                console.error('Error generating PDF');
+                            }
+                        };
+                        xhr.send(`cookiesJson=${encodeURIComponent(cookiesJson)}`);
                     });
                 },
                 error: function(xhr, status, error) {
@@ -458,369 +459,87 @@ $theme_url = get_template_directory_uri();
         });
     });
 
-    $(document).ready(function() {
-        $("#morning_excursions").click(function() {
-            $.ajax({
-                url: "<?php echo admin_url('admin-ajax.php'); ?>", // Replace with your URL
-                type: "POST",
-                data: {
-                    action: 'my_custom_ajax_endpoint1',
-                    search_keyword: $("#sel2").val()
-                },
-                success: function(data) {
-                    console.log(data);
-                    let response = JSON.parse(data);
-                    let s = '';
-                    for (var i = 0; i < response.length; i++) {
-                        s += '<div class="col-sm-6 col-md-4 col-lg-3 border p-3">';
-                        s += '<div class="option">';
-                        s += '<img class="img-fluid" src="' + response[i].featured_image.large + '" alt="Option 1">';
-                        s += '<div class="caption row my-2">';
-                        s += ' <div class="col">';
-                        s += '<a href="">';
-                        s += '<span class="option-title text-primary">' + response[i].name + '</span>';
-                        s += '</a>';
-                        s += '<input type="hidden" class="title" name="title" value="' + response[i].name + '">';
-                        s += '<input type="hidden" class="address" name="address" value="' + response[i].address.address + '">';
-                        s += '<input type="hidden" class="image" name="image" value="' + response[i].featured_image.large + '">';
-                        s += '<input type="hidden" class="price" name="price" value="' + response[i].price_range + '">';
-                        s += '<input type="hidden" class="hotline" name="hotline" value="' + response[i].hotline + '">';
-                        s += '<input type="hidden" class="email" name="email" value="' + response[i].email + '">';
-                        s += '<input type="hidden" class="loc_name" name="loc_name" value="' + response[i].location + '">';
-                        s += ' </div>';
-                        s += '<div class="col text-end">';
-                        s += '<span class="option-price text-end">' + response[i].price_range + '</span>';
-                        s += '</div>';
-                        s += '</div>';
-                        s += '<div class="star mb-2">';
-                        s += '' + response[i].price_range + '';
-                        s += '</div>';
-                        s += '<div class="buttonOpt w-100">';
-                        s += '<button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>';
-                        s += '</div>';
-                        s += '</div>';
-                        s += '</div>';
-                        // <option value="' + response[i].id + '">' + response[i].name + '</option>';
-                    }
-                    $("#morning_excursions_data").html(s);
-                    // Add click event listeners to the Choose buttons inside each option
-                    $("#select_3 .option .submit-btn").click(function() {
-                        // Get the data for the selected option
-                        var imageSrc = $(this).closest(".option").find(".img-fluid").attr("src");
-                        var title = $(this).closest(".option").find(".option-title").text();
-                        var price = $(this).closest(".option").find(".option-price").text();
-                        var location = $(this).closest(".option").find(".loc_name").val();
+    function updateSelectedOption1(imageSrc, title, price, location) {
+        document.getElementById("btn1_inside").style.backgroundImage =
+            "url('" + imageSrc + "')";
+        document.getElementById("btn1_inside").innerHTML = title;
+        document.getElementById("btn1_price").innerHTML = price;
+        document.getElementById("sel1").value = location;
 
-                        // Update the selected option data display area
-                        updateSelectedOptionMorning(imageSrc, title, price, location);
-                    });
-                },
-                error: function(xhr, status, error) {
-                    console.log("Error: " + error);
+    }
+
+    function selectOpt(id) {
+        console.log(id);
+        $.ajax({
+            url: "<?php echo admin_url('admin-ajax.php'); ?>", // Replace with your URL
+            type: "POST",
+            data: {
+                action: 'my_custom_ajax_endpoint1',
+                search_keyword: $("#sel" + (id - 1)).val()
+            },
+            success: function(data) {
+                console.log(data);
+                let response = JSON.parse(data);
+                let s = '';
+                for (var i = 0; i < response.length; i++) {
+                    s += '<div class="col-sm-6 col-md-4 col-lg-3 border p-3">';
+                    s += '<div class="option">';
+                    s += '<img class="img-fluid" src="' + response[i].featured_image.large + '" alt="Option 1">';
+                    s += '<div class="caption row my-2">';
+                    s += ' <div class="col">';
+                    s += '<a href="">';
+                    s += '<span class="option-title text-primary">' + response[i].name + '</span>';
+                    s += '</a>';
+                    s += '<input type="hidden" class="title" name="title" value="' + response[i].name + '">';
+                    s += '<input type="hidden" class="address" name="address" value="' + response[i].address.address + '">';
+                    s += '<input type="hidden" class="image" name="image" value="' + response[i].featured_image.large + '">';
+                    s += '<input type="hidden" class="price" name="price" value="' + response[i].price_range + '">';
+                    s += '<input type="hidden" class="hotline" name="hotline" value="' + response[i].hotline + '">';
+                    s += '<input type="hidden" class="email" name="email" value="' + response[i].email + '">';
+                    s += '<input type="hidden" class="loc_name" name="loc_name" value="' + response[i].location + '">';
+                    s += ' </div>';
+                    s += '<div class="col text-end">';
+                    s += '<span class="option-price text-end">' + response[i].price_range + '</span>';
+                    s += '</div>';
+                    s += '</div>';
+                    s += '<div class="star mb-2">';
+                    s += '' + response[i].price_range + '';
+                    s += '</div>';
+                    s += '<div class="buttonOpt w-100">';
+                    s += '<button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>';
+                    s += '</div>';
+                    s += '</div>';
+                    s += '</div>';
+                    // <option value="' + response[i].id + '">' + response[i].name + '</option>';
                 }
-            });
+                $("#select_data" + id).html(s);
+
+                // Add click event listeners to the Choose buttons inside each option
+                $(".submit-btn").click(function() {
+                    // Get the data for the selected option
+                    var imageSrc = $(this).closest(".option").find(".img-fluid").attr("src");
+                    var title = $(this).closest(".option").find(".option-title").text();
+                    var price = $(this).closest(".option").find(".option-price").text();
+                    var location = $(this).closest(".option").find(".loc_name").val();
+
+                    // Update the selected option data display area
+                    updateSelectedOption(imageSrc, title, price, location);
+
+                });
+            },
+            error: function(xhr, status, error) {
+                console.log("Error: " + error);
+            }
         });
-    });
 
-
-    // new sec
-    $(document).ready(function() {
-        // ...
-        
-        // Add click event listener to "Add Another" button
-        $("#add_another").click(function() {
-            // Open the modal
-            $('#myModal').modal('show');
-
-            // Update the new section with the selected data
-            $("#select_3 .option .submit-btn").click(function() {
-                // Get the data for the selected option
-                var imageSrc = $(this).closest(".option").find(".img-fluid").attr("src");
-                var title = $(this).closest(".option").find(".option-title").text();
-                var price = $(this).closest(".option").find(".option-price").text();
-                var location = $(this).closest(".option").find(".loc_name").val();
-
-                // Update the new section with the selected data
-                $("#btn4_inside").html(
-                    '<div class="col-3">' +
-                    '<div class="btn-image" style="background-image:url(' + imageSrc + ')"></div>' +
-                    '</div>' +
-                    '<div class="col-6">' +
-                    '<div class="btn-details">' +
-                    '<div id="btn4_title">' + title + '</div>' +
-                    '<div id="btn4_location">' + location + '</div>' +
-                    '</div>' +
-                    '</div>' +
-                    '<div class="col-3">' +
-                    '<div id="btn4_price" class="btn-price">' + price + '</div>' +
-                    '</div>'
-                );
-            });
-        });
-    });
-
-    // new sec
-
-
-    // Lunch
-    $(document).ready(function() {
-        $("#lunch_data").click(function() {
-            $.ajax({
-                url: "<?php echo admin_url('admin-ajax.php'); ?>", // Replace with your URL
-                type: "POST",
-                data: {
-                    action: 'my_custom_ajax_endpoint',
-                    search_keyword: $("#sel3").val()
-                },
-                success: function(data) {
-                    console.log(data);
-                    let response = JSON.parse(data);
-                    let s = '';
-                    for (var i = 0; i < response.length; i++) {
-                        s += '<div class="col-sm-6 col-md-4 col-lg-3 border p-3">';
-                        s += '<div class="option">';
-                        s += '<img class="img-fluid" src="' + response[i].featured_image.large + '" alt="Option 1">';
-                        s += '<div class="caption row my-2">';
-                        s += ' <div class="col">';
-                        s += '<a href="">';
-                        s += '<span class="option-title text-primary">' + response[i].name + '</span>';
-                        s += '</a>';
-                        s += '<input type="hidden" class="title" name="title" value="' + response[i].name + '">';
-                        s += '<input type="hidden" class="address" name="address" value="' + response[i].address.address + '">';
-                        s += '<input type="hidden" class="image" name="image" value="' + response[i].featured_image.large + '">';
-                        s += '<input type="hidden" class="price" name="price" value="' + response[i].price_range + '">';
-                        s += '<input type="hidden" class="hotline" name="hotline" value="' + response[i].hotline + '">';
-                        s += '<input type="hidden" class="email" name="email" value="' + response[i].email + '">';
-                        s += '<input type="hidden" class="loc_name" name="loc_name" value="' + response[i].location + '">';
-                        s += ' </div>';
-                        s += '<div class="col text-end">';
-                        s += '<span class="option-price text-end">' + response[i].price_range + '</span>';
-                        s += '</div>';
-                        s += '</div>';
-                        s += '<div class="star mb-2">';
-                        s += '' + response[i].price_range + '';
-                        s += '</div>';
-                        s += '<div class="buttonOpt w-100">';
-                        s += '<button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>';
-                        s += '</div>';
-                        s += '</div>';
-                        s += '</div>';
-                        // <option value="' + response[i].id + '">' + response[i].name + '</option>';
-                    }
-                    $("#lunch").html(s);
-                    // Add click event listeners to the Choose buttons inside each option
-                    $("#select_4 .option .submit-btn").click(function() {
-                        // Get the data for the selected option
-                        var imageSrc = $(this).closest(".option").find(".img-fluid").attr("src");
-                        var title = $(this).closest(".option").find(".option-title").text();
-                        var price = $(this).closest(".option").find(".option-price").text();
-                        var location = $(this).closest(".option").find(".loc_name").val();
-
-                        // Update the selected option data display area
-                        updateSelectedOptionLunch(imageSrc, title, price, location);
-                    });
-                },
-                error: function(xhr, status, error) {
-                    console.log("Error: " + error);
-                }
-            });
-        });
-    });
-
-    // Evening Excursions
-    $(document).ready(function() {
-        $("#evening_excursions").click(function() {
-            $.ajax({
-                url: "<?php echo admin_url('admin-ajax.php'); ?>", // Replace with your URL
-                type: "POST",
-                data: {
-                    action: 'my_custom_ajax_endpoint1',
-                    search_keyword: $("#sel4").val()
-                },
-                success: function(data) {
-                    console.log(data);
-                    let response = JSON.parse(data);
-                    let s = '';
-                    for (var i = 0; i < response.length; i++) {
-                        s += '<div class="col-sm-6 col-md-4 col-lg-3 border p-3">';
-                        s += '<div class="option">';
-                        s += '<img class="img-fluid" src="' + response[i].featured_image.large + '" alt="Option 1">';
-                        s += '<div class="caption row my-2">';
-                        s += ' <div class="col">';
-                        s += '<a href="">';
-                        s += '<span class="option-title text-primary">' + response[i].name + '</span>';
-                        s += '</a>';
-                        s += '<input type="hidden" class="title" name="title" value="' + response[i].name + '">';
-                        s += '<input type="hidden" class="address" name="address" value="' + response[i].address.address + '">';
-                        s += '<input type="hidden" class="image" name="image" value="' + response[i].featured_image.large + '">';
-                        s += '<input type="hidden" class="price" name="price" value="' + response[i].price_range + '">';
-                        s += '<input type="hidden" class="hotline" name="hotline" value="' + response[i].hotline + '">';
-                        s += '<input type="hidden" class="email" name="email" value="' + response[i].email + '">';
-                        s += '<input type="hidden" class="loc_name" name="loc_name" value="' + response[i].location + '">';
-                        s += ' </div>';
-                        s += '<div class="col text-end">';
-                        s += '<span class="option-price text-end">' + response[i].price_range + '</span>';
-                        s += '</div>';
-                        s += '</div>';
-                        s += '<div class="star mb-2">';
-                        s += '' + response[i].price_range + '';
-                        s += '</div>';
-                        s += '<div class="buttonOpt w-100">';
-                        s += '<button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>';
-                        s += '</div>';
-                        s += '</div>';
-                        s += '</div>';
-                        // <option value="' + response[i].id + '">' + response[i].name + '</option>';
-                    }
-                    $("#evening").html(s);
-                    // Add click event listeners to the Choose buttons inside each option
-                    $("#select_5 .option .submit-btn").click(function() {
-                        // Get the data for the selected option
-                        var imageSrc = $(this).closest(".option").find(".img-fluid").attr("src");
-                        var title = $(this).closest(".option").find(".option-title").text();
-                        var price = $(this).closest(".option").find(".option-price").text();
-                        var location = $(this).closest(".option").find(".loc_name").val();
-
-                        // Update the selected option data display area
-                        updateSelectedOptionEvening(imageSrc, title, price, location);
-                    });
-                },
-                error: function(xhr, status, error) {
-                    console.log("Error: " + error);
-                }
-            });
-        });
-    });
-
-    // Dinner Excursions
-    $(document).ready(function() {
-        $("#dinner_data").click(function() {
-            $.ajax({
-                url: "<?php echo admin_url('admin-ajax.php'); ?>", // Replace with your URL
-                type: "POST",
-                data: {
-                    action: 'my_custom_ajax_endpoint',
-                    search_keyword: $("#sel5").val()
-                },
-                success: function(data) {
-                    console.log(data);
-                    let response = JSON.parse(data);
-                    let s = '';
-                    for (var i = 0; i < response.length; i++) {
-                        s += '<div class="col-sm-6 col-md-4 col-lg-3 border p-3">';
-                        s += '<div class="option">';
-                        s += '<img class="img-fluid" src="' + response[i].featured_image.large + '" alt="Option 1">';
-                        s += '<div class="caption row my-2">';
-                        s += ' <div class="col">';
-                        s += '<a href="">';
-                        s += '<span class="option-title text-primary">' + response[i].name + '</span>';
-                        s += '</a>';
-                        s += '<input type="hidden" class="title" name="title" value="' + response[i].name + '">';
-                        s += '<input type="hidden" class="address" name="address" value="' + response[i].address.address + '">';
-                        s += '<input type="hidden" class="image" name="image" value="' + response[i].featured_image.large + '">';
-                        s += '<input type="hidden" class="price" name="price" value="' + response[i].price_range + '">';
-                        s += '<input type="hidden" class="hotline" name="hotline" value="' + response[i].hotline + '">';
-                        s += '<input type="hidden" class="email" name="email" value="' + response[i].email + '">';
-                        s += '<input type="hidden" class="loc_name" name="loc_name" value="' + response[i].location + '">';
-                        s += ' </div>';
-                        s += '<div class="col text-end">';
-                        s += '<span class="option-price text-end">' + response[i].price_range + '</span>';
-                        s += '</div>';
-                        s += '</div>';
-                        s += '<div class="star mb-2">';
-                        s += '' + response[i].price_range + '';
-                        s += '</div>';
-                        s += '<div class="buttonOpt w-100">';
-                        s += '<button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>';
-                        s += '</div>';
-                        s += '</div>';
-                        s += '</div>';
-                        // <option value="' + response[i].id + '">' + response[i].name + '</option>';
-                    }
-                    $("#dinner").html(s);
-                    // Add click event listeners to the Choose buttons inside each option
-                    $("#select_6 .option .submit-btn").click(function() {
-                        // Get the data for the selected option
-                        var imageSrc = $(this).closest(".option").find(".img-fluid").attr("src");
-                        var title = $(this).closest(".option").find(".option-title").text();
-                        var price = $(this).closest(".option").find(".option-price").text();
-                        var location = $(this).closest(".option").find(".loc_name").val();
-
-                        // Update the selected option data display area
-                        updateSelectedOptionDinner(imageSrc, title, price, location);
-                    });
-                },
-                error: function(xhr, status, error) {
-                    console.log("Error: " + error);
-                }
-            });
-        });
-    });
-
-    // Night Excursions
-    $(document).ready(function() {
-        $("#night_data").click(function() {
-            $.ajax({
-                url: "<?php echo admin_url('admin-ajax.php'); ?>", // Replace with your URL
-                type: "POST",
-                data: {
-                    action: 'my_custom_ajax_endpoint1',
-                    search_keyword: $("#sel6").val()
-                },
-                success: function(data) {
-                    console.log(data);
-                    let response = JSON.parse(data);
-                    let s = '';
-                    for (var i = 0; i < response.length; i++) {
-                        s += '<div class="col-sm-6 col-md-4 col-lg-3 border p-3">';
-                        s += '<div class="option">';
-                        s += '<img class="img-fluid" src="' + response[i].featured_image.large + '" alt="Option 1">';
-                        s += '<div class="caption row my-2">';
-                        s += ' <div class="col">';
-                        s += '<a href="">';
-                        s += '<span class="option-title text-primary">' + response[i].name + '</span>';
-                        s += '</a>';
-                        s += '<input type="hidden" class="title" name="title" value="' + response[i].name + '">';
-                        s += '<input type="hidden" class="address" name="address" value="' + response[i].address.address + '">';
-                        s += '<input type="hidden" class="image" name="image" value="' + response[i].featured_image.large + '">';
-                        s += '<input type="hidden" class="price" name="price" value="' + response[i].price_range + '">';
-                        s += '<input type="hidden" class="hotline" name="hotline" value="' + response[i].hotline + '">';
-                        s += '<input type="hidden" class="email" name="email" value="' + response[i].email + '">';
-                        s += '<input type="hidden" class="loc_name" name="loc_name" value="' + response[i].location + '">';
-                        s += ' </div>';
-                        s += '<div class="col text-end">';
-                        s += '<span class="option-price text-end">' + response[i].price_range + '</span>';
-                        s += '</div>';
-                        s += '</div>';
-                        s += '<div class="star mb-2">';
-                        s += '' + response[i].price_range + '';
-                        s += '</div>';
-                        s += '<div class="buttonOpt w-100">';
-                        s += '<button type="button" class="submit-btn btn btn-default text-light w-100">Choose</button>';
-                        s += '</div>';
-                        s += '</div>';
-                        s += '</div>';
-                        // <option value="' + response[i].id + '">' + response[i].name + '</option>';
-                    }
-                    $("#night").html(s);
-                    // Add click event listeners to the Choose buttons inside each option
-                    $("#select_7 .option .submit-btn").click(function() {
-                        // Get the data for the selected option
-                        var imageSrc = $(this).closest(".option").find(".img-fluid").attr("src");
-                        var title = $(this).closest(".option").find(".option-title").text();
-                        var price = $(this).closest(".option").find(".option-price").text();
-                        var location = $(this).closest(".option").find(".loc_name").val();
-
-                        // Update the selected option data display area
-                        updateSelectedOptionNight(imageSrc, title, price, location);
-                    });
-                },
-                error: function(xhr, status, error) {
-                    console.log("Error: " + error);
-                }
-            });
-        });
-    });
+        function updateSelectedOption(imageSrc, title, price, location) {
+            document.getElementById("btn" + id + "_inside").style.backgroundImage =
+                "url('" + imageSrc + "')";
+            document.getElementById("btn" + id + "_inside").innerHTML = title;
+            document.getElementById("btn" + id + "_price").innerHTML = price;
+            document.getElementById("sel" + id).value = location;
+        }
+    }
 </script>
 
 
