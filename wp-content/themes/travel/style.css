@@ -3405,6 +3405,7 @@ img.travel-logo2 {
   background-repeat: no-repeat;
   background-position: center;
   line-height: 1.7;
+  min-width: 218px;
 }
 .form-1 .form-select {
   background-size: 16px 20px;
@@ -3495,7 +3496,17 @@ input.invalid {
 .global_content{
   margin-top: 20px;
 }
-
+.rmv_btn {
+	padding: 0;
+	background-color: #0000;
+	border: none;
+	margin-left: -14px;
+	position: absolute;
+  margin-top: -5px;
+}
+.rmv_btn .fa-minus-circle{
+  color: #fff;
+}
 /* Mobile responsive */
 
 @media screen and (max-width: 1200px) and (min-width: 991px) {
