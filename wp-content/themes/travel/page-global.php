@@ -3,10 +3,7 @@
 Template Name: Global
 */
 get_header();  ?>
-<?php
 
-
-?>
 
 
 <!-- ////////////////Global page content Start////////////////// -->
