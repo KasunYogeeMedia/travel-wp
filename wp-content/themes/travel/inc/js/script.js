@@ -142,17 +142,26 @@ function nextPrev(n) {
         formData[input.name] = input.value;
       }
     }
-    const jsonData = JSON.stringify(formData);
-    // ... set the form action to the URL you want to submit the form data to:
-    document.getElementById("regForm").action = "http://travel-wp.test/form-3/";
+      const jsonData = JSON.stringify(formData);
+      // Send an AJAX request to the API endpoint
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', 'https://ongoing.website/websites/travel-wp/api');
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          // Handle the response from the API if needed
+          console.log(xhr.responseText);
+               document.getElementById("regForm").action = "https://ongoing.website/websites/travel-wp/form-3/";
     // ... submit the form:
-    //document.getElementById("regForm").submit();
+        document.getElementById("regForm").submit();
+        } else {
+          // Handle the error if the request failed
+          console.error('Request failed.  Returned status of ' + xhr.status);
+        }
+      };
+      xhr.send(jsonData);
+      // ... set the form action to the URL you want to submit the form data to:
 
-    // ... set the form action to the URL you want to submit the form data to:
-    // document.getElementById("regForm").action = "http://travel-wp.test/form-2/";
-    // ... submit the form:
-    // document.getElementById("regForm").submit();
-    return false;
   }
   // Otherwise, display the correct tab:
   showTab(currentTab);
