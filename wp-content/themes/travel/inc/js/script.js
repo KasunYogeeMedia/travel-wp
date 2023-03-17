@@ -1,3 +1,18 @@
+// footer fit bottom function
+
+window.addEventListener('load', function() {
+  var bodyHeight = document.body.clientHeight;
+  var windowHeight = window.innerHeight;
+  var footer = document.getElementById('footer');
+  var footerHeight = footer.offsetHeight;
+
+  if (bodyHeight < windowHeight) {
+    var newFooterHeight = footerHeight + (windowHeight - bodyHeight);
+    // footer.style.height = newFooterHeight + 'px';
+    footer.style.position = 'absolute';
+    footer.style.bottom = '0';
+  }
+});
 
 
 // for (let i = 0; i < data.length; i++) {
@@ -264,3 +279,4 @@ $(document).ready(function () {
 
   // document ready
 });
+

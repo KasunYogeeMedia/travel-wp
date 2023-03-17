@@ -910,11 +910,11 @@ button.btn-new {
 .gallery-para {
   text-align: justify;
 }
-.log_reg{
+.log_reg {
+  margin-top: 60px;
   padding-top: 50px;
-  height: calc(100vh - 82.5px);
+  margin-bottom: 80px;
 }
-/*footer*/
 
 .footer-content p {
   text-align: center;
@@ -3481,34 +3481,46 @@ input.invalid {
   }
 }
 
-
 /* hide unwanted sections template default */
 #secondary {
-	display: none;
+  display: none;
 }
 
 /* Login Page styles */
-.w3eden .wpdmlogin{
-
+.w3eden .wpdmlogin {
 }
 
 /* global page template */
-.global_content{
+.global_content {
   margin-top: 60px;
+  padding-top: 50px;
+  margin-bottom: 80px;
 }
 .rmv_btn {
-	padding: 0;
-	background-color: #0000;
-	border: none;
-	margin-left: -14px;
-	position: absolute;
+  padding: 0;
+  background-color: #0000;
+  border: none;
+  margin-left: -14px;
+  position: absolute;
   margin-top: -5px;
 }
-.rmv_btn .fa-minus-circle{
+.rmv_btn .fa-minus-circle {
   color: #fff;
 }
-/* Mobile responsive */
+/* global page height */
 
+#footer {
+  width: 100%;
+}
+/* single blog page */
+.single-wpdmpro .comment-form-comment label {
+  display: block;
+}
+.single-wpdmpro .form-submit .submit {
+  background-color: #c1b086;
+  border-color: #c1b086;
+  padding: 10px 20px;
+}
 @media screen and (max-width: 1200px) and (min-width: 991px) {
   .contact-info {
     margin-top: 0;
@@ -3527,6 +3539,7 @@ input.invalid {
     border-color: #4ab678 !important;
   }
 }
+
 @media (max-width: 768px) {
   .contact-info {
     position: relative;
@@ -3561,5 +3574,8 @@ input.invalid {
   }
   .form_bt_sec {
     top: 380px;
+  }
+  .global_content {
+    padding-top: 20px;
   }
 }

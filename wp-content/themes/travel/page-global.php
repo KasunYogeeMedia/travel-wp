@@ -12,7 +12,7 @@ get_header();  ?>
 <!-- ////////////////Global page content Start////////////////// -->
 
 <div class="global_content">
-    <div class="container-fluid">
+    <div class="container">
         <?php the_content() ?>
     </div>
 </div>

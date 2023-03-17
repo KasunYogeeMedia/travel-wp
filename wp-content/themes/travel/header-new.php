@@ -54,4 +54,48 @@
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 
-	
+	<!-- header section start -->
+	<header>
+		<div class="container-fluid">
+			<nav class="navbar navbar-expand-lg navbar-light px-5 fixed-top">
+				<a class="navbar-brand" href="<?php echo get_home_url(); ?>"><img class="travel-logo" src="<?php echo get_template_directory_uri(); ?>/inc/img/logo.png" alt=""></a>
+				<button class="navbar-toggler bg-light" id="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="main-menu">
+
+					<div class="social-media-icon ms-auto">
+						<ul class="navbar-nav sm-icons social-icons pt-md-22 px-md-2 d-inline">
+
+							<?php
+							$fb = get_field('facebook_link', 'option');
+							?>
+							<?php if ($fb) : ?>
+								<div class="social-media">
+									<a class="nav-link" href="<?php echo $fb; ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
+								</div>
+							<?php endif; ?>
+							<?php
+							$insta = get_field('instagram_link', 'option');
+							?>
+							<?php if ($insta) : ?>
+								<div class="social-media">
+									<a class="nav-link" href="<?php echo $insta; ?>" target="_blank"><i class="fab fa-instagram"></i></a>
+								</div>
+							<?php endif; ?>
+							<?php
+							$twit = get_field('twitter_link', 'option');
+							?>
+							<?php if ($twit) : ?>
+								<div class="social-media">
+									<a class="nav-link" href="<?php echo $twit; ?>" target="_blank"><i class="fab fa-twitter"></i></a>
+								</div>
+							<?php endif; ?>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		
+		</div>
+	</header>
+	<!-- header section end -->
