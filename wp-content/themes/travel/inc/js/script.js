@@ -130,7 +130,7 @@ function nextPrev(n) {
       const jsonData = JSON.stringify(formData);
       // Send an AJAX request to the API endpoint
       const xhr = new XMLHttpRequest();
-      xhr.open('POST', 'http://travel-wp.test/api');
+      xhr.open('POST', 'https://ongoing.website/websites/travel-wp/api');
       xhr.setRequestHeader('Content-Type', 'application/json');
       xhr.onload = function() {
         if (xhr.status === 200) {
@@ -143,7 +143,7 @@ function nextPrev(n) {
       };
       xhr.send(jsonData);
       // ... set the form action to the URL you want to submit the form data to:
-     document.getElementById("regForm").action = "http://travel-wp.test/form-3/";
+     document.getElementById("regForm").action = "https://ongoing.website/websites/travel-wp/form-3/";
     // ... submit the form:
     document.getElementById("regForm").submit();
   }
