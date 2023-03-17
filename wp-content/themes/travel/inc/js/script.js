@@ -136,6 +136,9 @@ function nextPrev(n) {
         if (xhr.status === 200) {
           // Handle the response from the API if needed
           console.log(xhr.responseText);
+               document.getElementById("regForm").action = "https://ongoing.website/websites/travel-wp/form-3/";
+    // ... submit the form:
+        document.getElementById("regForm").submit();
         } else {
           // Handle the error if the request failed
           console.error('Request failed.  Returned status of ' + xhr.status);
@@ -143,9 +146,7 @@ function nextPrev(n) {
       };
       xhr.send(jsonData);
       // ... set the form action to the URL you want to submit the form data to:
-     document.getElementById("regForm").action = "https://ongoing.website/websites/travel-wp/form-3/";
-    // ... submit the form:
-    document.getElementById("regForm").submit();
+
   }
   // Otherwise, display the correct tab:
   showTab(currentTab);
