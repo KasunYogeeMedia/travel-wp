@@ -1,34 +1,24 @@
 <?php
-/*
-Template Name: API
-*/
-// Read the JSON data from the request body
 require_once('tcpdf/tcpdf.php');
-$jsonData = file_get_contents('php://input');
 
-// Parse the JSON data into a PHP array
-$data = json_decode($jsonData, true);
+// Create new PDF document
+$pdf = new TCPDF('P', 'mm', 'A4', true, 'UTF-8', false);
 
-
-$pdf = new TCPDF();
-$pdf->SetAutoPageBreak(false);
+// Add a page to the PDF document
 $pdf->AddPage();
 
 // Set the font and font size
-$pdf->SetFont('helvetica', 'B', 16);
+$pdf->SetFont('helvetica', '', 12);
 
+// Get the form data from a POST request
+$formData = $_POST['formData'];
 
-
-// Loop through the form data and create a PDF file
-foreach ($data as $key => $value) {
-  $pdf->Cell(40, 10, $key, 1);
-  $pdf->Cell(0, 10, $value, 1);
-  $pdf->Ln();
+// Loop through the form data and add to PDF document
+foreach ($formData as $key => $value) {
+    $pdf->Cell(0, 10, $key . ': ' . $value, 0, 1);
 }
 
-// Output the PDF to the browser
-$path = '/wp-content/uploads/travel_plane.pdf';
+// Save the PDF document to a file
+$pdf->Output('form-data.pdf', 'F');
 
-// Output the PDF to the specified path
-$pdf->Output($path, 'F');
- ?>
+?>

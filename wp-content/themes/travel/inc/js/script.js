@@ -1,5 +1,4 @@
 
-
 // for (let i = 0; i < data.length; i++) {
 //   const item = data[i];
 //   const index = i + 2; // to match the button IDs
@@ -130,15 +129,16 @@ function nextPrev(n) {
       const jsonData = JSON.stringify(formData);
       // Send an AJAX request to the API endpoint
       const xhr = new XMLHttpRequest();
-      xhr.open('POST', 'https://ongoing.website/websites/travel-wp/api');
+      xhr.open('POST', 'http://travel-wp.test/form-3/');
       xhr.setRequestHeader('Content-Type', 'application/json');
       xhr.onload = function() {
         if (xhr.status === 200) {
           // Handle the response from the API if needed
           console.log(xhr.responseText);
-               document.getElementById("regForm").action = "https://ongoing.website/websites/travel-wp/form-3/";
-    // ... submit the form:
-        document.getElementById("regForm").submit();
+
+          document.getElementById("regForm").action = "http://travel-wp.test/form-3/";
+      // ... submit the form:
+          document.getElementById("regForm").submit();
         } else {
           // Handle the error if the request failed
           console.error('Request failed.  Returned status of ' + xhr.status);
@@ -273,3 +273,4 @@ $(document).ready(function () {
 
   // document ready
 });
+
