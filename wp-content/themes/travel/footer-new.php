@@ -12,17 +12,19 @@
 
 ?>
 
-<section class="footer-section">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="footer-content text-center">
-				<p class="mb-0">copyrights @ <script>
-						document.write(new Date().getFullYear())
-					</script> Perfect Itinerary. All rights reserved</p>
+<footer id="footer">
+	<section class="footer-section">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="footer-content text-center">
+					<p class="mb-0">copyrights @ <script>
+							document.write(new Date().getFullYear())
+						</script> Perfect Itinerary. All rights reserved</p>
+				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
+</footer>
 
 <!-- Footer End -->
 

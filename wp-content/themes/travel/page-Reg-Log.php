@@ -6,7 +6,9 @@ get_header('new');  ?>
 
 <!-- ////////////////Register Login Page////////////////// -->
 <div class="log_reg">
-    <?php the_content() ?>
+    <div class="container">
+        <?php the_content() ?>
+    </div>
 </div>
 
 <!-- ////////////////Register Login Page////////////////// -->
