@@ -15,11 +15,7 @@ class MYPDF extends TCPDF {
 
     //Page header
     public function Header() {
-        // Logo
-        $image_file = K_PATH_IMAGES.'logo_example.jpg';
-        $this->Image($image_file, 10, 10, 15, '', 'JPG', '', 'T', false, 300, '', false, false, 0, false, false, false);
-        $html = '<table cellspacing="0" cellpadding="1" border="0"><tr><td rowspan="2"></td><td><h1>Travel</h1></td></tr></table><hr>';
-        $this->writeHTML($html, true, false, false, false, '');
+        
     }
 
     // Page footer
@@ -92,8 +88,15 @@ $pdf->setTextShadow(array('enabled'=>true, 'depth_w'=>0.2, 'depth_h'=>0.2, 'colo
 $html = '<table>';
 $i=0;
 foreach($formData as $key => $value) {
+    $hr = '';
 if($i == 0){
-    $key = 'Title';
+    if($value == ''){
+        $value = '';
+        $key = '';
+    }else{
+        $key = 'Title';
+    }
+    
 }elseif($i == 1){
     $key = 'Address';
 }elseif($i == 2){
@@ -107,22 +110,24 @@ if($i == 0){
     $key = 'Email';
 }elseif($i == 6){ 
     $key = 'Location Name';
+    $hr = '<hr>';
 }else{
     $key = '';
     $value = '';    
+    
 } 
 
 
   $html .= '<tr>
             <td>' . $key . '</td>
             <td>' . $value . '</td>
-        </tr>';
+        </tr>'.$hr;
     
-    
+     $i++;
     if($i==7){
         $i=0;
     }
-    $i++;
+    
 }
 $html .= '</table>';
 
