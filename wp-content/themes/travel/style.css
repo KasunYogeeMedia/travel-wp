@@ -3508,7 +3508,10 @@ input.invalid {
   color: #fff;
 }
 /* global page height */
+.page-template-page-global button.btn.btn-link{
 
+}
+/* footer */
 #footer {
   width: 100%;
 }

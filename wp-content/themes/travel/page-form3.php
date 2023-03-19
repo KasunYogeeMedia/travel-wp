@@ -147,7 +147,7 @@ $upload_path = $uploads['basedir'];
 $pdf->Output($upload_path.'/travel_plane.pdf', 'F');
 ?>
 <div class="global_content">
-    <div class="container-fluid">
+    <div class="container">
         <?php the_content() ?>
     </div>
 </div>

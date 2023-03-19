@@ -181,10 +181,10 @@ if(!defined("ABSPATH")) die();
                 <a class="btn btn-info" href="<?= wpdmpp_continue_shopping_url(); ?>">
                     <i class="fa fa-white fa-cart-plus"></i>&nbsp;<?php echo apply_filters( "wpdmpp_cart_continue_shopping_button_label", __( "Continue Shopping", "wpdm-premium-packages" ) ); ?>
                 </a>
-                <button id="save-cart" type="button" class="btn btn-link ml-2">
+                <button id="save-cart" type="button" class="btn btn-primary ml-2">
                     <i class="fas fa-hdd"></i>&nbsp;<?php echo apply_filters( "wpdmpp_save_cart_button_label", __( "Save Cart", "wpdm-premium-packages" ) ); ?>
                 </button>
-                <button id="empty-cart"  onclick='return wpdmpp_remove_cart_item("all")' type="button" class="btn btn-link">
+                <button id="empty-cart"  onclick='return wpdmpp_remove_cart_item("all")' type="button" class="btn btn-primary">
                     <i class="fas fa-trash"></i>&nbsp;<?php echo apply_filters( "wpdmpp_empty_cart_button_label", __( "Empty Cart", "wpdm-premium-packages" ) ); ?>
                 </button>
             </td>
