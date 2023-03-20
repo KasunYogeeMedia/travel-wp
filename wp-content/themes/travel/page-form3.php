@@ -93,8 +93,8 @@ $imagePath = 'https://ongoing.website/websites/travel-wp/wp-content/themes/trave
 
 $header = '<table>
              <tr>
-               <td><img src="' . $imagePath . '"></td>
-               <td><h2 style="margin-bottom:20px">PERFECT ITINERARY</h2></td>
+               <td><img style="margin-bottom:20px" src="' . $imagePath . '"></td>
+               <td><h2>PERFECT ITINERARY</h2></td>
              </tr>
            </table>';
 // new section
@@ -130,7 +130,7 @@ foreach ($formData as $key => $value) {
     }
 
 
-    $html .= '<tr style="margin-top:2cm">
+    $html .= '<tr style="margin-top:20px">
             <td>' . $key . '</td>
             <td>' . $value . '</td>
         </tr>' . $hr;
