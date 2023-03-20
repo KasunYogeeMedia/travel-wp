@@ -89,12 +89,12 @@ $pdf->setTextShadow(array('enabled' => true, 'depth_w' => 0.2, 'depth_h' => 0.2,
 // Set some content to print
 
 // new section
-$imagePath = 'https://picsum.photos/200';
+$imagePath = 'https://ongoing.website/websites/travel-wp/wp-content/themes/travel/inc/img/logo.png';
 
 $header = '<table>
              <tr>
                <td><img src="' . $imagePath . '"></td>
-               <td><h2>PERFECT ITINERARY</h2></td>
+               <td><h2 style="margin-bottom:20px">PERFECT ITINERARY</h2></td>
              </tr>
            </table>';
 // new section
