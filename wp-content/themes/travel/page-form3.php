@@ -96,7 +96,8 @@ $header = '<table>
                <td><img style="margin-bottom:20px;" src="' . $imagePath . '"></td>
                <td><h2>SUMMARY OF ITINERARY</h2></td>
              </tr>
-           </table>';
+           </table>
+           <br>';
 // new section
 
 $html = '<table>';
