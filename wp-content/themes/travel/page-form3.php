@@ -94,7 +94,7 @@ $imagePath = 'https://picsum.photos/200';
 $header = '<table>
              <tr>
                <td><img src="' . $imagePath . '"></td>
-               <td><h1>Document Title</h1></td>
+               <td><h2>PERFECT ITINERARY</h2></td>
              </tr>
            </table>';
 // new section
@@ -143,7 +143,7 @@ foreach ($formData as $key => $value) {
 $html .= '</table>';
 
 // new section
-$html = $header . $html;
+$html = $header . $hr . $html;
 // new section
 
 // Replace placeholders in the HTML string with the form data values
