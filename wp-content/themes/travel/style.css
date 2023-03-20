@@ -3406,6 +3406,7 @@ img.travel-logo2 {
   background-position: center;
   line-height: 1.7;
   min-width: 218px;
+  min-height: 100px;
 }
 .form-1 .form-select {
   background-size: 16px 20px;
@@ -3503,13 +3504,13 @@ input.invalid {
   margin-left: -14px;
   position: absolute;
   margin-top: -5px;
+  display: none;
 }
 .rmv_btn .fa-minus-circle {
   color: #fff;
 }
 /* global page height */
-.page-template-page-global button.btn.btn-link{
-
+.page-template-page-global button.btn.btn-link {
 }
 /* footer */
 #footer {
@@ -3524,6 +3525,25 @@ input.invalid {
   border-color: #c1b086;
   padding: 10px 20px;
 }
+
+/* download page styles */
+.down_data h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.comments-area{
+  margin-top: 20px;
+}
+.comments-area textarea{
+  width: 100%;
+  height: 100px;
+}
+/* single page styles */
+.single h1.entry-title {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
 @media screen and (max-width: 1200px) and (min-width: 991px) {
   .contact-info {
     margin-top: 0;

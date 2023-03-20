@@ -102,7 +102,7 @@ if(!defined("ABSPATH")) die();
                 <?php } ?>
                 <td class='cart_item_quantity'>
                     <span class=' d-md-none'><?php echo __("Quantity", "wpdm-premium-packages"); ?>: </span>
-                    <input type='number' style='width:60px' min='1' name='cart_items[<?php echo $ID; ?>][quantity]' value='<?php echo $item['quantity']; ?>' size=3 class=' input-sm form-control'/>
+                    <input type='text' style='width:40px' min='1' name='cart_items[<?php echo $ID; ?>][quantity]' value='<?php echo $item['quantity']; ?>' size=3 class=' input-sm form-control' readonly="readonly"/>
                 </td>
                 <td class='cart_item_subtotal amt'>
                     <span class=' d-md-none'><?php echo __("Item Total", "wpdm-premium-packages"); ?>: </span>

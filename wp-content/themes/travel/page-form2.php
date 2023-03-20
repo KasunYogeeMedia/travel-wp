@@ -318,6 +318,11 @@ $theme_url = get_template_directory_uri();
 <!-- ////////////////Form2 page content End////////////////// -->
 
 <script>
+
+
+
+
+
     var currentTabId = 0;
 
     function selectOpt(id) {
@@ -422,6 +427,7 @@ $theme_url = get_template_directory_uri();
             $("#" + currentTabId + " #btn" + id + "_inside").html(title);
             $("#" + currentTabId + " #btn" + id + "_price").html(price);
             $("#" + currentTabId + " #sel" + id).val(location);
+            $("#" + currentTabId + " .rmv_btn#" + id).css("display", "inline");
         }
 
     }
@@ -432,6 +438,7 @@ $theme_url = get_template_directory_uri();
         $("#" + currentTabId + " #btn" + id + "_inside").html("Choose <i class='fa fa-2x fa-plus-circle' aria-hidden='true'></i>");
         $("#" + currentTabId + " #btn" + id + "_price").html();
         $("#" + currentTabId + " #sel" + id).val();
+        $("#" + currentTabId + " .rmv_btn#" + id).css("display", "none");
     }
 </script>
 

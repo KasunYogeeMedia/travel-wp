@@ -14,6 +14,7 @@ window.addEventListener('load', function() {
   }
 });
 
+
 // for (let i = 0; i < data.length; i++) {
 //   const item = data[i];
 //   const index = i + 2; // to match the button IDs
