@@ -3404,7 +3404,7 @@ img.travel-logo2 {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  line-height: 1.7;
+  /* line-height: 1.7; */
   min-width: 218px;
   min-height: 100px;
 }
@@ -3538,10 +3538,20 @@ input.invalid {
   width: 100%;
   height: 100px;
 }
+.w3eden .min-price-note{
+  margin-top: 10px;
+}
 /* single page styles */
 .single h1.entry-title {
   font-size: 32px;
   margin-bottom: 20px;
+}
+/* Order page styles */
+.wpdmpp-all-orders {
+	margin-top: 20px;
+} 
+.w3eden h3 {
+	margin-bottom: 20px;
 }
 
 @media screen and (max-width: 1200px) and (min-width: 991px) {
@@ -3600,5 +3610,9 @@ input.invalid {
   }
   .global_content {
     padding-top: 20px;
+  }
+  .single h1.entry-title{
+    font-size: 22px;
+    margin-bottom: 0;
   }
 }
