@@ -11,21 +11,23 @@ $formData = $_POST;
 
 
 require_once('tcpdf/tcpdf.php');
-class MYPDF extends TCPDF {
+class MYPDF extends TCPDF
+{
 
     //Page header
-    public function Header() {
-        
+    public function Header()
+    {
     }
 
     // Page footer
-    public function Footer() {
+    public function Footer()
+    {
         // Position at 15 mm from bottom
         $this->SetY(-15);
         // Set font
         $this->SetFont('helvetica', 'I', 8);
         // Page number
-        $this->Cell(0, 10, 'Page '.$this->getAliasNumPage().'/'.$this->getAliasNbPages(), 0, false, 'C', 0, '', 0, false, 'T', 'M');
+        $this->Cell(0, 10, 'Page ' . $this->getAliasNumPage() . '/' . $this->getAliasNbPages(), 0, false, 'C', 0, '', 0, false, 'T', 'M');
     }
 }
 // create new PDF document
@@ -39,12 +41,12 @@ $pdf->SetSubject('TCPDF Tutorial');
 $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
 
 // set default header data
-$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 001', PDF_HEADER_STRING, array(0,64,255), array(0,64,128));
-$pdf->setFooterData(array(0,64,0), array(0,64,128));
+$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE . ' 001', PDF_HEADER_STRING, array(0, 64, 255), array(0, 64, 128));
+$pdf->setFooterData(array(0, 64, 0), array(0, 64, 128));
 
 // set header and footer fonts
-$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+$pdf->setHeaderFont(array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+$pdf->setFooterFont(array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
 // set default monospaced font
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
@@ -61,8 +63,8 @@ $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 
 // set some language-dependent strings (optional)
-if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
-    require_once(dirname(__FILE__).'/lang/eng.php');
+if (@file_exists(dirname(__FILE__) . '/lang/eng.php')) {
+    require_once(dirname(__FILE__) . '/lang/eng.php');
     $pdf->setLanguageArray($l);
 }
 
@@ -82,56 +84,67 @@ $pdf->SetFont('dejavusans', '', 14, '', true);
 $pdf->AddPage();
 
 // set text shadow effect
-$pdf->setTextShadow(array('enabled'=>true, 'depth_w'=>0.2, 'depth_h'=>0.2, 'color'=>array(196,196,196), 'opacity'=>1, 'blend_mode'=>'Normal'));
+$pdf->setTextShadow(array('enabled' => true, 'depth_w' => 0.2, 'depth_h' => 0.2, 'color' => array(196, 196, 196), 'opacity' => 1, 'blend_mode' => 'Normal'));
 
 // Set some content to print
+
+// new section
+$imagePath = 'https://picsum.photos/200';
+
+$header = '<table>
+             <tr>
+               <td><img src="' . $imagePath . '"></td>
+               <td><h1>Document Title</h1></td>
+             </tr>
+           </table>';
+// new section
+
 $html = '<table>';
-$i=0;
-foreach($formData as $key => $value) {
+$i = 0;
+foreach ($formData as $key => $value) {
     $hr = '';
-if($i == 0){
-    if($value == ''){
-        $value = '';
+    if ($i == 0) {
+        if ($value == '') {
+            $value = '';
+            $key = '';
+        } else {
+            $key = 'Title';
+        }
+    } elseif ($i == 1) {
+        $key = 'Address';
+    } elseif ($i == 2) {
         $key = '';
-    }else{
-        $key = 'Title';
+        $value = '<img src="' . $value . '" >';
+    } elseif ($i == 3) {
+        $key = 'Price';
+    } elseif ($i == 4) {
+        $key = 'Hotline';
+    } elseif ($i == 5) {
+        $key = 'Email';
+    } elseif ($i == 6) {
+        $key = 'Location Name';
+        $hr = '<hr>';
+    } else {
+        $key = '';
+        $value = '';
     }
-    
-}elseif($i == 1){
-    $key = 'Address';
-}elseif($i == 2){
-    $key = '';
-    $value = '<img src="'.$value.'" >';
-}elseif($i == 3){
-    $key = 'Price';
-}elseif($i == 4){
-    $key = 'Hotline';
-}elseif($i == 5){
-    $key = 'Email';
-}elseif($i == 6){ 
-    $key = 'Location Name';
-    $hr = '<hr>';
-}else{
-    $key = '';
-    $value = '';    
-    
-} 
 
 
-  $html .= '<tr style="margin-top:2cm">
+    $html .= '<tr style="margin-top:2cm">
             <td>' . $key . '</td>
             <td>' . $value . '</td>
-        </tr>'.$hr;
-    
-     $i++;
-    if($i==7){
-        $i=0;
+        </tr>' . $hr;
+
+    $i++;
+    if ($i == 7) {
+        $i = 0;
     }
-    
 }
 $html .= '</table>';
 
-
+// new section
+$html = $header . $html;
+// new section
 
 // Replace placeholders in the HTML string with the form data values
 
@@ -144,7 +157,7 @@ $uploads = wp_upload_dir();
 $upload_path = $uploads['basedir'];
 // Close and output PDF document
 // This method has several options, check the source code documentation for more information.
-$pdf->Output($upload_path.'/travel_plane.pdf', 'F');
+$pdf->Output($upload_path . '/travel_plane.pdf', 'F');
 ?>
 <div class="global_content">
     <div class="container">
