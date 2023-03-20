@@ -118,7 +118,7 @@ if($i == 0){
 } 
 
 
-  $html .= '<tr>
+  $html .= '<tr style="margin-top:2cm">
             <td>' . $key . '</td>
             <td>' . $value . '</td>
         </tr>'.$hr;
