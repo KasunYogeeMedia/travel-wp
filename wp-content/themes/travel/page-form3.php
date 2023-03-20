@@ -93,8 +93,8 @@ $imagePath = 'https://ongoing.website/websites/travel-wp/wp-content/themes/trave
 
 $header = '<table>
              <tr>
-               <td><img style="margin-bottom:20px" src="' . $imagePath . '"></td>
-               <td><h2>PERFECT ITINERARY</h2></td>
+               <td><img style="margin-bottom:20px;" src="' . $imagePath . '"></td>
+               <td><h2>SUMMARY OF ITINERARY</h2></td>
              </tr>
            </table>';
 // new section
