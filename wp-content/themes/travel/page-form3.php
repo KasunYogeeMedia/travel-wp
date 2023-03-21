@@ -96,8 +96,8 @@ $header = '<table style="margin-bottom:20px;">
                <td><img src="' . $imagePath . '"></td>
                <td><h2>SUMMARY OF ITINERARY</h2></td>
              </tr>
+             <hr>
            </table>
-           <hr>
            <br>';
 // new section
 
@@ -136,7 +136,7 @@ foreach ($formData as $key => $value) {
     $html .= '<tr>
             <td>' . $key . '</td>
             <td>' . $value . '</td>
-        </tr>' . $hr . '<br>';
+        </tr>' . $hr;
 
     $i++;
     if ($i == 7) {
