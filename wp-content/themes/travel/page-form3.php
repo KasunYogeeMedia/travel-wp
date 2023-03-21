@@ -101,7 +101,8 @@ $header = '<table style="margin-bottom:20px;">
            <br>';
 // new section
 
-$html = '<table>';
+$html = '<table>
+<br>';
 $i = 0;
 foreach ($formData as $key => $value) {
     $hr = '';
@@ -132,7 +133,7 @@ foreach ($formData as $key => $value) {
     }
 
 
-    $html .= '<tr style="margin-top:20px">
+    $html .= '<tr>
             <td>' . $key . '</td>
             <td>' . $value . '</td>
         </tr>' . $hr . '<br>';
