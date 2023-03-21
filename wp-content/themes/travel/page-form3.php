@@ -88,21 +88,20 @@ $pdf->setTextShadow(array('enabled' => true, 'depth_w' => 0.2, 'depth_h' => 0.2,
 
 // Set some content to print
 
-// new section
+// Define the header section
 $imagePath = 'https://ongoing.website/websites/travel-wp/wp-content/themes/travel/inc/img/logo.png';
-
 $header = '<table style="margin-bottom:20px;">
              <tr>
                <td><img src="' . $imagePath . '"></td>
                <td><h2>SUMMARY OF ITINERARY</h2></td>
              </tr>
-             <hr>
+             <tr><td colspan="2"><hr></td></tr>
            </table>
            <br>';
-// new section
 
-$html = '<table>
-<br>';
+// Define the HTML content
+$html = '<table>';
+
 $i = 0;
 foreach ($formData as $key => $value) {
     $hr = '';
@@ -126,12 +125,11 @@ foreach ($formData as $key => $value) {
         $key = 'Email';
     } elseif ($i == 6) {
         $key = 'Location Name';
-        $hr = '<hr>';
+        $hr = '<tr><td colspan="2"><hr></td></tr>';
     } else {
         $key = '';
         $value = '';
     }
-
 
     $html .= '<tr>
             <td>' . $key . '</td>
@@ -145,9 +143,7 @@ foreach ($formData as $key => $value) {
 }
 $html .= '</table>';
 
-// new section
 $html = $header . $html;
-// new section
 
 // Replace placeholders in the HTML string with the form data values
 
