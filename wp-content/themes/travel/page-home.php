@@ -13,7 +13,7 @@ get_header();  ?>
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
-                        <div class="hero_cap mt-0 mt-md-5">
+                        <div class="hero_cap mt-0 mt-md-5 d-none">
                             <!-- <span class="lg_text text-light">Plan your dream vacation</span> -->
                             <span class="main-title lg_text text-light" id="text"></span>
                             <h2 class="sm_text text-light">in 3 simple steps</h2>
