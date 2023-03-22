@@ -152,18 +152,18 @@ function nextPrev(n) {
     const jsonData = JSON.stringify(formData);
     // Send an AJAX request to the API endpoint
     const xhr = new XMLHttpRequest();
-    // xhr.open('POST', 'https://ongoing.website/websites/travel-wp/form-3/');
-    xhr.open("POST", "http://travel-wp.test/form-3/");
+    xhr.open('POST', 'https://ongoing.website/websites/travel-wp/form-3/');
+    // xhr.open("POST", "http://travel-wp.test/form-3/");
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onload = function () {
       if (xhr.status === 200) {
         // Handle the response from the API if needed
         console.log(xhr.responseText);
 
-        // document.getElementById("regForm").action =
-        //   "https://ongoing.website/websites/travel-wp/form-3/";
         document.getElementById("regForm").action =
-          "http://travel-wp.test/form-3/";
+          "https://ongoing.website/websites/travel-wp/form-3/";
+        // document.getElementById("regForm").action =
+        //   "http://travel-wp.test/form-3/";
 
         // ... submit the form:
         document.getElementById("regForm").submit();

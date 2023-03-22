@@ -3292,6 +3292,7 @@ button.btn_popup:hover {
   transform: translateY(calc(100% - 62px));
   transition: 0.5s ease ease-in-out;
   transition: 0.5s !important;
+  margin-bottom: -1px;
 }
 
 .card-action:hover .card-overlay {
