@@ -10,6 +10,14 @@ if (!empty($_POST['search'])) {
     $_SESSION['adults'] = $_POST['adults'];
     $_SESSION['childern'] = $_POST['childern'];
     $_SESSION['datediff'] = $_POST['datediff'];
+    // $_SESSION['alldates'] = $_POST['alldates'];
+
+    $alldates_string = $_POST['alldates'];
+
+    // Split the string data by comma and store it in an array
+    $alldates = explode(",", $alldates_string);
+
+    // echo $alldates[0];
 }
 get_header();
 
@@ -31,7 +39,8 @@ get_header();
                                 <h2 class="form_title text-light fw-bold text-lg mb-1">
                                     Day <?php echo $x; ?>.
                                 </h2>
-                                <span class="text-light sub_head">20th of Feb 2023</span>
+                                <span class="text-light sub_head"><?php echo $alldates[$x-1] ?></span>
+                                <input type="hidden" name="curr_date<?php echo $x; ?>" value="<?php echo $alldates[$x-1] ?>">
                             </div>
 
                             <div class="col-md-5 mt-4 mt-md-0">
@@ -318,11 +327,6 @@ $theme_url = get_template_directory_uri();
 <!-- ////////////////Form2 page content End////////////////// -->
 
 <script>
-
-
-
-
-
     var currentTabId = 0;
 
     function selectOpt(id) {

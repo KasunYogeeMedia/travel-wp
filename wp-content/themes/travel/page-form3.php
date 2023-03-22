@@ -7,6 +7,14 @@ get_header();  ?>
 <?php
 $formData = $_POST;
 
+
+// Convert the array to a JSON string
+$formData_json = json_encode($formData);
+
+// Print the JSON string to the browser console
+// echo "$formData_json";
+
+
 // Loop through the form data and print out the key-value pairs
 
 
@@ -106,26 +114,28 @@ $i = 0;
 foreach ($formData as $key => $value) {
     $hr = '';
     if ($i == 0) {
+        $key = 'Date';
+    } elseif ($i == 1) {
         if ($value == '') {
             $value = '';
             $key = '';
         } else {
             $key = 'Title';
         }
-    } elseif ($i == 1) {
-        $key = 'Address';
     } elseif ($i == 2) {
+        $key = 'Address';
+    } elseif ($i == 3) {
         $key = '';
         $value = '<img src="' . $value . '" >';
-    } elseif ($i == 3) {
-        $key = 'Price';
     } elseif ($i == 4) {
-        $key = 'Hotline';
+        $key = 'Price';
     } elseif ($i == 5) {
-        $key = 'Email';
+        $key = 'Hotline';
     } elseif ($i == 6) {
+        $key = 'Email';
+    } elseif ($i == 7) {
         $key = 'Location Name';
-        $hr = '<tr><td colspan="2"><hr></td></tr>';
+        $hr = '<hr>';
     } else {
         $key = '';
         $value = '';
@@ -137,7 +147,7 @@ foreach ($formData as $key => $value) {
         </tr>' . $hr;
 
     $i++;
-    if ($i == 7) {
+    if ($i == 8) {
         $i = 0;
     }
 }

@@ -1,19 +1,18 @@
 // footer fit bottom function
 
-window.addEventListener('load', function() {
+window.addEventListener("load", function () {
   var bodyHeight = document.body.clientHeight;
   var windowHeight = window.innerHeight;
-  var footer = document.getElementById('footer');
+  var footer = document.getElementById("footer");
   var footerHeight = footer.offsetHeight;
 
   if (bodyHeight < windowHeight) {
     var newFooterHeight = footerHeight + (windowHeight - bodyHeight);
     // footer.style.height = newFooterHeight + 'px';
-    footer.style.position = 'absolute';
-    footer.style.bottom = '0';
+    footer.style.position = "absolute";
+    footer.style.bottom = "0";
   }
 });
-
 
 // for (let i = 0; i < data.length; i++) {
 //   const item = data[i];
@@ -51,9 +50,6 @@ window.addEventListener('load', function() {
 //       break;
 //   }
 // }
-
-
-
 
 function updateSelectedOption3(imageSrc, title, price, location) {
   document.getElementById("btn3_inside").style.backgroundImage =
@@ -129,45 +125,59 @@ function nextPrev(n) {
   // Increase or decrease the current tab by 1:
   currentTab = currentTab + n;
   // if you have reached the end of the form...
-  
+
   if (currentTab >= x.length) {
     // ... get form data as JSON:
     const formData = {};
     const inputs = document.querySelectorAll("input, select, textarea");
     for (let i = 0; i < inputs.length; i++) {
       const input = inputs[i];
-      if (input.name == 's' || input.name == 'optradio' || input.name == ''|| input.name == 'json_data'|| input.name == 'permalink'|| input.name == '__phash'|| input.name == 'wpdm_login[log]'|| input.name == 'wpdm_login[pwd]'|| input.name == 'rememberme'|| input.name == 'redirect_to') {
-       // formData[input.name] = input.value;
-      }else{
+      if (
+        input.name == "s" ||
+        input.name == "optradio" ||
+        input.name == "" ||
+        input.name == "json_data" ||
+        input.name == "permalink" ||
+        input.name == "__phash" ||
+        input.name == "wpdm_login[log]" ||
+        input.name == "wpdm_login[pwd]" ||
+        input.name == "rememberme" ||
+        input.name == "redirect_to"
+      ) {
+        // formData[input.name] = input.value;
+      } else {
         formData[input.name] = input.value;
       }
     }
-      const jsonData = JSON.stringify(formData);
-      // Send an AJAX request to the API endpoint
-      const xhr = new XMLHttpRequest();
-      xhr.open('POST', 'https://ongoing.website/websites/travel-wp/form-3/');
-      xhr.setRequestHeader('Content-Type', 'application/json');
-      xhr.onload = function() {
-        if (xhr.status === 200) {
-          // Handle the response from the API if needed
-          console.log(xhr.responseText);
+    const jsonData = JSON.stringify(formData);
+    // Send an AJAX request to the API endpoint
+    const xhr = new XMLHttpRequest();
+    // xhr.open('POST', 'https://ongoing.website/websites/travel-wp/form-3/');
+    xhr.open("POST", "http://travel-wp.test/form-3/");
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        // Handle the response from the API if needed
+        console.log(xhr.responseText);
 
-          document.getElementById("regForm").action = "https://ongoing.website/websites/travel-wp/form-3/";
-      // ... submit the form:
-          document.getElementById("regForm").submit();
-        } else {
-          // Handle the error if the request failed
-          console.error('Request failed.  Returned status of ' + xhr.status);
-        }
-      };
-      xhr.send(jsonData);
-      // ... set the form action to the URL you want to submit the form data to:
+        // document.getElementById("regForm").action =
+        //   "https://ongoing.website/websites/travel-wp/form-3/";
+        document.getElementById("regForm").action =
+          "http://travel-wp.test/form-3/";
 
+        // ... submit the form:
+        document.getElementById("regForm").submit();
+      } else {
+        // Handle the error if the request failed
+        console.error("Request failed.  Returned status of " + xhr.status);
+      }
+    };
+    xhr.send(jsonData);
+    // ... set the form action to the URL you want to submit the form data to:
   }
   // Otherwise, display the correct tab:
   showTab(currentTab);
 }
-
 
 function validateForm() {
   // This function deals with validation of the form fields
@@ -204,8 +214,6 @@ function fixStepIndicator(n) {
   //... and adds the "active" class on the current step:
   x[n].className += " active";
 }
-
-
 
 // Navbar toggle
 $(document).ready(function () {
@@ -289,4 +297,3 @@ $(document).ready(function () {
 
   // document ready
 });
-
