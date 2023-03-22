@@ -12,7 +12,7 @@ $formData = $_POST;
 $formData_json = json_encode($formData);
 
 // Print the JSON string to the browser console
-// echo "$formData_json";
+//  echo $formData_json;
 
 
 // Loop through the form data and print out the key-value pairs
@@ -114,14 +114,14 @@ $i = 0;
 foreach ($formData as $key => $value) {
     $hr = '';
     if ($i == 0) {
-        $key = 'Date';
-    } elseif ($i == 1) {
         if ($value == '') {
             $value = '';
             $key = '';
         } else {
-            $key = 'Title';
+            $key = 'Date';
         }
+    } elseif ($i == 1) {
+            $key = 'Title';
     } elseif ($i == 2) {
         $key = 'Address';
     } elseif ($i == 3) {
@@ -142,9 +142,9 @@ foreach ($formData as $key => $value) {
     }
 
     $html .= '<tr>
-            <td>' . $key . '</td>
-            <td>' . $value . '</td>
-        </tr>' . $hr;
+                <td>' . $key . '</td>
+                <td>' . $value . '</td>
+              </tr>' . $hr;
 
     $i++;
     if ($i == 8) {

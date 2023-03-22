@@ -160,10 +160,8 @@ function nextPrev(n) {
         // Handle the response from the API if needed
         console.log(xhr.responseText);
 
-        document.getElementById("regForm").action =
-          "https://ongoing.website/websites/travel-wp/form-3/";
-        // document.getElementById("regForm").action =
-        //   "http://travel-wp.test/form-3/";
+        document.getElementById("regForm").action = "https://ongoing.website/websites/travel-wp/form-3/";
+        // document.getElementById("regForm").action = "http://travel-wp.test/form-3/";
 
         // ... submit the form:
         document.getElementById("regForm").submit();

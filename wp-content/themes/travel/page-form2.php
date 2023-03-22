@@ -39,8 +39,8 @@ get_header();
                                 <h2 class="form_title text-light fw-bold text-lg mb-1">
                                     Day <?php echo $x; ?>.
                                 </h2>
-                                <span class="text-light sub_head"><?php echo $alldates[$x-1] ?></span>
-                                <input type="hidden" name="curr_date<?php echo $x; ?>" value="<?php echo $alldates[$x-1] ?>">
+                                <span id="current_date" value="<?php echo $alldates[$x-1] ?>" class="text-light sub_head"><?php echo $alldates[$x-1] ?></span>
+                               
                             </div>
 
                             <div class="col-md-5 mt-4 mt-md-0">
@@ -330,6 +330,7 @@ $theme_url = get_template_directory_uri();
     var currentTabId = 0;
 
     function selectOpt(id) {
+        var currentValue = $("#current_date").attr("value");
         currentTabId = "tab" + (currentTab + 1);
         var keyword = '';
         var action = '';
@@ -372,6 +373,7 @@ $theme_url = get_template_directory_uri();
                     s += '<a href="">';
                     s += '<span class="option-title text-primary">' + response[i].name + '</span>';
                     s += '</a>';
+                    s += '<input type="hidden" class="current_date" name="current_date' + id + '" value="' + currentValue + '">';
                     s += '<input type="hidden" class="title" name="title' + id + '" value="' + response[i].name + '">';
                     s += '<input type="hidden" class="address" name="address' + id + '" value="' + response[i].address.address + '">';
                     s += '<input type="hidden" class="image" name="image' + id + '" value="' + response[i].featured_image.large + '">';
