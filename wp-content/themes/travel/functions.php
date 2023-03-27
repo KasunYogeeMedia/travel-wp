@@ -424,3 +424,9 @@ function enqueue_jspdf()
 }
 add_action('wp_enqueue_scripts', 'enqueue_jspdf');
 
+function my_session_start() {
+    if ( ! session_id() ) {
+        session_start();
+    }
+}
+add_action( 'init', 'my_session_start', 1 );

@@ -186,7 +186,7 @@ $pdf_name =  random_string(10);
 $pdf->Output($upload_path . '/'.$pdf_name.'.pdf', 'F');
 
 
-session_start();
+
 $_SESSION["pdf_name"] = $pdf_name;
 
 ?>
