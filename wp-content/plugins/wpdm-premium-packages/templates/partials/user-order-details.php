@@ -79,7 +79,13 @@ $download_button_label = esc_attr__( 'Download', 'download-manager' );
 
                     $itotal         = number_format(((($item['price'] + $prices) * $item['quantity']) - $discount - $item['coupon_discount']), 2, ".", "");
                     $total          += $itotal;
-                    $download_link  = \WPDMPP\WPDMPremiumPackage::customerDownloadURL($item['pid'], $order->order_id); //home_url("/?wpdmdl={$item['pid']}&oid={$order->order_id}");
+                    $upload_dir = wp_upload_dir();
+                    $upload_url = $upload_dir['baseurl'];
+                    $upload_url;
+                    $url = $upload_url.'/'.$order->pdf_name.'.pdf';
+                    $hashed_url = hash('sha256', $url);
+                    $hashed_url;
+                    $download_link  = $hashed_url; //home_url("/?wpdmdl={$item['pid']}&oid={$order->order_id}");
                     $licenseurl     = home_url("/?task=getlicensekey&file={$item['pid']}&oid={$order->order_id}");
                     $order_item     = "";
 
