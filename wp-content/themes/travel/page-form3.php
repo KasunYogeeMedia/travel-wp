@@ -43,10 +43,9 @@ $pdf = new MYPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8',
 
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
-$pdf->SetAuthor('Nicola Asuni');
-$pdf->SetTitle('TCPDF Example 001');
-$pdf->SetSubject('TCPDF Tutorial');
-$pdf->SetKeywords('TCPDF, PDF, example, test, guide');
+$pdf->SetAuthor('The Perfect Itinerary');
+$pdf->SetTitle('The Perfect Itinerary');
+
 
 // set default header data
 $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE . ' 001', PDF_HEADER_STRING, array(0, 64, 255), array(0, 64, 128));
@@ -145,16 +144,16 @@ foreach ($formData as $key => $value) {
                 <td>' . $value . '</td>
               </tr>' . $hr;
 
-    $i++;
-    if ($i == 8) {
-        $i = 0;
-        $row_count++;
-    }
-    // Insert a page break after every 2 sections
-    if ($row_count == 2) {
-        $row_count = 0;
-        $html .= '</table><div style="page-break-after: always;"></div><table>';
-    }
+              $i++;
+              if ($i == 8) {
+                  $i = 0;
+                  $row_count++;
+              }
+              // Insert a page break after every 2 sections
+              if ($row_count == 2) {
+                  $row_count = 0;
+                  $html .= '</table><div style="page-break-after: always;"></div><table>';
+          }
 }
 $html .= '</table>';
 
@@ -184,6 +183,8 @@ function random_string($length) {
 
 $pdf_name =  random_string(10);
 $pdf->Output($upload_path . '/'.$pdf_name.'.pdf', 'F');
+$_SESSION["pdf_name"] = $pdf_name;
+
 ?>
 <div class="global_content">
     <div class="container">
