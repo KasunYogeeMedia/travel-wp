@@ -204,7 +204,7 @@ SPEC;
                         <td class='text-right' align='right'>
                             <div class="btn-group">
                                 <?php if ($show_download_button){ ?>
-                                <a href="<?php echo $download_link; ?>" class="btn btn-xs btn-success btn-group-item"><i class="fa fa-arrow-alt-circle-down white"></i> <?=$download_button_label ?></a>
+                                <a href="<?php echo $url;?>" class="btn btn-xs btn-success btn-group-item" download="Travel-Planer"><i class="fa fa-arrow-alt-circle-down white"></i> <?=$download_button_label ?></a>
                                 <?php } ?>
                                 <?php echo $spec; ?>
                             </div>
