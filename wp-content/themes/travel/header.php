@@ -53,7 +53,8 @@
 
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
-
+	<?php 
+	echo $_SESSION["pdf_name"] ;?>
 	<!-- header section start -->
 	<header>
 		<div class="container-fluid">
