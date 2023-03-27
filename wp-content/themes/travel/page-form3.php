@@ -145,16 +145,16 @@ foreach ($formData as $key => $value) {
                 <td>' . $value . '</td>
               </tr>' . $hr;
 
-    $i++;
-    if ($i == 8) {
-        $i = 0;
-        $row_count++;
-    }
-    // Insert a page break after every 2 sections
-    if ($row_count == 2) {
-        $row_count = 0;
-        $html .= '</table><div style="page-break-after: always;"></div><table>';
-    }
+              $i++;
+              if ($i == 8) {
+                  $i = 0;
+                  $row_count++;
+              }
+              // Insert a page break after every 2 sections
+              if ($row_count == 2) {
+                  $row_count = 0;
+                  $html .= '</table><div style="page-break-after: always;"></div><table>';
+          }
 }
 $html .= '</table>';
 
@@ -184,9 +184,6 @@ function random_string($length) {
 
 $pdf_name =  random_string(10);
 $pdf->Output($upload_path . '/'.$pdf_name.'.pdf', 'F');
-
-
-
 $_SESSION["pdf_name"] = $pdf_name;
 
 ?>
