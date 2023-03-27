@@ -185,8 +185,10 @@ function random_string($length) {
 $pdf_name =  random_string(10);
 $pdf->Output($upload_path . '/'.$pdf_name.'.pdf', 'F');
 
+
+session_start();
 $_SESSION["pdf_name"] = $pdf_name;
-var_dump($_SESSION["pdf_name"] );
+do_action('my_custom_action', $_SESSION["pdf_name"]);
 ?>
 <div class="global_content">
     <div class="container">
