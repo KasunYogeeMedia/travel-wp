@@ -171,19 +171,7 @@ $uploads = wp_upload_dir();
 $upload_path = $uploads['basedir'];
 // Close and output PDF document
 // This method has several options, check the source code documentation for more information.
-function random_string($length) {
-    $key = '';
-    $keys = array_merge(range(0, 9), range('a', 'z'));
-
-    for ($i = 0; $i < $length; $i++) {
-        $key .= $keys[array_rand($keys)];
-    }
-
-    return $key;
-}
-
-$pdf_name =  random_string(10);
-$pdf->Output($upload_path . '/'.$pdf_name.'.pdf', 'F');
+$pdf->Output($upload_path . '/travel_plane.pdf', 'F');
 ?>
 <div class="global_content">
     <div class="container">
