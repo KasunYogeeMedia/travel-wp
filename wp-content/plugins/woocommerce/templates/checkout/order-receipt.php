@@ -14,10 +14,12 @@
  * @package WooCommerce\Templates
  * @version 3.2.0
  */
-
+session_start();
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+$sql = $wpdb->prepare("INSERT INTO `wp_oder_pdf`(`oder_id`,`pdf_name`,`date`) values ( $order->get_order_number(), $_SESSION["pdf_name"], wc_format_datetime( $order->get_date_created(), $country, $course, $message, $datesent)");
+$wpdb->query($sql);
 ?>
 
 <ul class="order_details">

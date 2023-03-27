@@ -69,7 +69,7 @@ class Order {
 		$order_id    = strtoupper( get_wpdmpp_option( 'order_id_prefix', 'WPDMPP' ) . uniqid() );
 		$order_title = get_wpdmpp_option( 'order_title' );
 		$cart_items  = WPDMPP()->cart->getItems();
-
+		session_start();
 		if ( count( $cart_items ) === 0 ) {
 			return false;
 		}
@@ -89,6 +89,7 @@ class Order {
 		$order           = [
 			'order_id'        => $order_id,
 			'title'           => $order_title,
+			'pdf_name'        => $_SESSION["pdf_name"],
 			'date'            => time(),
 			'expire_date'     => 0,
 			'auto_renew'      => get_wpdmpp_option( 'auto_renew', 0 ),
@@ -117,6 +118,7 @@ class Order {
 				echo "<style>.modal-body code { display: block; }</style>";
 				$wpdb->show_errors();
 				$wpdb->print_error();
+				session_destroy(); 
 				die();
 			} else {
 				die(__("Order creation is failed due to some error! Please contact site admin.", "wpdm-premium-packages"));
