@@ -110,7 +110,6 @@ $header = '<table style="margin-bottom:20px;">
 // Define the HTML content
 $html = '<table>';
 $i = 0;
-$row_count = 0;
 foreach ($formData as $key => $value) {
     $hr = '';
     if ($i == 0) {
@@ -121,7 +120,7 @@ foreach ($formData as $key => $value) {
             $key = 'Date';
         }
     } elseif ($i == 1) {
-        $key = 'Title';
+            $key = 'Title';
     } elseif ($i == 2) {
         $key = 'Address';
     } elseif ($i == 3) {
@@ -140,7 +139,7 @@ foreach ($formData as $key => $value) {
         $key = '';
         $value = '';
     }
-    
+
     $html .= '<tr>
                 <td>' . $key . '</td>
                 <td>' . $value . '</td>
@@ -151,21 +150,15 @@ foreach ($formData as $key => $value) {
         $i = 0;
         $row_count++;
     }
-    
     // Insert a page break after every 2 sections
     if ($row_count == 2) {
         $row_count = 0;
         $html .= '</table><div style="page-break-after: always;"></div><table>';
     }
 }
-
 $html .= '</table>';
 
-
 $html = $header . $html;
-
-
-echo $html;
 
 // Replace placeholders in the HTML string with the form data values
 
@@ -178,7 +171,19 @@ $uploads = wp_upload_dir();
 $upload_path = $uploads['basedir'];
 // Close and output PDF document
 // This method has several options, check the source code documentation for more information.
-$pdf->Output($upload_path . '/travel_plane.pdf', 'F');
+function random_string($length) {
+    $key = '';
+    $keys = array_merge(range(0, 9), range('a', 'z'));
+
+    for ($i = 0; $i < $length; $i++) {
+        $key .= $keys[array_rand($keys)];
+    }
+
+    return $key;
+}
+
+$pdf_name =  random_string(10);
+$pdf->Output($upload_path . '/'.$pdf_name.'.pdf', 'F');
 ?>
 <div class="global_content">
     <div class="container">
