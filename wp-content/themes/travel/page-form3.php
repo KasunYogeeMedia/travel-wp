@@ -109,8 +109,8 @@ $header = '<table style="margin-bottom:20px;">
 
 // Define the HTML content
 $html = '<table>';
-
 $i = 0;
+$row_count = 0;
 foreach ($formData as $key => $value) {
     $hr = '';
     if ($i == 0) {
@@ -121,7 +121,7 @@ foreach ($formData as $key => $value) {
             $key = 'Date';
         }
     } elseif ($i == 1) {
-            $key = 'Title';
+        $key = 'Title';
     } elseif ($i == 2) {
         $key = 'Address';
     } elseif ($i == 3) {
@@ -140,7 +140,7 @@ foreach ($formData as $key => $value) {
         $key = '';
         $value = '';
     }
-
+    
     $html .= '<tr>
                 <td>' . $key . '</td>
                 <td>' . $value . '</td>
@@ -149,11 +149,23 @@ foreach ($formData as $key => $value) {
     $i++;
     if ($i == 8) {
         $i = 0;
+        $row_count++;
+    }
+    
+    // Insert a page break after every 2 sections
+    if ($row_count == 2) {
+        $row_count = 0;
+        $html .= '</table><div style="page-break-after: always;"></div><table>';
     }
 }
+
 $html .= '</table>';
 
+
 $html = $header . $html;
+
+
+echo $html;
 
 // Replace placeholders in the HTML string with the form data values
 
