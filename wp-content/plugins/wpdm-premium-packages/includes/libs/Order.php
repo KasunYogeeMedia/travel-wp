@@ -1,5 +1,6 @@
 <?php
 
+
 namespace WPDMPP\Libs;
 
 // Exit if accessed directly
@@ -65,6 +66,11 @@ class Order {
 	}
 
 	function open() {
+		session_start();
+		if (isset($_SESSION['pdf_name'])) {
+			$pdf_name = $_SESSION['pdf_name'];
+			// Use $my_data variable as needed
+		}
 		global $wpdb;
 		$order_id    = strtoupper( get_wpdmpp_option( 'order_id_prefix', 'WPDMPP' ) . uniqid() );
 		$order_title = get_wpdmpp_option( 'order_title' );
@@ -89,7 +95,7 @@ class Order {
 		$order           = [
 			'order_id'        => $order_id,
 			'title'           => $order_title,
-			'pdf_name'        => $_SESSION["pdf_name"],
+			'pdf_name'        => $pdf_name,
 			'date'            => time(),
 			'expire_date'     => 0,
 			'auto_renew'      => get_wpdmpp_option( 'auto_renew', 0 ),
