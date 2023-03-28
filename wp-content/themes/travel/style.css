@@ -3408,6 +3408,7 @@ img.travel-logo2 {
   /* line-height: 1.7; */
   min-width: 218px;
   min-height: 100px;
+  text-shadow: 0px 0px 20px rgba(0,0,0,0.61);
 }
 .form-1 .form-select {
   background-size: 16px 20px;
