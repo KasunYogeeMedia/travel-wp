@@ -8,7 +8,8 @@ get_header();  ?>
 <!-- banner -->
 <section class="top_banner">
     <div class="container-fluid ss-2">
-        <div class="banner" style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/contact_banner.jpg)">
+        <div class="banner"
+            style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/contact_banner.jpg)">
             <h1 class="centered">Contact Us </h1>
         </div>
     </div>
@@ -20,7 +21,16 @@ get_header();  ?>
             <img src="<?php echo get_template_directory_uri(); ?>/inc/img/header_default.png" alt="Perfect Itinerary">
             <div class="main-title-contact text-center">
                 <h2 class="text-center">Contact Us</h2>
-                <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quidem hic modi adipisci ab corrupti odio, sapiente consequatur impedit quas voluptatem blanditiis corporis porro beatae vero at voluptates, et nulla!</p>
+                <p class="text-center">"We welcome all inquiries and feedback from our users here at The Perfect
+                    Itinerary, and
+                    we're happy to assist with any questions or concerns you may have. Our dedicated support
+                    team is available 24/7 to help you with any aspect of your travel planning, from itinerary
+                    creation to booking support and everything in between. Whether you have a question about a
+                    specific travel destination or need assistance with our website's features, we're here to
+                    provide timely and helpful solutions. Simply fill out our online contact form or email us directly,
+                    and we'll get back to you as soon as possible. At The Perfect Itinerary, we're committed to
+                    providing the best possible travel planning experience, and we welcome the opportunity to
+                    hear from our valued users."</p>
             </div>
 
         </div>
@@ -110,7 +120,8 @@ get_header();  ?>
                 <div class="contact-info">
                     <div class="contact-form-main">
                         <h2>Send a Message</h2>
-                        <p>Providing you have any questions don’t hesitate to contact our team. We are always here to answer your questions.</p>
+                        <p>Providing you have any questions don’t hesitate to contact our team. We are always here to
+                            answer your questions.</p>
                     </div>
                     <div class="contact-form">
 
@@ -133,7 +144,8 @@ get_header();  ?>
             </div>
             <div class="col-sm-12 col-md-7 col-lg-7">
                 <div class="map">
-                    <div class="contact_img" style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/contact_image.jpg)">
+                    <div class="contact_img"
+                        style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/contact_image.jpg)">
                     </div>
                     <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.3072558260296!2d79.99263001370609!3d7.090337394879447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2fbed59abfe0b%3A0x156c4d8153c22b78!2sYogee%20Media%20(Pvt)%20Ltd.!5e0!3m2!1sen!2slk!4v1674483937676!5m2!1sen!2slk" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
                 </div>

@@ -9,7 +9,8 @@ get_header();  ?>
 <!-- banner about section start -->
 <section class="about-us">
     <div class="container-fluid ss-2">
-        <div class="aboutus-banner banner" style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/about.jpg)">
+        <div class="aboutus-banner banner"
+            style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/about.jpg)">
             <h1 class="centered">About Us</h1>
         </div>
     </div>
@@ -25,14 +26,22 @@ get_header();  ?>
                     <div class="line"></div>
                     <p class="title-known-us">GET TO KNOW US</p>
                     <p class="maintitle-knownus">Who we are</p>
-                    <p class="description-knownus">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Eius ab officiis tenetur, ratione aut esse ipsa eum voluptatum alias aperiam
-                        reprehenderit, modi porro ad veritatis? Culpa illo fugiat nulla nobis.<br><br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates possimus sed
-                        asperiores fugiat excepturi reprehenderit autem rerum veritatis eveniet voluptate, cum
-                        voluptatibus debitis dolor vel necessitatibus vero laborum magni animi!
-                        <br><br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque consequatur doloribus perferendis aliquam cupiditate vitae at iusto praesentium vero magnam sint aspernatur reiciendis nulla enim eum, dolorem excepturi exercitationem magni.
+                    <p class="description-knownus"><b>Discover Your Next Adventure with our Customized Travel
+                            Itineraries</b>
+                        At The Perfect Itinerary, we are passionate about creating personalized travel
+                        experiences for every type of traveler. Whether you're looking to escape to a
+                        tropical paradise, explore the historic beauty of Europe, or embark on an adventure
+                        that will leave you breathless, we have the perfect itinerary for you.
+                        <br>
+                        Our team of experienced travel experts meticulously curates each itinerary to
+                        ensure it is tailored to your individual interests, preferences, and budget. From
+                        accommodations and activities to transportation and dining, every detail is taken
+                        care of, so you can sit back, relax, and enjoy the journey.
+                        <br>
+                        With our extensive knowledge and insider access to top-rated destinations and
+                        attractions around the world, we are committed to providing you with a seamless
+                        and unforgettable travel experience. So why wait? Discover your next adventure
+                        with The Perfect Itinerary today!
                     </p>
 
                     <!-- <button class="btn-new">READ MORE</button> -->
@@ -41,15 +50,18 @@ get_header();  ?>
 
             <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
                 <div class="about-rightside">
-                    <div class="first-image" style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg)">
+                    <div class="first-image"
+                        style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg)">
 
                     </div>
 
-                    <div class="second-image" style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/home2.jpg)">
+                    <div class="second-image"
+                        style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/home2.jpg)">
 
                     </div>
 
-                    <div class="third-image" style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/home3.jpg)">
+                    <div class="third-image"
+                        style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/home3.jpg)">
 
                     </div>
 
@@ -79,10 +91,9 @@ get_header();  ?>
                                 <span><i class="fas fa-swimming-pool"></i></span>
                             </div>
                             <h4 class="font-weight-bold pb-2">01.Enter your trip details with your preferences</h4>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Officiis ex consequatur minus atque!
-                                <br>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dicta consequuntur saepe magnam animi accusantium labore perferendis harum explicabo velit, reiciendis in. Rerum quo corrupti aut odio quas asperiores exercitationem?
+                            <p>Start by entering your trip details and preferences. This includes your travel dates,
+                                destinations, and any speciNc preferences you may have, such as budget or amount of
+                                travelers.
                             </p>
 
                             <!-- <div class="read-more">
@@ -98,11 +109,11 @@ get_header();  ?>
                             <div class="card-icon">
                                 <span><i class="fab fa-first-order-alt"></i></span>
                             </div>
-                            <h4 class="font-weight-bold pb-2">02.We will list your accomodation and excursions</h4>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Officiis ex consequatur minus atque!
-                                <br>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, perspiciatis reprehenderit! Eos obcaecati velit eveniet debitis corrupti molestiae ea totam excepturi ratione asperiores explicabo, nihil, provident incidunt quas praesentium omnis.
+                            <h4 class="font-weight-bold pb-2">02.We will list your accommodation and excursions
+                            </h4>
+                            <p>Once you have entered your trip details, you can start adding accommodation and excursion
+                                options. The itinerary builder will provide a list of recommended options based on your
+                                preferences, and you can also search for specific options to add to your itinerary
                             </p>
 
                             <!-- <div class="read-more">
@@ -118,11 +129,14 @@ get_header();  ?>
                             <div class="card-icon">
                                 <span><i class="fas fa-umbrella-beach"></i></span>
                             </div>
-                            <h4 class="font-weight-bold pb-2">03.Click the confirm button and get ready for your
-                                trip!</h4>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Officiis ex consequatur minus atque!
-                                <br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam at, quaerat recusandae aliquam cum alias. Dolorum, blanditiis. Fugit eveniet magni, reprehenderit cum eligendi numquam, voluptate, incidunt saepe dolorum maxime a.
+                            <h4 class="font-weight-bold pb-2">03.Click the conNrm button and get ready for your trip!
+                            </h4>
+                            <p>Once you have added your accommodation and excursion choices, it's time to confirm your
+                                final details. This includes reviewing your itinerary to ensure everything is correct,
+                                making any
+                                necessary changes, and booking your choices. You can also share your itinerary with
+                                others,
+                                such as travel companions or tour guides.
                             </p>
 
                             <!-- <div class="read-more">
@@ -146,7 +160,8 @@ get_header();  ?>
 <!-- image gallery section start-->
 <section class="image-gallery">
     <div class="image-fluid text-center">
-        <div class="image-gallery-banner" style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/home4.jpg)">
+        <div class="image-gallery-banner"
+            style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/home4.jpg)">
             <h2 class="text-center">let us help tou to get most of your trip & make it memorable...</h2>
         </div>
     </div>
@@ -295,7 +310,9 @@ get_header();  ?>
                         adipisicing elit. Molestias quas facere sed,
                         vitae, commodi ipsa nulla ut mollitia possimus temporibus vel distinctio atque
                         iusto. Eius odit consectetur consequatur ipsa vitae!
-                        <br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, dolorem! Atque corrupti rerum id reiciendis harum nobis quod, cumque incidunt fugiat. Quidem culpa est numquam illo voluptatem atque, maxime omnis!
+                        <br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, dolorem! Atque corrupti
+                        rerum id reiciendis harum nobis quod, cumque incidunt fugiat. Quidem culpa est numquam illo
+                        voluptatem atque, maxime omnis!
                     </div>
 
                     <!-- <div class="text-button">
