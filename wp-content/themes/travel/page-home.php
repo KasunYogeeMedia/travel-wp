@@ -93,7 +93,7 @@ get_header();  ?>
                             <div class="card-icon">
                                 <span><i class="fab fa-first-order-alt"></i></span>
                             </div>
-                            <h4 class="font-weight-bold pb-2">02.We will list your accomodation and excursions</h4>
+                            <h4 class="font-weight-bold pb-2">02.We will list your accommodations and excursions</h4>
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                                 Officiis ex consequatur minus atque!</p>
 
@@ -182,7 +182,7 @@ get_header();  ?>
             <div class="steps2-title">
                 <p class="title-step2">TRAVEL BLOGS</p>
                 <P class="title-description2">
-                    where to next?
+                    Where to Next?
                 </P>
             </div>
 

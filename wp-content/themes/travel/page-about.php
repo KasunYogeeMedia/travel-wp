@@ -162,7 +162,7 @@ get_header();  ?>
     <div class="image-fluid text-center">
         <div class="image-gallery-banner"
             style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/home4.jpg)">
-            <h2 class="text-center">let us help tou to get most of your trip & make it memorable...</h2>
+            <h2 class="text-center">let us help you to get most of your trip & make it memorable...</h2>
         </div>
     </div>
 </section>
@@ -218,7 +218,7 @@ get_header();  ?>
                                     <span><i class="fas fa-globe"></i></span>
                                 </div>
                                 <h4 class="font-weight-bold pb-2">WORLD WIDE HOTEL RESERVATION</h4>
-                                <p>Access an all-encompassing global accomodation portfolio of over 50,000 hotels
+                                <p>Access an all-encompassing global accommodations portfolio of over 50,000 hotels
                                     across 150 countries.</p>
 
 

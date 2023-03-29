@@ -794,6 +794,7 @@ p.title-description {
   height: 500px;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 .wrapper2 .text {
@@ -1019,13 +1020,17 @@ p.title-step2 {
   font-weight: 700;
   letter-spacing: 1px;
   color: #000000;
+  font-size: 30px;
+  color: #25325c;
+  text-align: center;
 }
 
 p.title-description2 {
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 600;
   color: #000000;
   padding-top: 8px;
+  text-align: center;
 }
 
 .steps2-title {
@@ -3204,14 +3209,13 @@ section.footer-section {
   .s-11 {
     padding-left: 0px;
   }
-  
+
   img.travel-logo2 {
     width: 120px;
     /* margin-left: -7px; */
     margin: 0 auto;
     /* margin: 0px 60px; */
   }
-
 }
 
 /* Form 2 js section part styles*/
