@@ -242,15 +242,20 @@ a:hover#navbarDropdown {
 a:hover#navbarDropdown {
   color: #fff;
   padding: 6px 15px;
-  background: linear-gradient(to right, #3f9cc1de, #b0b8d8ad);
+  /* background: linear-gradient(to right, #3f9cc1de, #b0b8d8ad); */
   border-radius: 25px;
   border: none;
 }
-
+a.dropdown-item {
+  transition: 0.5s;
+}
+.dropdown-menu .menu-item{
+  width: 100%;
+}
 a:hover.dropdown-item {
-  background: #25305bed;
-  margin-top: 11px;
-  color: #fff;
+  /* background: #25305bed; */
+  /* margin-top: 11px; */
+  color: #000;
 }
 
 li.nav-item {
