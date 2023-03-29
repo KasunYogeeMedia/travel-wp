@@ -22,31 +22,23 @@ get_header();  ?>
                     </div>
                     <div class="col-sm-6 mt-4 mt-sm-0">
                         <div class="img">
-                            <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/video.png"
-                                alt="Perfect Itinerary">
+                            <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/inc/img/video.png" alt="Perfect Itinerary">
                             <h2 class="text-uppercase click">click here for video guide</h2>
 
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn_popup" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">
+                            <button type="button" class="btn_popup" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 <i class="fa fa-play-circle fa-5x" aria-hidden="true"></i>
                             </button>
 
                             <!-- Modal -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                                aria-hidden="true">
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <iframe width="100%" height="auto"
-                                                src="https://www.youtube.com/embed/3SsK-cxlj_w"
-                                                title="YouTube video player" frameborder="0"
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                allowfullscreen></iframe>
+                                            <iframe width="100%" height="auto" src="https://www.youtube.com/embed/3SsK-cxlj_w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                         </div>
                                     </div>
                                 </div>
@@ -77,8 +69,9 @@ get_header();  ?>
                                 <span><i class="fas fa-swimming-pool"></i></span>
                             </div>
                             <h4 class="font-weight-bold pb-2">01.Enter your trip details with your preferences</h4>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Officiis ex consequatur minus atque!</p>
+                            <p>Start by entering your trip details and preferences. This includes your travel dates,
+                                destinations, and any speciNc preferences you may have, such as budget or amount of
+                                travelers.</p>
 
                             <div class="read-more">
                                 <a href="about/"><button class="btn">READ MORE</button></a>
@@ -94,8 +87,9 @@ get_header();  ?>
                                 <span><i class="fab fa-first-order-alt"></i></span>
                             </div>
                             <h4 class="font-weight-bold pb-2">02.We will list your accommodations and excursions</h4>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Officiis ex consequatur minus atque!</p>
+                            <p>Once you have entered your trip details, you can start adding accommodation and excursion
+                                options. The itinerary builder will provide a list of recommended options based on your
+                                preferences, and you can also search for specific options to add to your itinerary.</p>
 
                             <div class="read-more">
                                 <a href="about/"><button class="btn">READ MORE</button></a>
@@ -112,8 +106,10 @@ get_header();  ?>
                             </div>
                             <h4 class="font-weight-bold pb-2">03.Click the confirm button and get ready for your
                                 trip!</h4>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Officiis ex consequatur minus atque!</p>
+                            <p>Once you have added your accommodation and excursion choices, it's time to confirm your
+                                final details. This includes reviewing your itinerary to ensure everything is correct, making any
+                                necessary changes, and booking your choices. You can also share your itinerary with others,
+                                such as travel companions or tour guides.</p>
 
                             <div class="read-more">
                                 <a href="about/"><button class="btn">READ MORE</button></a>
@@ -134,8 +130,7 @@ get_header();  ?>
 
 <section class="wrapper2 top">
     <div class="container-fluid wrap-2">
-        <div class="bag-image"
-            style="background-image: url(<?php echo get_template_directory_uri(); ?>/inc/img/testimonials.jpg);"></div>
+        <div class="bag-image" style="background-image: url(<?php echo get_template_directory_uri(); ?>/inc/img/testimonials.jpg);"></div>
 
     </div>
     <div class="text">
@@ -161,8 +156,7 @@ get_header();  ?>
             <div class="box flex">
                 <div class="box-img">
                     <div class="img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/inc/img/kate-palmer-150x150.jpg"
-                            alt="Perfect Itinerary">
+                        <img src="<?php echo get_template_directory_uri(); ?>/inc/img/kate-palmer-150x150.jpg" alt="Perfect Itinerary">
                     </div>
                     <div class="name">
                         <h5>Billy San Diego</h5>
@@ -211,29 +205,28 @@ get_header();  ?>
                         $the_query = new WP_Query($args);
                         ?>
                         <?php if ($the_query->have_posts()) : ?>
-                        <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-                        <div class="col-sm-6 col-md-6 col-lg-4">
-                            <div class="card card-action">
-                                <a href="<?php the_permalink(); ?>">
-                                    <img src="<?php the_post_thumbnail_url(); ?>" class="card-img-top"
-                                        alt="Perfect Itinerary">
-                                </a>
-                                <div class="card-overlay">
-                                    <div class="card-body">
-                                        <div class="text">
-                                            <a href="<?php the_permalink(); ?>">
-                                                <h3 class="countries-name"><?php the_title(); ?></h3>
-                                            </a>
-                                            <p class="countries-para"><?php the_field('hover_description'); ?></p>
+                            <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                                <div class="col-sm-6 col-md-6 col-lg-4">
+                                    <div class="card card-action">
+                                        <a href="<?php the_permalink(); ?>">
+                                            <img src="<?php the_post_thumbnail_url(); ?>" class="card-img-top" alt="Perfect Itinerary">
+                                        </a>
+                                        <div class="card-overlay">
+                                            <div class="card-body">
+                                                <div class="text">
+                                                    <a href="<?php the_permalink(); ?>">
+                                                        <h3 class="countries-name"><?php the_title(); ?></h3>
+                                                    </a>
+                                                    <p class="countries-para"><?php the_field('hover_description'); ?></p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <?php endwhile;
+                            <?php endwhile;
                             wp_reset_postdata(); ?>
                         <?php else :  ?>
-                        <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+                            <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -277,15 +270,10 @@ get_header();  ?>
                 <div class="partners-right">
                     <div class="row r-1">
                         <div class="col logos-s">
-                            <a
-                                href="https://www.booking.com/index.en-gb.html?label=gen173nr-1BCAEoggI46AdIM1gEaIUBiAEBmAEJuAEXyAEM2AEB6AEBiAIBqAIDuAKZm_KeBsACAdICJDJmMWZhMDA3LWE2NDYtNGM1YS1hZDM4LWE4ZmRkNjE1NTllNtgCBeACAQ&sid=8ad28074e6722df796d09bab274ec954&keep_landing=1&sb_price_type=total&"><img
-                                    src="<?php echo get_template_directory_uri(); ?>/inc/img/247454a990efac1952e44dddbf30c58677aa0fd8.png"
-                                    alt="Perfect Itinerary" class="logo-s1"></a>
+                            <a href="https://www.booking.com/index.en-gb.html?label=gen173nr-1BCAEoggI46AdIM1gEaIUBiAEBmAEJuAEXyAEM2AEB6AEBiAIBqAIDuAKZm_KeBsACAdICJDJmMWZhMDA3LWE2NDYtNGM1YS1hZDM4LWE4ZmRkNjE1NTllNtgCBeACAQ&sid=8ad28074e6722df796d09bab274ec954&keep_landing=1&sb_price_type=total&"><img src="<?php echo get_template_directory_uri(); ?>/inc/img/247454a990efac1952e44dddbf30c58677aa0fd8.png" alt="Perfect Itinerary" class="logo-s1"></a>
                         </div>
                         <div class="col logos-s">
-                            <a href="https://tourscanner.com/"> <img
-                                    src="<?php echo get_template_directory_uri(); ?>/inc/img/Logo-icon-500x500.png"
-                                    alt="Perfect Itinerary" class="logo-s2"></a>
+                            <a href="https://tourscanner.com/"> <img src="<?php echo get_template_directory_uri(); ?>/inc/img/Logo-icon-500x500.png" alt="Perfect Itinerary" class="logo-s2"></a>
                         </div>
                     </div>
                 </div>

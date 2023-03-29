@@ -9,8 +9,7 @@ get_header();  ?>
 <!-- banner about section start -->
 <section class="about-us">
     <div class="container-fluid ss-2">
-        <div class="aboutus-banner banner"
-            style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/about.jpg)">
+        <div class="aboutus-banner banner" style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/about.jpg)">
             <h1 class="centered">About Us</h1>
         </div>
     </div>
@@ -50,18 +49,15 @@ get_header();  ?>
 
             <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
                 <div class="about-rightside">
-                    <div class="first-image"
-                        style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg)">
+                    <div class="first-image" style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/home1.jpg)">
 
                     </div>
 
-                    <div class="second-image"
-                        style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/home2.jpg)">
+                    <div class="second-image" style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/home2.jpg)">
 
                     </div>
 
-                    <div class="third-image"
-                        style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/home3.jpg)">
+                    <div class="third-image" style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/home3.jpg)">
 
                     </div>
 
@@ -113,7 +109,7 @@ get_header();  ?>
                             </h4>
                             <p>Once you have entered your trip details, you can start adding accommodation and excursion
                                 options. The itinerary builder will provide a list of recommended options based on your
-                                preferences, and you can also search for specific options to add to your itinerary
+                                preferences, and you can also search for specific options to add to your itinerary.
                             </p>
 
                             <!-- <div class="read-more">
@@ -160,8 +156,7 @@ get_header();  ?>
 <!-- image gallery section start-->
 <section class="image-gallery">
     <div class="image-fluid text-center">
-        <div class="image-gallery-banner"
-            style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/home4.jpg)">
+        <div class="image-gallery-banner" style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/home4.jpg)">
             <h2 class="text-center">let us help you to get most of your trip & make it memorable...</h2>
         </div>
     </div>
