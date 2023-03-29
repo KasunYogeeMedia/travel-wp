@@ -127,6 +127,9 @@ function nextPrev(n) {
   // if you have reached the end of the form...
 
   if (currentTab >= x.length) {
+    //hide next prv buttons after submit
+    document.getElementById("next_btn").style.display = "none";
+
     // ... get form data as JSON:
     const formData = {};
     const inputs = document.querySelectorAll("input, select, textarea");
@@ -149,6 +152,7 @@ function nextPrev(n) {
         formData[input.name] = input.value;
       }
     }
+
     const jsonData = JSON.stringify(formData);
     // Send an AJAX request to the API endpoint
     const xhr = new XMLHttpRequest();
@@ -162,10 +166,15 @@ function nextPrev(n) {
         console.log(xhr.responseText);
         document.getElementById("regForm").action = "https://theperfectitinerary.com/form-3/";
         // document.getElementById("regForm").action = "https://ongoing.website/websites/travel-wp/form-3/";
-        // document.getElementById("regForm").action = "http://travel-wp.test/form-3/";
+        // document.getElementById("regForm").action =
+        //   "http://travel-wp.test/form-3/";
 
         // ... submit the form:
         document.getElementById("regForm").submit();
+
+        // show alert wait
+        alert("Wait for Redirection");
+
       } else {
         // Handle the error if the request failed
         console.error("Request failed.  Returned status of " + xhr.status);

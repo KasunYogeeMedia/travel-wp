@@ -39,8 +39,8 @@ get_header();
                                 <h2 class="form_title text-light fw-bold text-lg mb-1">
                                     Day <?php echo $x; ?>.
                                 </h2>
-                                <span id="current_date" value="<?php echo $alldates[$x-1] ?>" class="text-light sub_head"><?php echo $alldates[$x-1] ?></span>
-                               
+                                <span id="current_date" value="<?php echo $alldates[$x - 1] ?>" class="text-light sub_head"><?php echo $alldates[$x - 1] ?></span>
+
                             </div>
 
                             <div class="col-md-5 mt-4 mt-md-0">
@@ -294,15 +294,14 @@ get_header();
         ?>
 
         <div class="col-md-3 mt-4 mt-md-0 form_bt_sec">
-            <div class="next_btn text-center">
+            <div id="next_btn" class="next_btn text-center">
                 <button class="text-light btn border-bottom" type="button" id="prevBtn" onclick="nextPrev(-1)"><span class="lg-text fw-bold">
                         <i class="fa fa-arrow-left" aria-hidden="true"></i> Previous
                     </span></button>
                 <button class="text-light btn px-5 lg-text fw-bold" type="button" id="nextBtn" onclick="nextPrev(1)"><span id="nextBtnNext" class="lg-text fw-bold">Next </span>
-
                 </button>
             </div>
-            <div style="text-align:center;margin-top:20px;">
+            <div class="d-none" style="text-align:center;margin-top:20px;">
                 <span class="step"></span>
                 <span class="step"></span>
                 <span class="step"></span>

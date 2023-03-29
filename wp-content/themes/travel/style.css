@@ -2153,10 +2153,10 @@ i.fas.fa-leaf-maple {
     margin: 0px;
   }
 
- section.steps-2 {
-   padding: 30px 30px;
-   padding-right: 30px;
- }
+  section.steps-2 {
+    padding: 30px 30px;
+    padding-right: 30px;
+  }
   section.footer-links {
     padding: 50px 50px 50px 43px;
   }
@@ -3048,7 +3048,7 @@ section.footer-section {
   font-weight: 300;
   margin: 10px;
   margin-left: 40px;
-  min-width: 300px;
+  min-width: -moz-available;
 }
 
 .fa-plus-circle {
@@ -3178,7 +3178,7 @@ section.footer-section {
     font-weight: 300;
     margin: 10px;
     margin-left: 20px;
-    min-width: 200px;
+    min-width: -moz-available;
   }
 
   .fa-plus-circle {
@@ -3191,11 +3191,11 @@ section.footer-section {
     padding: 0px;
   }
 
-.partners-description p {
-  font-size: 13px;
-  padding: 10px 10px;
-  text-align: center;
-}
+  .partners-description p {
+    font-size: 13px;
+    padding: 10px 10px;
+    text-align: center;
+  }
 
   .button-part {
     text-align: center;
@@ -3204,14 +3204,14 @@ section.footer-section {
   .s-11 {
     padding-left: 0px;
   }
-  .video-text {
-  }
+  
   img.travel-logo2 {
     width: 120px;
     /* margin-left: -7px; */
     margin: 0 auto;
     /* margin: 0px 60px; */
   }
+
 }
 
 /* Form 2 js section part styles*/
@@ -3412,9 +3412,9 @@ img.travel-logo2 {
   background-repeat: no-repeat;
   background-position: center;
   /* line-height: 1.7; */
-  min-width: 218px;
+  min-width: -moz-available;
   min-height: 100px;
-  text-shadow: 0px 0px 20px rgba(0,0,0,0.61);
+  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.61);
 }
 .form-1 .form-select {
   background-size: 16px 20px;
@@ -3539,14 +3539,14 @@ input.invalid {
   font-size: 32px;
   margin-bottom: 20px;
 }
-.comments-area{
+.comments-area {
   margin-top: 20px;
 }
-.comments-area textarea{
+.comments-area textarea {
   width: 100%;
   height: 100px;
 }
-.w3eden .min-price-note{
+.w3eden .min-price-note {
   margin-top: 10px;
 }
 /* single page styles */
@@ -3556,17 +3556,16 @@ input.invalid {
 }
 /* Order page styles */
 .wpdmpp-all-orders {
-	margin-top: 20px;
-} 
+  margin-top: 20px;
+}
 .w3eden h3 {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 1200px) and (min-width: 991px) {
   .contact-info {
     margin-top: 0;
   }
-  
 }
 @media screen and (max-width: 991px) and (min-width: 768px) {
   .contact-info {
@@ -3574,31 +3573,31 @@ input.invalid {
     top: 7%;
   }
 
-    .wrapper2 .text {
-      padding: 26px;
-      width: 50%;
-    }
+  .wrapper2 .text {
+    padding: 26px;
+    width: 50%;
+  }
 
-    p.form-para {
-      width: 292px;
-      font-size: 13px;
-    }
+  p.form-para {
+    width: 292px;
+    font-size: 13px;
+  }
 
-    .sample-status-bottom {
-      margin: 20px 50px -6px 50px;
-    }
+  .sample-status-bottom {
+    margin: 20px 50px -6px 50px;
+  }
 }
 
 @media screen and (max-width: 768px) and (max-width: 1024px) {
   p.form-para {
-      width: 328px;
-      font-size: 13px;
-      padding: 0px 20px;
+    width: 328px;
+    font-size: 13px;
+    padding: 0px 20px;
   }
 
-    .sample-status-bottom {
-      margin: 20px 50px 0px 40px;
-    }
+  .sample-status-bottom {
+    margin: 20px 50px 0px 40px;
+  }
 }
 
 @media screen and (max-width: 768px) and (min-width: 389px) {
@@ -3647,7 +3646,7 @@ input.invalid {
   .global_content {
     padding-top: 20px;
   }
-  .single h1.entry-title{
+  .single h1.entry-title {
     font-size: 22px;
     margin-bottom: 0;
   }
@@ -3661,5 +3660,8 @@ input.invalid {
     width: 254px;
     font-size: 12px;
     padding: 0px 10px;
+  }
+  .rmv_btn {
+    margin-left: -40px;
   }
 }
