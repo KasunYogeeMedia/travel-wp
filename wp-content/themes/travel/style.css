@@ -249,7 +249,7 @@ a:hover#navbarDropdown {
 a.dropdown-item {
   transition: 0.5s;
 }
-.dropdown-menu .menu-item{
+.dropdown-menu .menu-item {
   width: 100%;
 }
 a:hover.dropdown-item {
@@ -3679,24 +3679,28 @@ input.invalid {
   .rmv_btn {
     margin-left: -40px;
   }
-  .bag-image{
+  .bag-image {
     height: 500px;
   }
 }
 
-@media screen and (max-width: 430px){
+@media screen and (max-width: 430px) {
   .wrapper2 {
     margin-bottom: 40vw;
   }
 }
-@media screen and (max-width: 380px){
+@media screen and (max-width: 380px) {
   .wrapper2 {
     margin-bottom: 60vw;
   }
 }
-@media screen and (max-width: 340px){
+@media screen and (max-width: 340px) {
   .wrapper2 {
     margin-bottom: 80vw;
   }
 }
-/* sasha requested new changes 3.30 */
+@media screen and (min-width: 768px) {
+  .sub-title-post2 {
+    padding-top: 75px;
+  }
+}
