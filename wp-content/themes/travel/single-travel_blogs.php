@@ -57,8 +57,8 @@
 
                             <div class="col-xm-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
                                 <div class="post1-right-images">
-                                    <img src="<?php the_field('bottom_image_1'); ?>" alt="Perfect Itinerary" class="imgp-1">
-                                    <img src="<?php the_field('bottom_image_2'); ?>" alt="Perfect Itinerary" class="imgp-1 mt-3">
+                                    <img src="<?php the_field('bottom_image_1'); ?>" alt="<?php the_title(); ?>" class="imgp-1">
+                                    <img src="<?php the_field('bottom_image_2'); ?>" alt="<?php the_title(); ?>" class="imgp-1 mt-3">
                                 </div>
                             </div>
                         </div>
