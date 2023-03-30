@@ -631,7 +631,7 @@ section#room {
 }
 
 p.form-para {
-  width: 506px;
+  width: 100%;
   text-align: center;
   padding: 0px 0px;
   font-style: italic;
@@ -837,7 +837,7 @@ p.title-description {
   background: #3f9cc1;
   padding: 50px;
   width: 50%;
-  height: 696px;
+  height: auto;
   position: absolute;
   top: -15%;
   padding-top: 5%;
@@ -1161,7 +1161,7 @@ p.maintitle-knownus {
 
 section.known-us {
   margin: 100px;
-  margin-bottom: 240px;
+  margin-bottom: 180px;
 }
 
 .about-rightside {
@@ -2291,7 +2291,7 @@ i.fas.fa-leaf-maple {
   }
 
   .top {
-    margin-top: 200px;
+    margin-top: 150px;
   }
 
   .wrapper2 .text {
@@ -2299,7 +2299,7 @@ i.fas.fa-leaf-maple {
   }
 
   .wrapper2 .text {
-    top: -53%;
+    /* top: -53%; */
     right: -1%;
   }
 
@@ -2382,7 +2382,7 @@ i.fas.fa-leaf-maple {
   }
 
   section.steps-2 {
-    margin-top: 360px;
+    margin-top: 50px;
     padding: 0px 30px;
     padding-right: 55px;
   }
@@ -2952,7 +2952,7 @@ section.footer-section {
   }
 
   .wrapper2 {
-    margin-bottom: 250px;
+    margin-bottom: 20vw;
   }
 
   .partners-description h2 {
@@ -3599,9 +3599,9 @@ input.invalid {
 
 @media screen and (max-width: 768px) and (max-width: 1024px) {
   p.form-para {
-    width: 328px;
+    width: 100%;
     font-size: 13px;
-    padding: 0px 20px;
+    /* padding: 0px 20px; */
   }
 
   .sample-status-bottom {
@@ -3614,6 +3614,12 @@ input.invalid {
   #nextBtn {
     min-height: 68px;
     border-color: #4ab678 !important;
+  }
+}
+
+@media screen and (max-width: 700px) and (min-width: 576px) {
+  .wrapper2 .text {
+    width: 65%;
   }
 }
 
@@ -3666,11 +3672,31 @@ input.invalid {
   }
 
   p.form-para {
-    width: 254px;
+    width: 100%;
     font-size: 12px;
     padding: 0px 10px;
   }
   .rmv_btn {
     margin-left: -40px;
   }
+  .bag-image{
+    height: 500px;
+  }
 }
+
+@media screen and (max-width: 430px){
+  .wrapper2 {
+    margin-bottom: 40vw;
+  }
+}
+@media screen and (max-width: 380px){
+  .wrapper2 {
+    margin-bottom: 60vw;
+  }
+}
+@media screen and (max-width: 340px){
+  .wrapper2 {
+    margin-bottom: 80vw;
+  }
+}
+/* sasha requested new changes 3.30 */

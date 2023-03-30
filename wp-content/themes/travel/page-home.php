@@ -73,9 +73,9 @@ get_header();  ?>
                                 destinations, and any speciNc preferences you may have, such as budget or amount of
                                 travelers.</p>
 
-                            <div class="read-more">
+                            <!-- <div class="read-more">
                                 <a href="about/"><button class="btn">READ MORE</button></a>
-                            </div>
+                            </div> -->
                         </card>
                     </div>
                 </div>
@@ -91,9 +91,9 @@ get_header();  ?>
                                 options. The itinerary builder will provide a list of recommended options based on your
                                 preferences, and you can also search for specific options to add to your itinerary.</p>
 
-                            <div class="read-more">
+                            <!-- <div class="read-more">
                                 <a href="about/"><button class="btn">READ MORE</button></a>
-                            </div>
+                            </div> -->
                         </card>
                     </div>
                 </div>
@@ -111,9 +111,9 @@ get_header();  ?>
                                 necessary changes, and booking your choices. You can also share your itinerary with others,
                                 such as travel companions or tour guides.</p>
 
-                            <div class="read-more">
+                            <!-- <div class="read-more">
                                 <a href="about/"><button class="btn">READ MORE</button></a>
-                            </div>
+                            </div> -->
                         </card>
                     </div>
                 </div>

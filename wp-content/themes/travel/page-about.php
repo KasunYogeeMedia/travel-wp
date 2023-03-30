@@ -27,16 +27,18 @@ get_header();  ?>
                     <p class="maintitle-knownus">Who we are</p>
                     <p class="description-knownus"><b>Discover Your Next Adventure with our Customized Travel
                             Itineraries</b>
+                            <br>
+                            <br>
                         At The Perfect Itinerary, we are passionate about creating personalized travel
                         experiences for every type of traveler. Whether you're looking to escape to a
                         tropical paradise, explore the historic beauty of Europe, or embark on an adventure
                         that will leave you breathless, we have the perfect itinerary for you.
-                        <br>
+                        <br> <br>
                         Our team of experienced travel experts meticulously curates each itinerary to
                         ensure it is tailored to your individual interests, preferences, and budget. From
                         accommodations and activities to transportation and dining, every detail is taken
                         care of, so you can sit back, relax, and enjoy the journey.
-                        <br>
+                        <br><br>
                         With our extensive knowledge and insider access to top-rated destinations and
                         attractions around the world, we are committed to providing you with a seamless
                         and unforgettable travel experience. So why wait? Discover your next adventure
@@ -69,7 +71,7 @@ get_header();  ?>
 <!-- known us section end -->
 
 <!-- sample status page start -->
-<section class="sample-staus">
+<section class="sample-staus d-none">
     <div class="container-fluid">
         <div class="sample-status-top">
             <div class="line1"></div>
@@ -164,7 +166,7 @@ get_header();  ?>
 <!-- image gallery section end-->
 
 <!-- service page start -->
-<section class="service-page">
+<section class="service-page d-none">
     <div class="container-fluid">
         <div class="service">
             <div class="service-title text-center">
@@ -279,7 +281,7 @@ get_header();  ?>
 </section>
 <!-- service page end -->
 
-<section class="video-gallery">
+<section class="video-gallery d-none">
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-6">
