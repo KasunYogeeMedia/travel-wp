@@ -812,9 +812,10 @@ p.title-description {
 }
 .wrapper2 .box-img .img{
   width: 50px;
+  margin-right: 20px;
 }
 .wrapper2 img {
-  
+  width: 100%;
   height: auto;
   border-radius: 50%;
   margin-right: 20px;
