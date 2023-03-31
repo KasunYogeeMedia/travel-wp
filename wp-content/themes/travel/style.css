@@ -193,10 +193,6 @@ ul.navbar-nav.ms-auto {
   border: 1px solid #ffffff00;
   transition: 0.5s;
 }
-.social-media:hover {
-  border-color: #fff;
-  background-color: #a1a1a1;
-}
 
 i.fab.fa-facebook-f {
   color: #fff;
@@ -3588,14 +3584,14 @@ input.invalid {
 .w3eden div#wpdmlogin,
 .w3eden div#wpdmreg {
   background: #ffffff3d;
-  -webkit-box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.33); 
-  box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.33);
+  -webkit-box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.33);
+  box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.33);
 }
 .w3eden .btn.btn-xs,
 .w3eden .color-info,
 .w3eden .color-blue,
-.w3eden label{
-color: #fff !important;
+.w3eden label {
+  color: #fff !important;
 }
 
 /* Mobile responsive */
@@ -3652,6 +3648,12 @@ color: #fff !important;
   }
 }
 
+@media (min-width: 768px) {
+  .social-media:hover {
+    border-color: #fff;
+    background-color: #a1a1a1;
+  }
+}
 @media (max-width: 768px) {
   .contact-info {
     position: relative;
@@ -3673,6 +3675,7 @@ color: #fff !important;
     width: 100%;
   }
 }
+
 @media (max-width: 576px) {
   section.our-details {
     padding-left: 10%;
