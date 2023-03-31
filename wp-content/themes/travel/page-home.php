@@ -70,7 +70,7 @@ get_header();  ?>
                             </div>
                             <h4 class="font-weight-bold pb-2">01.Enter your trip details with your preferences</h4>
                             <p>Start by entering your trip details and preferences. This includes your travel dates,
-                                destinations, and any speciNc preferences you may have, such as budget or amount of
+                                destinations, and any specific preferences you may have, such as budget or amount of
                                 travelers.</p>
 
                             <!-- <div class="read-more">
@@ -159,7 +159,7 @@ get_header();  ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/inc/img/kate-palmer-150x150.jpg" alt="Perfect Itinerary">
                     </div>
                     <div class="name">
-                        <h5>Billy San Diego</h5>
+                        <h5>Billie San Diego</h5>
                         <!-- <H5>IDAHO</H5> -->
                     </div>
                 </div>

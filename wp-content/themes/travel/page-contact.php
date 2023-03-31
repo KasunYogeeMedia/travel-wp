@@ -9,7 +9,7 @@ get_header();  ?>
 <section class="top_banner">
     <div class="container-fluid ss-2">
         <div class="banner"
-            style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/contact_banner.jpg)">
+            style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/contact0banner.jpg)">
             <h1 class="centered">Contact Us </h1>
         </div>
     </div>
@@ -145,7 +145,7 @@ get_header();  ?>
             <div class="col-sm-12 col-md-7 col-lg-7">
                 <div class="map">
                     <div class="contact_img"
-                        style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/contact_image.jpg)">
+                        style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/contact_form.jpg)">
                     </div>
                     <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.3072558260296!2d79.99263001370609!3d7.090337394879447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2fbed59abfe0b%3A0x156c4d8153c22b78!2sYogee%20Media%20(Pvt)%20Ltd.!5e0!3m2!1sen!2slk!4v1674483937676!5m2!1sen!2slk" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
                 </div>

@@ -96,7 +96,7 @@ $pdf->setTextShadow(array('enabled' => true, 'depth_w' => 0.2, 'depth_h' => 0.2,
 // Set some content to print
 
 // Define the header section
-$imagePath = 'https://ongoing.website/websites/travel-wp/wp-content/themes/travel/inc/img/logo.png';
+$imagePath = 'https://theperfectitinerary.com/wp-content/themes/travel/inc/img/logo.png';
 $header = '<table style="margin-bottom:20px;">
              <tr>
                <td><img src="' . $imagePath . '"></td>
