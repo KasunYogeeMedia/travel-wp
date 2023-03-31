@@ -810,7 +810,7 @@ p.title-description {
 .wrapper2 h2 {
   color: #fff;
 }
-.wrapper2 .box-img .img{
+.wrapper2 .box-img .img {
   width: 50px;
   margin-right: 20px;
 }
@@ -922,9 +922,9 @@ button.btn-new {
   text-align: justify;
 }
 .log_reg {
-  margin-top: 60px;
-  padding-top: 50px;
-  margin-bottom: 80px;
+  /* margin-top: 60px; */
+  padding-top: 150px;
+  /* margin-bottom: 80px; */
 }
 
 .footer-content p {
@@ -3573,6 +3573,32 @@ input.invalid {
 .w3eden h3 {
   margin-bottom: 20px;
 }
+
+/* Register login page css */
+.page-template-page-Reg-Log {
+  /* height: 100vh; */
+}
+.page-template-page-Reg-Log .log_reg {
+  min-height: calc(100vh - 83px);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 20px;
+}
+.w3eden div#wpdmlogin,
+.w3eden div#wpdmreg {
+  background: #ffffff3d;
+  -webkit-box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.33); 
+  box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.33);
+}
+.w3eden .btn.btn-xs,
+.w3eden .color-info,
+.w3eden .color-blue,
+.w3eden label{
+color: #fff !important;
+}
+
+/* Mobile responsive */
 
 @media screen and (max-width: 1200px) and (min-width: 991px) {
   .contact-info {
