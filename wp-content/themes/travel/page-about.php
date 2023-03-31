@@ -159,7 +159,7 @@ get_header();  ?>
 <section class="image-gallery">
     <div class="image-fluid text-center">
         <div class="image-gallery-banner" style="background-image:url(<?php echo get_template_directory_uri(); ?>/inc/img/home4.jpg)">
-            <h2 class="text-center">let us help you to get most of your trip & make it memorable...</h2>
+            <h2 class="text-center">Let us help you get the most out of your trip memorable...</h2>
         </div>
     </div>
 </section>
