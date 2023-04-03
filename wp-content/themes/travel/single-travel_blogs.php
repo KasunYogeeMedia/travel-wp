@@ -46,7 +46,9 @@
 
                         <div class="row last-section-post">
                             <div class="col-sm-12 col-md-8">
-                                <?php the_content(); ?>
+                                <div class="blog_content">
+                                    <?php the_content(); ?>
+                                </div>
                             </div>
                             <div class="col-sm-12 col-md-4 mt-5 mt-md-0 ">
                                 <div class="blog-slidebar">

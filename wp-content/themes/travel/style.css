@@ -1616,7 +1616,7 @@ i.fas.fa-leaf-maple {
     left: 33%;
   }
   .blog-image.text-center {
-    margin: 50px 50px;   
+    margin: 50px 50px;
   }
 }
 
@@ -3535,7 +3535,9 @@ input.invalid {
 #footer {
   width: 100%;
 }
+
 /* single blog page */
+
 .single-wpdmpro .comment-form-comment label {
   display: block;
 }
@@ -3557,8 +3559,11 @@ input.invalid {
   list-style: none;
   line-height: 3;
 }
-.blog-slidebar .border-bottom{
+.blog-slidebar .border-bottom {
   border-color: #b7b7b7 !important;
+}
+.blog_content p {
+  font-size: 14px;
 }
 /* download page styles */
 .down_data h1 {
