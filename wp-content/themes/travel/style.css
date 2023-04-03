@@ -3564,6 +3564,7 @@ input.invalid {
 }
 .blog_content p {
   font-size: 14px;
+  font-weight: 300;
 }
 /* download page styles */
 .down_data h1 {
