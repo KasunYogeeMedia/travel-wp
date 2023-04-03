@@ -13,7 +13,7 @@ Template Name: Travels
     </div>
 </section>
 <section class="steps-2 mt-2">
-    <div class="container-fluid">
+    <div class="container">
         <div class="step2-chance">
             <div class="container-fluid mt-4">
                 <div class="steps2-images">
