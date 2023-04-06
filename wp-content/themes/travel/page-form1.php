@@ -20,7 +20,7 @@ get_header();  ?>
                 <div class="row mt-5">
                     <div class="col-md-12">
                         <div class="input-group">
-                            <input class="form-control form-control-lg border-end-0 border px-2 px-sm-5 py-3" type="search" placeholder="Where you want to go?" id="search" name="search">
+                            <input class="form-control form-control-lg border-end-0 border px-2 px-sm-5 py-3" type="search" placeholder="Where to go?" id="search" name="search">
                             <span class="input-group-append">
                                 <button class="btn btn-lg bg-white border-start-0 border ms-n5 rounded-0 rounded-end mt-0 py-3" type="button">
                                     <i class="fa fa-search fa-2x pt-1"></i>
