@@ -69,9 +69,10 @@ get_header();  ?>
                                 <span><i class="fas fa-swimming-pool"></i></span>
                             </div>
                             <h4 class="font-weight-bold pb-2">01.Enter your trip details with your preferences</h4>
-                            <p>Start by entering your trip details and preferences. This includes your travel dates,
+                            <!-- <p>Start by entering your trip details and preferences. This includes your travel dates,
                                 destinations, and any specific preferences you may have, such as budget or amount of
-                                travelers.</p>
+                                travelers.</p> -->
+                                <p>Pay a one time $20 fee for unlimited itinerary access.</p>
 
                             <!-- <div class="read-more">
                                 <a href="about/"><button class="btn">READ MORE</button></a>
