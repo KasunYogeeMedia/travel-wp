@@ -56,7 +56,7 @@ get_header();  ?>
     <div class="container-fluid">
         <div class="sample-status-top">
             <div class="status-content text-center">
-                HERE IS HOW YOU DO IT
+            Travel ideas
             </div>
         </div>
 
@@ -68,11 +68,11 @@ get_header();  ?>
                             <div class="card-icon">
                                 <span><i class="fas fa-swimming-pool"></i></span>
                             </div>
-                            <h4 class="font-weight-bold pb-2">01.Enter your trip details with your preferences</h4>
+                            <h4 class="font-weight-bold pb-2">01.Register account and pay one time fee</h4>
                             <!-- <p>Start by entering your trip details and preferences. This includes your travel dates,
                                 destinations, and any specific preferences you may have, such as budget or amount of
                                 travelers.</p> -->
-                                <p>Pay a one time $20 fee for unlimited itinerary access.</p>
+                                <!-- <p>Pay a one time $20 fee for unlimited itinerary access.</p> -->
 
                             <!-- <div class="read-more">
                                 <a href="about/"><button class="btn">READ MORE</button></a>
@@ -87,10 +87,10 @@ get_header();  ?>
                             <div class="card-icon">
                                 <span><i class="fab fa-first-order-alt"></i></span>
                             </div>
-                            <h4 class="font-weight-bold pb-2">02.We will list your accommodations and excursions</h4>
-                            <p>Once you have entered your trip details, you can start adding accommodation and excursion
+                            <h4 class="font-weight-bold pb-2">02.Enter trip preferences with details</h4>
+                            <!-- <p>Once you have entered your trip details, you can start adding accommodation and excursion
                                 options. The itinerary builder will provide a list of recommended options based on your
-                                preferences, and you can also search for specific options to add to your itinerary.</p>
+                                preferences, and you can also search for specific options to add to your itinerary.</p> -->
 
                             <!-- <div class="read-more">
                                 <a href="about/"><button class="btn">READ MORE</button></a>
@@ -105,12 +105,11 @@ get_header();  ?>
                             <div class="card-icon">
                                 <span><i class="fas fa-umbrella-beach"></i></span>
                             </div>
-                            <h4 class="font-weight-bold pb-2">03.Click the confirm button and get ready for your
-                                trip!</h4>
-                            <p>Once you have added your accommodation and excursion choices, it's time to confirm your
+                            <h4 class="font-weight-bold pb-2">03.Generate your customized itineray</h4>
+                            <!-- <p>Once you have added your accommodation and excursion choices, it's time to confirm your
                                 final details. This includes reviewing your itinerary to ensure everything is correct, making any
                                 necessary changes, and booking your choices. You can also share your itinerary with others,
-                                such as travel companions or tour guides.</p>
+                                such as travel companions or tour guides.</p> -->
 
                             <!-- <div class="read-more">
                                 <a href="about/"><button class="btn">READ MORE</button></a>
